@@ -4,27 +4,32 @@
 package com.aakash.cloudfs.protocol.proto.generated.stubs;
 
 public interface ExistMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:cloudfs.protocol.ExistMsg)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:cloudfs.protocol.ExistMsg)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>bool exists = 1;</code>
-   * @return The exists.
-   */
-  boolean getExists();
+    /**
+     * <code>bool exists = 1;</code>
+     *
+     * @return The exists.
+     */
+    boolean getExists();
 
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-   * @return Whether the errorMsg field is set.
-   */
-  boolean hasErrorMsg();
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-   * @return The errorMsg.
-   */
-  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-   */
-  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     *
+     * @return Whether the errorMsg field is set.
+     */
+    boolean hasErrorMsg();
+
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     *
+     * @return The errorMsg.
+     */
+    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
+
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
 }

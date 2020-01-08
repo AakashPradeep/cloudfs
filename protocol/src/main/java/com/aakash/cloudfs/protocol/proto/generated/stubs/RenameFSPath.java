@@ -6,1216 +6,1326 @@ package com.aakash.cloudfs.protocol.proto.generated.stubs;
 /**
  * Protobuf type {@code cloudfs.protocol.RenameFSPath}
  */
-public  final class RenameFSPath extends
-    com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:cloudfs.protocol.RenameFSPath)
-    RenameFSPathOrBuilder {
-private static final long serialVersionUID = 0L;
-  // Use RenameFSPath.newBuilder() to construct.
-  private RenameFSPath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-  private RenameFSPath() {
-    namespace_ = "";
-    owner_ = "";
-    group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    srcPath_ = "";
-    dstPath_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new RenameFSPath();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-  private RenameFSPath(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            namespace_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            owner_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              group_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            group_.add(s);
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            srcPath_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            dstPath_ = s;
-            break;
-          }
-          case 48: {
-
-            reqTimeOutInMillis_ = input.readInt64();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
+public final class RenameFSPath extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:cloudfs.protocol.RenameFSPath)
+        RenameFSPathOrBuilder {
+    public static final int NAMESPACE_FIELD_NUMBER = 1;
+    public static final int OWNER_FIELD_NUMBER = 2;
+    public static final int GROUP_FIELD_NUMBER = 3;
+    public static final int SRCPATH_FIELD_NUMBER = 4;
+    public static final int DSTPATH_FIELD_NUMBER = 5;
+    public static final int REQTIMEOUTINMILLIS_FIELD_NUMBER = 6;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:cloudfs.protocol.RenameFSPath)
+    private static final com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<RenameFSPath>
+            PARSER = new com.google.protobuf.AbstractParser<RenameFSPath>() {
+        @java.lang.Override
+        public RenameFSPath parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return new RenameFSPath(input, extensionRegistry);
         }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        group_ = group_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_descriptor;
-  }
+    };
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.Builder.class);
-  }
+    static {
+        DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath();
+    }
 
-  public static final int NAMESPACE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object namespace_;
-  /**
-   * <code>string namespace = 1;</code>
-   * @return The namespace.
-   */
-  public java.lang.String getNamespace() {
-    java.lang.Object ref = namespace_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      namespace_ = s;
-      return s;
+    private volatile java.lang.Object namespace_;
+    private volatile java.lang.Object owner_;
+    private com.google.protobuf.LazyStringList group_;
+    private volatile java.lang.Object srcPath_;
+    private volatile java.lang.Object dstPath_;
+    private long reqTimeOutInMillis_;
+    private byte memoizedIsInitialized = -1;
+    // Use RenameFSPath.newBuilder() to construct.
+    private RenameFSPath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
     }
-  }
-  /**
-   * <code>string namespace = 1;</code>
-   * @return The bytes for namespace.
-   */
-  public com.google.protobuf.ByteString
-      getNamespaceBytes() {
-    java.lang.Object ref = namespace_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      namespace_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
 
-  public static final int OWNER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object owner_;
-  /**
-   * <code>string owner = 2;</code>
-   * @return The owner.
-   */
-  public java.lang.String getOwner() {
-    java.lang.Object ref = owner_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      owner_ = s;
-      return s;
+    private RenameFSPath() {
+        namespace_ = "";
+        owner_ = "";
+        group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        srcPath_ = "";
+        dstPath_ = "";
     }
-  }
-  /**
-   * <code>string owner = 2;</code>
-   * @return The bytes for owner.
-   */
-  public com.google.protobuf.ByteString
-      getOwnerBytes() {
-    java.lang.Object ref = owner_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      owner_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
 
-  public static final int GROUP_FIELD_NUMBER = 3;
-  private com.google.protobuf.LazyStringList group_;
-  /**
-   * <code>repeated string group = 3;</code>
-   * @return A list containing the group.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getGroupList() {
-    return group_;
-  }
-  /**
-   * <code>repeated string group = 3;</code>
-   * @return The count of group.
-   */
-  public int getGroupCount() {
-    return group_.size();
-  }
-  /**
-   * <code>repeated string group = 3;</code>
-   * @param index The index of the element to return.
-   * @return The group at the given index.
-   */
-  public java.lang.String getGroup(int index) {
-    return group_.get(index);
-  }
-  /**
-   * <code>repeated string group = 3;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the group at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getGroupBytes(int index) {
-    return group_.getByteString(index);
-  }
+    private RenameFSPath(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+            boolean done = false;
+            while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                    case 0:
+                        done = true;
+                        break;
+                    case 10: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public static final int SRCPATH_FIELD_NUMBER = 4;
-  private volatile java.lang.Object srcPath_;
-  /**
-   * <code>string srcPath = 4;</code>
-   * @return The srcPath.
-   */
-  public java.lang.String getSrcPath() {
-    java.lang.Object ref = srcPath_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      srcPath_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string srcPath = 4;</code>
-   * @return The bytes for srcPath.
-   */
-  public com.google.protobuf.ByteString
-      getSrcPathBytes() {
-    java.lang.Object ref = srcPath_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      srcPath_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
+                        namespace_ = s;
+                        break;
+                    }
+                    case 18: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public static final int DSTPATH_FIELD_NUMBER = 5;
-  private volatile java.lang.Object dstPath_;
-  /**
-   * <code>string dstPath = 5;</code>
-   * @return The dstPath.
-   */
-  public java.lang.String getDstPath() {
-    java.lang.Object ref = dstPath_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dstPath_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string dstPath = 5;</code>
-   * @return The bytes for dstPath.
-   */
-  public com.google.protobuf.ByteString
-      getDstPathBytes() {
-    java.lang.Object ref = dstPath_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      dstPath_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
+                        owner_ = s;
+                        break;
+                    }
+                    case 26: {
+                        java.lang.String s = input.readStringRequireUtf8();
+                        if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                            group_ = new com.google.protobuf.LazyStringArrayList();
+                            mutable_bitField0_ |= 0x00000001;
+                        }
+                        group_.add(s);
+                        break;
+                    }
+                    case 34: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public static final int REQTIMEOUTINMILLIS_FIELD_NUMBER = 6;
-  private long reqTimeOutInMillis_;
-  /**
-   * <code>int64 reqTimeOutInMillis = 6;</code>
-   * @return The reqTimeOutInMillis.
-   */
-  public long getReqTimeOutInMillis() {
-    return reqTimeOutInMillis_;
-  }
+                        srcPath_ = s;
+                        break;
+                    }
+                    case 42: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
+                        dstPath_ = s;
+                        break;
+                    }
+                    case 48: {
 
-    memoizedIsInitialized = 1;
-    return true;
-  }
+                        reqTimeOutInMillis_ = input.readInt64();
+                        break;
+                    }
+                    default: {
+                        if (!parseUnknownField(
+                                input, unknownFields, extensionRegistry, tag)) {
+                            done = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+        } finally {
+            if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                group_ = group_.getUnmodifiableView();
+            }
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+        }
+    }
 
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (!getNamespaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
-    }
-    if (!getOwnerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
-    }
-    for (int i = 0; i < group_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, group_.getRaw(i));
-    }
-    if (!getSrcPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, srcPath_);
-    }
-    if (!getDstPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, dstPath_);
-    }
-    if (reqTimeOutInMillis_ != 0L) {
-      output.writeInt64(6, reqTimeOutInMillis_);
-    }
-    unknownFields.writeTo(output);
-  }
-
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    if (!getNamespaceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
-    }
-    if (!getOwnerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < group_.size(); i++) {
-        dataSize += computeStringSizeNoTag(group_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getGroupList().size();
-    }
-    if (!getSrcPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, srcPath_);
-    }
-    if (!getDstPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, dstPath_);
-    }
-    if (reqTimeOutInMillis_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, reqTimeOutInMillis_);
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath)) {
-      return super.equals(obj);
-    }
-    com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath other = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath) obj;
-
-    if (!getNamespace()
-        .equals(other.getNamespace())) return false;
-    if (!getOwner()
-        .equals(other.getOwner())) return false;
-    if (!getGroupList()
-        .equals(other.getGroupList())) return false;
-    if (!getSrcPath()
-        .equals(other.getSrcPath())) return false;
-    if (!getDstPath()
-        .equals(other.getDstPath())) return false;
-    if (getReqTimeOutInMillis()
-        != other.getReqTimeOutInMillis()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-    hash = (53 * hash) + getNamespace().hashCode();
-    hash = (37 * hash) + OWNER_FIELD_NUMBER;
-    hash = (53 * hash) + getOwner().hashCode();
-    if (getGroupCount() > 0) {
-      hash = (37 * hash) + GROUP_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupList().hashCode();
-    }
-    hash = (37 * hash) + SRCPATH_FIELD_NUMBER;
-    hash = (53 * hash) + getSrcPath().hashCode();
-    hash = (37 * hash) + DSTPATH_FIELD_NUMBER;
-    hash = (53 * hash) + getDstPath().hashCode();
-    hash = (37 * hash) + REQTIMEOUTINMILLIS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getReqTimeOutInMillis());
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * Protobuf type {@code cloudfs.protocol.RenameFSPath}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:cloudfs.protocol.RenameFSPath)
-      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPathOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_descriptor;
+    getDescriptor() {
+        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_descriptor;
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<RenameFSPath> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+        return new RenameFSPath();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+        return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.Builder.class);
+    internalGetFieldAccessorTable() {
+        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.Builder.class);
     }
 
-    // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      namespace_ = "";
-
-      owner_ = "";
-
-      group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      srcPath_ = "";
-
-      dstPath_ = "";
-
-      reqTimeOutInMillis_ = 0L;
-
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_descriptor;
-    }
-
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath getDefaultInstanceForType() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath build() {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath buildPartial() {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath result = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath(this);
-      int from_bitField0_ = bitField0_;
-      result.namespace_ = namespace_;
-      result.owner_ = owner_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        group_ = group_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.group_ = group_;
-      result.srcPath_ = srcPath_;
-      result.dstPath_ = dstPath_;
-      result.reqTimeOutInMillis_ = reqTimeOutInMillis_;
-      onBuilt();
-      return result;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath) {
-        return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
-    public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath other) {
-      if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.getDefaultInstance()) return this;
-      if (!other.getNamespace().isEmpty()) {
-        namespace_ = other.namespace_;
-        onChanged();
-      }
-      if (!other.getOwner().isEmpty()) {
-        owner_ = other.owner_;
-        onChanged();
-      }
-      if (!other.group_.isEmpty()) {
-        if (group_.isEmpty()) {
-          group_ = other.group_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureGroupIsMutable();
-          group_.addAll(other.group_);
-        }
-        onChanged();
-      }
-      if (!other.getSrcPath().isEmpty()) {
-        srcPath_ = other.srcPath_;
-        onChanged();
-      }
-      if (!other.getDstPath().isEmpty()) {
-        dstPath_ = other.dstPath_;
-        onChanged();
-      }
-      if (other.getReqTimeOutInMillis() != 0L) {
-        setReqTimeOutInMillis(other.getReqTimeOutInMillis());
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
-    }
-    private int bitField0_;
-
-    private java.lang.Object namespace_ = "";
     /**
      * <code>string namespace = 1;</code>
+     *
      * @return The namespace.
      */
     public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = namespace_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            namespace_ = s;
+            return s;
+        }
     }
+
     /**
      * <code>string namespace = 1;</code>
+     *
      * @return The bytes for namespace.
      */
     public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string namespace = 1;</code>
-     * @param value The namespace to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNamespace(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      namespace_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string namespace = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNamespace() {
-      
-      namespace_ = getDefaultInstance().getNamespace();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string namespace = 1;</code>
-     * @param value The bytes for namespace to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNamespaceBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      namespace_ = value;
-      onChanged();
-      return this;
+    getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            namespace_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private java.lang.Object owner_ = "";
     /**
      * <code>string owner = 2;</code>
+     *
      * @return The owner.
      */
     public java.lang.String getOwner() {
-      java.lang.Object ref = owner_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        owner_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = owner_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            owner_ = s;
+            return s;
+        }
     }
+
     /**
      * <code>string owner = 2;</code>
+     *
      * @return The bytes for owner.
      */
     public com.google.protobuf.ByteString
-        getOwnerBytes() {
-      java.lang.Object ref = owner_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        owner_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string owner = 2;</code>
-     * @param value The owner to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOwner(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      owner_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string owner = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOwner() {
-      
-      owner_ = getDefaultInstance().getOwner();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string owner = 2;</code>
-     * @param value The bytes for owner to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOwnerBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      owner_ = value;
-      onChanged();
-      return this;
+    getOwnerBytes() {
+        java.lang.Object ref = owner_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            owner_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private com.google.protobuf.LazyStringList group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureGroupIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        group_ = new com.google.protobuf.LazyStringArrayList(group_);
-        bitField0_ |= 0x00000001;
-       }
-    }
     /**
      * <code>repeated string group = 3;</code>
+     *
      * @return A list containing the group.
      */
     public com.google.protobuf.ProtocolStringList
-        getGroupList() {
-      return group_.getUnmodifiableView();
+    getGroupList() {
+        return group_;
     }
+
     /**
      * <code>repeated string group = 3;</code>
+     *
      * @return The count of group.
      */
     public int getGroupCount() {
-      return group_.size();
+        return group_.size();
     }
+
     /**
      * <code>repeated string group = 3;</code>
+     *
      * @param index The index of the element to return.
      * @return The group at the given index.
      */
     public java.lang.String getGroup(int index) {
-      return group_.get(index);
+        return group_.get(index);
     }
+
     /**
      * <code>repeated string group = 3;</code>
+     *
      * @param index The index of the value to return.
      * @return The bytes of the group at the given index.
      */
     public com.google.protobuf.ByteString
-        getGroupBytes(int index) {
-      return group_.getByteString(index);
-    }
-    /**
-     * <code>repeated string group = 3;</code>
-     * @param index The index to set the value at.
-     * @param value The group to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGroup(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureGroupIsMutable();
-      group_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string group = 3;</code>
-     * @param value The group to add.
-     * @return This builder for chaining.
-     */
-    public Builder addGroup(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureGroupIsMutable();
-      group_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string group = 3;</code>
-     * @param values The group to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllGroup(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureGroupIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, group_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string group = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearGroup() {
-      group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string group = 3;</code>
-     * @param value The bytes of the group to add.
-     * @return This builder for chaining.
-     */
-    public Builder addGroupBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureGroupIsMutable();
-      group_.add(value);
-      onChanged();
-      return this;
+    getGroupBytes(int index) {
+        return group_.getByteString(index);
     }
 
-    private java.lang.Object srcPath_ = "";
     /**
      * <code>string srcPath = 4;</code>
+     *
      * @return The srcPath.
      */
     public java.lang.String getSrcPath() {
-      java.lang.Object ref = srcPath_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        srcPath_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = srcPath_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            srcPath_ = s;
+            return s;
+        }
     }
+
     /**
      * <code>string srcPath = 4;</code>
+     *
      * @return The bytes for srcPath.
      */
     public com.google.protobuf.ByteString
-        getSrcPathBytes() {
-      java.lang.Object ref = srcPath_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        srcPath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string srcPath = 4;</code>
-     * @param value The srcPath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSrcPath(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      srcPath_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string srcPath = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSrcPath() {
-      
-      srcPath_ = getDefaultInstance().getSrcPath();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string srcPath = 4;</code>
-     * @param value The bytes for srcPath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSrcPathBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      srcPath_ = value;
-      onChanged();
-      return this;
+    getSrcPathBytes() {
+        java.lang.Object ref = srcPath_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            srcPath_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private java.lang.Object dstPath_ = "";
     /**
      * <code>string dstPath = 5;</code>
+     *
      * @return The dstPath.
      */
     public java.lang.String getDstPath() {
-      java.lang.Object ref = dstPath_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dstPath_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = dstPath_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            dstPath_ = s;
+            return s;
+        }
     }
+
     /**
      * <code>string dstPath = 5;</code>
+     *
      * @return The bytes for dstPath.
      */
     public com.google.protobuf.ByteString
-        getDstPathBytes() {
-      java.lang.Object ref = dstPath_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dstPath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string dstPath = 5;</code>
-     * @param value The dstPath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDstPath(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      dstPath_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dstPath = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDstPath() {
-      
-      dstPath_ = getDefaultInstance().getDstPath();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string dstPath = 5;</code>
-     * @param value The bytes for dstPath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDstPathBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      dstPath_ = value;
-      onChanged();
-      return this;
+    getDstPathBytes() {
+        java.lang.Object ref = dstPath_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            dstPath_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private long reqTimeOutInMillis_ ;
     /**
      * <code>int64 reqTimeOutInMillis = 6;</code>
+     *
      * @return The reqTimeOutInMillis.
      */
     public long getReqTimeOutInMillis() {
-      return reqTimeOutInMillis_;
+        return reqTimeOutInMillis_;
     }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+        if (!getNamespaceBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
+        }
+        if (!getOwnerBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
+        }
+        for (int i = 0; i < group_.size(); i++) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, group_.getRaw(i));
+        }
+        if (!getSrcPathBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 4, srcPath_);
+        }
+        if (!getDstPathBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 5, dstPath_);
+        }
+        if (reqTimeOutInMillis_ != 0L) {
+            output.writeInt64(6, reqTimeOutInMillis_);
+        }
+        unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getNamespaceBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
+        }
+        if (!getOwnerBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
+        }
+        {
+            int dataSize = 0;
+            for (int i = 0; i < group_.size(); i++) {
+                dataSize += computeStringSizeNoTag(group_.getRaw(i));
+            }
+            size += dataSize;
+            size += 1 * getGroupList().size();
+        }
+        if (!getSrcPathBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, srcPath_);
+        }
+        if (!getDstPathBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, dstPath_);
+        }
+        if (reqTimeOutInMillis_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt64Size(6, reqTimeOutInMillis_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath)) {
+            return super.equals(obj);
+        }
+        com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath other = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath) obj;
+
+        if (!getNamespace()
+                .equals(other.getNamespace())) return false;
+        if (!getOwner()
+                .equals(other.getOwner())) return false;
+        if (!getGroupList()
+                .equals(other.getGroupList())) return false;
+        if (!getSrcPath()
+                .equals(other.getSrcPath())) return false;
+        if (!getDstPath()
+                .equals(other.getDstPath())) return false;
+        if (getReqTimeOutInMillis()
+                != other.getReqTimeOutInMillis()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+        hash = (53 * hash) + getNamespace().hashCode();
+        hash = (37 * hash) + OWNER_FIELD_NUMBER;
+        hash = (53 * hash) + getOwner().hashCode();
+        if (getGroupCount() > 0) {
+            hash = (37 * hash) + GROUP_FIELD_NUMBER;
+            hash = (53 * hash) + getGroupList().hashCode();
+        }
+        hash = (37 * hash) + SRCPATH_FIELD_NUMBER;
+        hash = (53 * hash) + getSrcPath().hashCode();
+        hash = (37 * hash) + DSTPATH_FIELD_NUMBER;
+        hash = (53 * hash) + getDstPath().hashCode();
+        hash = (37 * hash) + REQTIMEOUTINMILLIS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getReqTimeOutInMillis());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+        return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RenameFSPath> getParserForType() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+    }
+
     /**
-     * <code>int64 reqTimeOutInMillis = 6;</code>
-     * @param value The reqTimeOutInMillis to set.
-     * @return This builder for chaining.
+     * Protobuf type {@code cloudfs.protocol.RenameFSPath}
      */
-    public Builder setReqTimeOutInMillis(long value) {
-      
-      reqTimeOutInMillis_ = value;
-      onChanged();
-      return this;
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:cloudfs.protocol.RenameFSPath)
+            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPathOrBuilder {
+        private int bitField0_;
+        private java.lang.Object namespace_ = "";
+        private java.lang.Object owner_ = "";
+        private com.google.protobuf.LazyStringList group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private java.lang.Object srcPath_ = "";
+        private java.lang.Object dstPath_ = "";
+        private long reqTimeOutInMillis_;
+
+        // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.newBuilder()
+        private Builder() {
+            maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.Builder.class);
+        }
+
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            namespace_ = "";
+
+            owner_ = "";
+
+            group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            srcPath_ = "";
+
+            dstPath_ = "";
+
+            reqTimeOutInMillis_ = 0L;
+
+            return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameFSPath_descriptor;
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath getDefaultInstanceForType() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath build() {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath buildPartial() {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath result = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath(this);
+            int from_bitField0_ = bitField0_;
+            result.namespace_ = namespace_;
+            result.owner_ = owner_;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                group_ = group_.getUnmodifiableView();
+                bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.group_ = group_;
+            result.srcPath_ = srcPath_;
+            result.dstPath_ = dstPath_;
+            result.reqTimeOutInMillis_ = reqTimeOutInMillis_;
+            onBuilt();
+            return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+            return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath) {
+                return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath other) {
+            if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath.getDefaultInstance())
+                return this;
+            if (!other.getNamespace().isEmpty()) {
+                namespace_ = other.namespace_;
+                onChanged();
+            }
+            if (!other.getOwner().isEmpty()) {
+                owner_ = other.owner_;
+                onChanged();
+            }
+            if (!other.group_.isEmpty()) {
+                if (group_.isEmpty()) {
+                    group_ = other.group_;
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                    ensureGroupIsMutable();
+                    group_.addAll(other.group_);
+                }
+                onChanged();
+            }
+            if (!other.getSrcPath().isEmpty()) {
+                srcPath_ = other.srcPath_;
+                onChanged();
+            }
+            if (!other.getDstPath().isEmpty()) {
+                dstPath_ = other.dstPath_;
+                onChanged();
+            }
+            if (other.getReqTimeOutInMillis() != 0L) {
+                setReqTimeOutInMillis(other.getReqTimeOutInMillis());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath parsedMessage = null;
+            try {
+                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath) e.getUnfinishedMessage();
+                throw e.unwrapIOException();
+            } finally {
+                if (parsedMessage != null) {
+                    mergeFrom(parsedMessage);
+                }
+            }
+            return this;
+        }
+
+        /**
+         * <code>string namespace = 1;</code>
+         *
+         * @return The namespace.
+         */
+        public java.lang.String getNamespace() {
+            java.lang.Object ref = namespace_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                namespace_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string namespace = 1;</code>
+         *
+         * @param value The namespace to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNamespace(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            namespace_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string namespace = 1;</code>
+         *
+         * @return The bytes for namespace.
+         */
+        public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+            java.lang.Object ref = namespace_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                namespace_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string namespace = 1;</code>
+         *
+         * @param value The bytes for namespace to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNamespaceBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            namespace_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string namespace = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNamespace() {
+
+            namespace_ = getDefaultInstance().getNamespace();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @return The owner.
+         */
+        public java.lang.String getOwner() {
+            java.lang.Object ref = owner_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                owner_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @param value The owner to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOwner(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            owner_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @return The bytes for owner.
+         */
+        public com.google.protobuf.ByteString
+        getOwnerBytes() {
+            java.lang.Object ref = owner_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                owner_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @param value The bytes for owner to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOwnerBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            owner_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOwner() {
+
+            owner_ = getDefaultInstance().getOwner();
+            onChanged();
+            return this;
+        }
+
+        private void ensureGroupIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+                group_ = new com.google.protobuf.LazyStringArrayList(group_);
+                bitField0_ |= 0x00000001;
+            }
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @return A list containing the group.
+         */
+        public com.google.protobuf.ProtocolStringList
+        getGroupList() {
+            return group_.getUnmodifiableView();
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @return The count of group.
+         */
+        public int getGroupCount() {
+            return group_.size();
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The group at the given index.
+         */
+        public java.lang.String getGroup(int index) {
+            return group_.get(index);
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the group at the given index.
+         */
+        public com.google.protobuf.ByteString
+        getGroupBytes(int index) {
+            return group_.getByteString(index);
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The group to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGroup(
+                int index, java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            ensureGroupIsMutable();
+            group_.set(index, value);
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @param value The group to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGroup(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            ensureGroupIsMutable();
+            group_.add(value);
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @param values The group to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllGroup(
+                java.lang.Iterable<java.lang.String> values) {
+            ensureGroupIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                    values, group_);
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGroup() {
+            group_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>repeated string group = 3;</code>
+         *
+         * @param value The bytes of the group to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGroupBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            ensureGroupIsMutable();
+            group_.add(value);
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string srcPath = 4;</code>
+         *
+         * @return The srcPath.
+         */
+        public java.lang.String getSrcPath() {
+            java.lang.Object ref = srcPath_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                srcPath_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string srcPath = 4;</code>
+         *
+         * @param value The srcPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSrcPath(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            srcPath_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string srcPath = 4;</code>
+         *
+         * @return The bytes for srcPath.
+         */
+        public com.google.protobuf.ByteString
+        getSrcPathBytes() {
+            java.lang.Object ref = srcPath_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                srcPath_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string srcPath = 4;</code>
+         *
+         * @param value The bytes for srcPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSrcPathBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            srcPath_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string srcPath = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSrcPath() {
+
+            srcPath_ = getDefaultInstance().getSrcPath();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string dstPath = 5;</code>
+         *
+         * @return The dstPath.
+         */
+        public java.lang.String getDstPath() {
+            java.lang.Object ref = dstPath_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                dstPath_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string dstPath = 5;</code>
+         *
+         * @param value The dstPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDstPath(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            dstPath_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string dstPath = 5;</code>
+         *
+         * @return The bytes for dstPath.
+         */
+        public com.google.protobuf.ByteString
+        getDstPathBytes() {
+            java.lang.Object ref = dstPath_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                dstPath_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string dstPath = 5;</code>
+         *
+         * @param value The bytes for dstPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDstPathBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            dstPath_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string dstPath = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDstPath() {
+
+            dstPath_ = getDefaultInstance().getDstPath();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 reqTimeOutInMillis = 6;</code>
+         *
+         * @return The reqTimeOutInMillis.
+         */
+        public long getReqTimeOutInMillis() {
+            return reqTimeOutInMillis_;
+        }
+
+        /**
+         * <code>int64 reqTimeOutInMillis = 6;</code>
+         *
+         * @param value The reqTimeOutInMillis to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReqTimeOutInMillis(long value) {
+
+            reqTimeOutInMillis_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 reqTimeOutInMillis = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReqTimeOutInMillis() {
+
+            reqTimeOutInMillis_ = 0L;
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:cloudfs.protocol.RenameFSPath)
     }
-    /**
-     * <code>int64 reqTimeOutInMillis = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearReqTimeOutInMillis() {
-      
-      reqTimeOutInMillis_ = 0L;
-      onChanged();
-      return this;
-    }
-    @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
-    }
-
-
-    // @@protoc_insertion_point(builder_scope:cloudfs.protocol.RenameFSPath)
-  }
-
-  // @@protoc_insertion_point(class_scope:cloudfs.protocol.RenameFSPath)
-  private static final com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath();
-  }
-
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<RenameFSPath>
-      PARSER = new com.google.protobuf.AbstractParser<RenameFSPath>() {
-    @java.lang.Override
-    public RenameFSPath parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RenameFSPath(input, extensionRegistry);
-    }
-  };
-
-  public static com.google.protobuf.Parser<RenameFSPath> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<RenameFSPath> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameFSPath getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
 
 }
 

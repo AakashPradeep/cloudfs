@@ -15,7 +15,7 @@ public class LockHandler implements Visitor<Boolean> {
     }
 
     protected boolean lock(Node node) throws InterruptedException {
-        if(timeOutInMillis <= 0){
+        if (timeOutInMillis <= 0) {
             node.getReadWriteLock().readLock().lockInterruptibly();
             return true;
         }
@@ -23,7 +23,7 @@ public class LockHandler implements Visitor<Boolean> {
     }
 
     public void unlock() {
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             Node pop = stack.pop();
             pop.getReadWriteLock().readLock().unlock();
         }

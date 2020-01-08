@@ -19,24 +19,25 @@ import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.TransferQueue;
 
 public class NamespaceContainerService {
     private final NamespaceContainer namespaceContainer = new NamespaceContainer();
     private final UTCTimeProvider utcTimeProvider = new UTCTimeProvider();
 
-    NamespaceContainerService(){}
+    NamespaceContainerService() {
+    }
     //TODO update namespace
     //TODO delete namespace
+
     /**
      * It allows only one request thread to modify the namespace metadata but multiple can read it.
      *
-     * @param owner              name of the owner creating the namespace
-     * @param groupName          name of the group owner belongs to
-     * @param namespace          name of the namespace
+     * @param owner          name of the owner creating the namespace
+     * @param groupName      name of the group owner belongs to
+     * @param namespace      name of the namespace
      * @param cloudVendorURI class name of cloud specific {@link org.apache.hadoop.fs.FileSystem}
-     * @param bucketName         name of the bucket if any
-     * @param additionalInfo     any additional info
+     * @param bucketName     name of the bucket if any
+     * @param additionalInfo any additional info
      * @throws NamespaceCannotBeCreated
      * @throws NamsepaceAlreadyExistException
      */
@@ -78,7 +79,7 @@ public class NamespaceContainerService {
     private void checkVendorFSClassPresence(String vendorUri) throws NamespaceCannotBeCreated {
         try {
             FileSystem.get(new URI(vendorUri), new Configuration());
-        } catch (IOException |URISyntaxException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new NamespaceCannotBeCreated(e);
         }
     }

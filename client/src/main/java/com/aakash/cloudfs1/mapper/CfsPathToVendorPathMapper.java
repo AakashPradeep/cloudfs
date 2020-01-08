@@ -34,20 +34,20 @@ public interface CfsPathToVendorPathMapper {
 
             String resolvedVendorUriStr = vendorURIStr;
             URI vendorUri = getURI(vendorURIStr);
-            if(vendorUri.getAuthority() == null){
+            if (vendorUri.getAuthority() == null) {
                 resolvedVendorUriStr += bucketName;
             }
             Path vendorUriPath = new Path(resolvedVendorUriStr);
 
             String filePath = cfsPath.toUri().getPath();
 
-            if(cfsPath.isAbsolute()){
-                filePath = namespace+filePath;
+            if (cfsPath.isAbsolute()) {
+                filePath = namespace + filePath;
             } else {
-                filePath = namespace +"/"+filePath;
+                filePath = namespace + "/" + filePath;
             }
 
-            Path resultPath = new Path(vendorUriPath,filePath);
+            Path resultPath = new Path(vendorUriPath, filePath);
             return resultPath;
         }
     }

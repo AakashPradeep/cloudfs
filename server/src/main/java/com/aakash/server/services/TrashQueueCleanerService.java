@@ -1,7 +1,6 @@
 package com.aakash.server.services;
 
 import com.aakash.bean.NamespaceInfo;
-import com.aakash.server.exceptions.LockNotAcquiredException;
 import com.aakash.server.in.memory.ds.DirContainer;
 import com.aakash.server.in.memory.ds.Node;
 import com.aakash.server.in.memory.ds.TrashQueue;
@@ -76,7 +75,7 @@ public class TrashQueueCleanerService {
             }
         }
 
-        if(parentNode.isPresent()){
+        if (parentNode.isPresent()) {
             try {
                 parentNode.get().removeChildNode(name);
             } catch (InterruptedException e) {

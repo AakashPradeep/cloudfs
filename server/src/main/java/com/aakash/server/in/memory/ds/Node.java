@@ -92,7 +92,7 @@ public class Node {
         if (this.readWriteLock.readLock().tryLock(0, TimeUnit.MILLISECONDS)) {
             try {
                 return this.children.remove(childName);
-            }finally {
+            } finally {
                 this.readWriteLock.readLock().unlock();
             }
         }

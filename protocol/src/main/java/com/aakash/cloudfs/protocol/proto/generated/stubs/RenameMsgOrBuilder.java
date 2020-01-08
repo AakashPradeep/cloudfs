@@ -4,27 +4,32 @@
 package com.aakash.cloudfs.protocol.proto.generated.stubs;
 
 public interface RenameMsgOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:cloudfs.protocol.RenameMsg)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:cloudfs.protocol.RenameMsg)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>bool success = 1;</code>
-   * @return The success.
-   */
-  boolean getSuccess();
+    /**
+     * <code>bool success = 1;</code>
+     *
+     * @return The success.
+     */
+    boolean getSuccess();
 
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-   * @return Whether the errorMsg field is set.
-   */
-  boolean hasErrorMsg();
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-   * @return The errorMsg.
-   */
-  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-   */
-  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     *
+     * @return Whether the errorMsg field is set.
+     */
+    boolean hasErrorMsg();
+
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     *
+     * @return The errorMsg.
+     */
+    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
+
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
 }

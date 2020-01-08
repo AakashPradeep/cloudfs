@@ -10,9 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public class NamespaceContainer {
-    private final Map<String,ContainerEntry> namespaceEntryMap = new ConcurrentHashMap<>();
+    private final Map<String, ContainerEntry> namespaceEntryMap = new ConcurrentHashMap<>();
 
-    public Set<String> listOfNamespaceNames(){
+    public Set<String> listOfNamespaceNames() {
         return this.namespaceEntryMap.keySet();
     }
 
@@ -21,35 +21,35 @@ public class NamespaceContainer {
     }
 
     public void add(String namespaceName, NamespaceInfo namespaceInfo, NodeAttribute rootNodeAttribute) throws NamsepaceAlreadyExistException {
-        if(exists(namespaceName)) {
-            throw  new NamsepaceAlreadyExistException("namespace :"+namespaceName+" already exist");
+        if (exists(namespaceName)) {
+            throw new NamsepaceAlreadyExistException("namespace :" + namespaceName + " already exist");
         }
         namespaceEntryMap.putIfAbsent(namespaceName, new ContainerEntry(namespaceInfo, new DirContainer(rootNodeAttribute)));
     }
 
     public NamespaceInfo getNamespaceInfo(String namespaceName) throws NamespaceDoesNotExist {
-        if(!exists(namespaceName)) {
-            throw new NamespaceDoesNotExist("namspace:"+namespaceName+ " does not exist" );
+        if (!exists(namespaceName)) {
+            throw new NamespaceDoesNotExist("namspace:" + namespaceName + " does not exist");
         }
         return this.namespaceEntryMap.get(namespaceName).namespaceInfo;
 
     }
 
     public DirContainer getRootDirOfNamespace(String namespaceName) throws NamespaceDoesNotExist {
-        if(!exists(namespaceName)) {
-            throw new NamespaceDoesNotExist("namspace:"+namespaceName+ " does not exist" );
+        if (!exists(namespaceName)) {
+            throw new NamespaceDoesNotExist("namspace:" + namespaceName + " does not exist");
         }
         return this.namespaceEntryMap.get(namespaceName).dirContainer;
     }
 
     public TrashQueue getTrashQueue(String namespaceName) throws NamespaceDoesNotExist {
-        if(!exists(namespaceName)) {
-            throw new NamespaceDoesNotExist("namspace:"+namespaceName+ " does not exist" );
+        if (!exists(namespaceName)) {
+            throw new NamespaceDoesNotExist("namspace:" + namespaceName + " does not exist");
         }
         return this.namespaceEntryMap.get(namespaceName).trashQueue;
     }
 
-    public boolean exists(String namespace){
+    public boolean exists(String namespace) {
         return this.namespaceEntryMap.containsKey(namespace);
     }
 

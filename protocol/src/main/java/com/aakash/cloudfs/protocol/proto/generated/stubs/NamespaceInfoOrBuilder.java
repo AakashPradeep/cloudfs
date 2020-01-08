@@ -4,91 +4,109 @@
 package com.aakash.cloudfs.protocol.proto.generated.stubs;
 
 public interface NamespaceInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:cloudfs.protocol.NamespaceInfo)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:cloudfs.protocol.NamespaceInfo)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
+    /**
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
 
-  /**
-   * <code>string uri = 2;</code>
-   * @return The uri.
-   */
-  java.lang.String getUri();
-  /**
-   * <code>string uri = 2;</code>
-   * @return The bytes for uri.
-   */
-  com.google.protobuf.ByteString
-      getUriBytes();
+    /**
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+    getNameBytes();
 
-  /**
-   * <code>string bucketName = 3;</code>
-   * @return The bucketName.
-   */
-  java.lang.String getBucketName();
-  /**
-   * <code>string bucketName = 3;</code>
-   * @return The bytes for bucketName.
-   */
-  com.google.protobuf.ByteString
-      getBucketNameBytes();
+    /**
+     * <code>string uri = 2;</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
 
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
-  int getAdditionalInfoCount();
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
-  boolean containsAdditionalInfo(
-      java.lang.String key);
-  /**
-   * Use {@link #getAdditionalInfoMap()} instead.
-   */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getAdditionalInfo();
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
-  java.util.Map<java.lang.String, java.lang.String>
-  getAdditionalInfoMap();
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
+    /**
+     * <code>string uri = 2;</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString
+    getUriBytes();
 
-  java.lang.String getAdditionalInfoOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
+    /**
+     * <code>string bucketName = 3;</code>
+     *
+     * @return The bucketName.
+     */
+    java.lang.String getBucketName();
 
-  java.lang.String getAdditionalInfoOrThrow(
-      java.lang.String key);
+    /**
+     * <code>string bucketName = 3;</code>
+     *
+     * @return The bytes for bucketName.
+     */
+    com.google.protobuf.ByteString
+    getBucketNameBytes();
 
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-   * @return Whether the errorMsg field is set.
-   */
-  boolean hasErrorMsg();
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-   * @return The errorMsg.
-   */
-  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-   */
-  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
+    /**
+     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+     */
+    int getAdditionalInfoCount();
+
+    /**
+     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+     */
+    boolean containsAdditionalInfo(
+            java.lang.String key);
+
+    /**
+     * Use {@link #getAdditionalInfoMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getAdditionalInfo();
+
+    /**
+     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getAdditionalInfoMap();
+
+    /**
+     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+     */
+
+    java.lang.String getAdditionalInfoOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue);
+
+    /**
+     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+     */
+
+    java.lang.String getAdditionalInfoOrThrow(
+            java.lang.String key);
+
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+     *
+     * @return Whether the errorMsg field is set.
+     */
+    boolean hasErrorMsg();
+
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+     *
+     * @return The errorMsg.
+     */
+    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
+
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+     */
+    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
 }

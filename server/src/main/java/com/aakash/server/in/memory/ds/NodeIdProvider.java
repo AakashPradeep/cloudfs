@@ -27,7 +27,7 @@ public class NodeIdProvider {
         Checksum checksum = new CRC32();
         byte[] bytes = unqiueVal.getBytes();
         checksum.update(bytes, 0, bytes.length);
-        this.seed = "Nid"+Long.toString(checksum.getValue(), 32);
+        this.seed = "Nid" + Long.toString(checksum.getValue(), 32);
     }
 
     public char[] getNewUniqueId() {

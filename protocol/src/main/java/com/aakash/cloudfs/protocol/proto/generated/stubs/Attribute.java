@@ -6,1188 +6,1290 @@ package com.aakash.cloudfs.protocol.proto.generated.stubs;
 /**
  * Protobuf type {@code cloudfs.protocol.Attribute}
  */
-public  final class Attribute extends
-    com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:cloudfs.protocol.Attribute)
-    AttributeOrBuilder {
-private static final long serialVersionUID = 0L;
-  // Use Attribute.newBuilder() to construct.
-  private Attribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-  private Attribute() {
-    owner_ = "";
-    group_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new Attribute();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-  private Attribute(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-
-            isFile_ = input.readBool();
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            owner_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            group_ = s;
-            break;
-          }
-          case 32: {
-
-            permission_ = input.readInt32();
-            break;
-          }
-          case 40: {
-
-            createdTime_ = input.readInt64();
-            break;
-          }
-          case 48: {
-
-            lastModifiedTime_ = input.readInt64();
-            break;
-          }
-          case 56: {
-
-            lastAccessedTime_ = input.readInt64();
-            break;
-          }
-          case 64: {
-
-            fileSize_ = input.readInt64();
-            break;
-          }
-          case 72: {
-
-            replication_ = input.readInt32();
-            break;
-          }
-          case 80: {
-
-            blockSize_ = input.readInt64();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
+public final class Attribute extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:cloudfs.protocol.Attribute)
+        AttributeOrBuilder {
+    public static final int ISFILE_FIELD_NUMBER = 1;
+    public static final int OWNER_FIELD_NUMBER = 2;
+    public static final int GROUP_FIELD_NUMBER = 3;
+    public static final int PERMISSION_FIELD_NUMBER = 4;
+    public static final int CREATEDTIME_FIELD_NUMBER = 5;
+    public static final int LASTMODIFIEDTIME_FIELD_NUMBER = 6;
+    public static final int LASTACCESSEDTIME_FIELD_NUMBER = 7;
+    public static final int FILESIZE_FIELD_NUMBER = 8;
+    public static final int REPLICATION_FIELD_NUMBER = 9;
+    public static final int BLOCKSIZE_FIELD_NUMBER = 10;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:cloudfs.protocol.Attribute)
+    private static final com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<Attribute>
+            PARSER = new com.google.protobuf.AbstractParser<Attribute>() {
+        @java.lang.Override
+        public Attribute parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Attribute(input, extensionRegistry);
         }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_descriptor;
-  }
+    };
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.class, com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.Builder.class);
-  }
+    static {
+        DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute();
+    }
 
-  public static final int ISFILE_FIELD_NUMBER = 1;
-  private boolean isFile_;
-  /**
-   * <code>bool isFile = 1;</code>
-   * @return The isFile.
-   */
-  public boolean getIsFile() {
-    return isFile_;
-  }
+    private boolean isFile_;
+    private volatile java.lang.Object owner_;
+    private volatile java.lang.Object group_;
+    private int permission_;
+    private long createdTime_;
+    private long lastModifiedTime_;
+    private long lastAccessedTime_;
+    private long fileSize_;
+    private int replication_;
+    private long blockSize_;
+    private byte memoizedIsInitialized = -1;
 
-  public static final int OWNER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object owner_;
-  /**
-   * <code>string owner = 2;</code>
-   * @return The owner.
-   */
-  public java.lang.String getOwner() {
-    java.lang.Object ref = owner_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      owner_ = s;
-      return s;
+    // Use Attribute.newBuilder() to construct.
+    private Attribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
     }
-  }
-  /**
-   * <code>string owner = 2;</code>
-   * @return The bytes for owner.
-   */
-  public com.google.protobuf.ByteString
-      getOwnerBytes() {
-    java.lang.Object ref = owner_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      owner_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+    private Attribute() {
+        owner_ = "";
+        group_ = "";
     }
-  }
 
-  public static final int GROUP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object group_;
-  /**
-   * <code>string group = 3;</code>
-   * @return The group.
-   */
-  public java.lang.String getGroup() {
-    java.lang.Object ref = group_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      group_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string group = 3;</code>
-   * @return The bytes for group.
-   */
-  public com.google.protobuf.ByteString
-      getGroupBytes() {
-    java.lang.Object ref = group_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      group_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
+    private Attribute(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+            boolean done = false;
+            while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                    case 0:
+                        done = true;
+                        break;
+                    case 8: {
 
-  public static final int PERMISSION_FIELD_NUMBER = 4;
-  private int permission_;
-  /**
-   * <code>int32 permission = 4;</code>
-   * @return The permission.
-   */
-  public int getPermission() {
-    return permission_;
-  }
+                        isFile_ = input.readBool();
+                        break;
+                    }
+                    case 18: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public static final int CREATEDTIME_FIELD_NUMBER = 5;
-  private long createdTime_;
-  /**
-   * <code>int64 createdTime = 5;</code>
-   * @return The createdTime.
-   */
-  public long getCreatedTime() {
-    return createdTime_;
-  }
+                        owner_ = s;
+                        break;
+                    }
+                    case 26: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public static final int LASTMODIFIEDTIME_FIELD_NUMBER = 6;
-  private long lastModifiedTime_;
-  /**
-   * <code>int64 lastModifiedTime = 6;</code>
-   * @return The lastModifiedTime.
-   */
-  public long getLastModifiedTime() {
-    return lastModifiedTime_;
-  }
+                        group_ = s;
+                        break;
+                    }
+                    case 32: {
 
-  public static final int LASTACCESSEDTIME_FIELD_NUMBER = 7;
-  private long lastAccessedTime_;
-  /**
-   * <code>int64 lastAccessedTime = 7;</code>
-   * @return The lastAccessedTime.
-   */
-  public long getLastAccessedTime() {
-    return lastAccessedTime_;
-  }
+                        permission_ = input.readInt32();
+                        break;
+                    }
+                    case 40: {
 
-  public static final int FILESIZE_FIELD_NUMBER = 8;
-  private long fileSize_;
-  /**
-   * <code>int64 fileSize = 8;</code>
-   * @return The fileSize.
-   */
-  public long getFileSize() {
-    return fileSize_;
-  }
+                        createdTime_ = input.readInt64();
+                        break;
+                    }
+                    case 48: {
 
-  public static final int REPLICATION_FIELD_NUMBER = 9;
-  private int replication_;
-  /**
-   * <code>int32 replication = 9;</code>
-   * @return The replication.
-   */
-  public int getReplication() {
-    return replication_;
-  }
+                        lastModifiedTime_ = input.readInt64();
+                        break;
+                    }
+                    case 56: {
 
-  public static final int BLOCKSIZE_FIELD_NUMBER = 10;
-  private long blockSize_;
-  /**
-   * <code>int64 blockSize = 10;</code>
-   * @return The blockSize.
-   */
-  public long getBlockSize() {
-    return blockSize_;
-  }
+                        lastAccessedTime_ = input.readInt64();
+                        break;
+                    }
+                    case 64: {
 
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
+                        fileSize_ = input.readInt64();
+                        break;
+                    }
+                    case 72: {
 
-    memoizedIsInitialized = 1;
-    return true;
-  }
+                        replication_ = input.readInt32();
+                        break;
+                    }
+                    case 80: {
 
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (isFile_ != false) {
-      output.writeBool(1, isFile_);
+                        blockSize_ = input.readInt64();
+                        break;
+                    }
+                    default: {
+                        if (!parseUnknownField(
+                                input, unknownFields, extensionRegistry, tag)) {
+                            done = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+        } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+        }
     }
-    if (!getOwnerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
-    }
-    if (!getGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, group_);
-    }
-    if (permission_ != 0) {
-      output.writeInt32(4, permission_);
-    }
-    if (createdTime_ != 0L) {
-      output.writeInt64(5, createdTime_);
-    }
-    if (lastModifiedTime_ != 0L) {
-      output.writeInt64(6, lastModifiedTime_);
-    }
-    if (lastAccessedTime_ != 0L) {
-      output.writeInt64(7, lastAccessedTime_);
-    }
-    if (fileSize_ != 0L) {
-      output.writeInt64(8, fileSize_);
-    }
-    if (replication_ != 0) {
-      output.writeInt32(9, replication_);
-    }
-    if (blockSize_ != 0L) {
-      output.writeInt64(10, blockSize_);
-    }
-    unknownFields.writeTo(output);
-  }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    if (isFile_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, isFile_);
-    }
-    if (!getOwnerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
-    }
-    if (!getGroupBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, group_);
-    }
-    if (permission_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, permission_);
-    }
-    if (createdTime_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, createdTime_);
-    }
-    if (lastModifiedTime_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, lastModifiedTime_);
-    }
-    if (lastAccessedTime_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, lastAccessedTime_);
-    }
-    if (fileSize_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, fileSize_);
-    }
-    if (replication_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, replication_);
-    }
-    if (blockSize_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(10, blockSize_);
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute)) {
-      return super.equals(obj);
-    }
-    com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute other = (com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute) obj;
-
-    if (getIsFile()
-        != other.getIsFile()) return false;
-    if (!getOwner()
-        .equals(other.getOwner())) return false;
-    if (!getGroup()
-        .equals(other.getGroup())) return false;
-    if (getPermission()
-        != other.getPermission()) return false;
-    if (getCreatedTime()
-        != other.getCreatedTime()) return false;
-    if (getLastModifiedTime()
-        != other.getLastModifiedTime()) return false;
-    if (getLastAccessedTime()
-        != other.getLastAccessedTime()) return false;
-    if (getFileSize()
-        != other.getFileSize()) return false;
-    if (getReplication()
-        != other.getReplication()) return false;
-    if (getBlockSize()
-        != other.getBlockSize()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ISFILE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsFile());
-    hash = (37 * hash) + OWNER_FIELD_NUMBER;
-    hash = (53 * hash) + getOwner().hashCode();
-    hash = (37 * hash) + GROUP_FIELD_NUMBER;
-    hash = (53 * hash) + getGroup().hashCode();
-    hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
-    hash = (53 * hash) + getPermission();
-    hash = (37 * hash) + CREATEDTIME_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCreatedTime());
-    hash = (37 * hash) + LASTMODIFIEDTIME_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLastModifiedTime());
-    hash = (37 * hash) + LASTACCESSEDTIME_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLastAccessedTime());
-    hash = (37 * hash) + FILESIZE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getFileSize());
-    hash = (37 * hash) + REPLICATION_FIELD_NUMBER;
-    hash = (53 * hash) + getReplication();
-    hash = (37 * hash) + BLOCKSIZE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBlockSize());
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * Protobuf type {@code cloudfs.protocol.Attribute}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:cloudfs.protocol.Attribute)
-      com.aakash.cloudfs.protocol.proto.generated.stubs.AttributeOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_descriptor;
+    getDescriptor() {
+        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_descriptor;
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Attribute> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+        return new Attribute();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+        return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.class, com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.Builder.class);
+    internalGetFieldAccessorTable() {
+        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.class, com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.Builder.class);
     }
 
-    // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
+    /**
+     * <code>bool isFile = 1;</code>
+     *
+     * @return The isFile.
+     */
+    public boolean getIsFile() {
+        return isFile_;
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      isFile_ = false;
-
-      owner_ = "";
-
-      group_ = "";
-
-      permission_ = 0;
-
-      createdTime_ = 0L;
-
-      lastModifiedTime_ = 0L;
-
-      lastAccessedTime_ = 0L;
-
-      fileSize_ = 0L;
-
-      replication_ = 0;
-
-      blockSize_ = 0L;
-
-      return this;
+    /**
+     * <code>string owner = 2;</code>
+     *
+     * @return The owner.
+     */
+    public java.lang.String getOwner() {
+        java.lang.Object ref = owner_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            owner_ = s;
+            return s;
+        }
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_descriptor;
+    /**
+     * <code>string owner = 2;</code>
+     *
+     * @return The bytes for owner.
+     */
+    public com.google.protobuf.ByteString
+    getOwnerBytes() {
+        java.lang.Object ref = owner_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            owner_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getDefaultInstanceForType() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.getDefaultInstance();
+    /**
+     * <code>string group = 3;</code>
+     *
+     * @return The group.
+     */
+    public java.lang.String getGroup() {
+        java.lang.Object ref = group_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            group_ = s;
+            return s;
+        }
     }
 
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute build() {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
+    /**
+     * <code>string group = 3;</code>
+     *
+     * @return The bytes for group.
+     */
+    public com.google.protobuf.ByteString
+    getGroupBytes() {
+        java.lang.Object ref = group_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            group_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute buildPartial() {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute result = new com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute(this);
-      result.isFile_ = isFile_;
-      result.owner_ = owner_;
-      result.group_ = group_;
-      result.permission_ = permission_;
-      result.createdTime_ = createdTime_;
-      result.lastModifiedTime_ = lastModifiedTime_;
-      result.lastAccessedTime_ = lastAccessedTime_;
-      result.fileSize_ = fileSize_;
-      result.replication_ = replication_;
-      result.blockSize_ = blockSize_;
-      onBuilt();
-      return result;
+    /**
+     * <code>int32 permission = 4;</code>
+     *
+     * @return The permission.
+     */
+    public int getPermission() {
+        return permission_;
     }
 
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute) {
-        return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
+    /**
+     * <code>int64 createdTime = 5;</code>
+     *
+     * @return The createdTime.
+     */
+    public long getCreatedTime() {
+        return createdTime_;
     }
 
-    public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute other) {
-      if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.getDefaultInstance()) return this;
-      if (other.getIsFile() != false) {
-        setIsFile(other.getIsFile());
-      }
-      if (!other.getOwner().isEmpty()) {
-        owner_ = other.owner_;
-        onChanged();
-      }
-      if (!other.getGroup().isEmpty()) {
-        group_ = other.group_;
-        onChanged();
-      }
-      if (other.getPermission() != 0) {
-        setPermission(other.getPermission());
-      }
-      if (other.getCreatedTime() != 0L) {
-        setCreatedTime(other.getCreatedTime());
-      }
-      if (other.getLastModifiedTime() != 0L) {
-        setLastModifiedTime(other.getLastModifiedTime());
-      }
-      if (other.getLastAccessedTime() != 0L) {
-        setLastAccessedTime(other.getLastAccessedTime());
-      }
-      if (other.getFileSize() != 0L) {
-        setFileSize(other.getFileSize());
-      }
-      if (other.getReplication() != 0) {
-        setReplication(other.getReplication());
-      }
-      if (other.getBlockSize() != 0L) {
-        setBlockSize(other.getBlockSize());
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
+    /**
+     * <code>int64 lastModifiedTime = 6;</code>
+     *
+     * @return The lastModifiedTime.
+     */
+    public long getLastModifiedTime() {
+        return lastModifiedTime_;
+    }
+
+    /**
+     * <code>int64 lastAccessedTime = 7;</code>
+     *
+     * @return The lastAccessedTime.
+     */
+    public long getLastAccessedTime() {
+        return lastAccessedTime_;
+    }
+
+    /**
+     * <code>int64 fileSize = 8;</code>
+     *
+     * @return The fileSize.
+     */
+    public long getFileSize() {
+        return fileSize_;
+    }
+
+    /**
+     * <code>int32 replication = 9;</code>
+     *
+     * @return The replication.
+     */
+    public int getReplication() {
+        return replication_;
+    }
+
+    /**
+     * <code>int64 blockSize = 10;</code>
+     *
+     * @return The blockSize.
+     */
+    public long getBlockSize() {
+        return blockSize_;
     }
 
     @java.lang.Override
     public final boolean isInitialized() {
-      return true;
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
     }
 
     @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+        if (isFile_ != false) {
+            output.writeBool(1, isFile_);
         }
-      }
-      return this;
+        if (!getOwnerBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
+        }
+        if (!getGroupBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, group_);
+        }
+        if (permission_ != 0) {
+            output.writeInt32(4, permission_);
+        }
+        if (createdTime_ != 0L) {
+            output.writeInt64(5, createdTime_);
+        }
+        if (lastModifiedTime_ != 0L) {
+            output.writeInt64(6, lastModifiedTime_);
+        }
+        if (lastAccessedTime_ != 0L) {
+            output.writeInt64(7, lastAccessedTime_);
+        }
+        if (fileSize_ != 0L) {
+            output.writeInt64(8, fileSize_);
+        }
+        if (replication_ != 0) {
+            output.writeInt32(9, replication_);
+        }
+        if (blockSize_ != 0L) {
+            output.writeInt64(10, blockSize_);
+        }
+        unknownFields.writeTo(output);
     }
 
-    private boolean isFile_ ;
-    /**
-     * <code>bool isFile = 1;</code>
-     * @return The isFile.
-     */
-    public boolean getIsFile() {
-      return isFile_;
-    }
-    /**
-     * <code>bool isFile = 1;</code>
-     * @param value The isFile to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsFile(boolean value) {
-      
-      isFile_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool isFile = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIsFile() {
-      
-      isFile_ = false;
-      onChanged();
-      return this;
+    @java.lang.Override
+    public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (isFile_ != false) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeBoolSize(1, isFile_);
+        }
+        if (!getOwnerBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
+        }
+        if (!getGroupBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, group_);
+        }
+        if (permission_ != 0) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt32Size(4, permission_);
+        }
+        if (createdTime_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt64Size(5, createdTime_);
+        }
+        if (lastModifiedTime_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt64Size(6, lastModifiedTime_);
+        }
+        if (lastAccessedTime_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt64Size(7, lastAccessedTime_);
+        }
+        if (fileSize_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt64Size(8, fileSize_);
+        }
+        if (replication_ != 0) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt32Size(9, replication_);
+        }
+        if (blockSize_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeInt64Size(10, blockSize_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
     }
 
-    private java.lang.Object owner_ = "";
-    /**
-     * <code>string owner = 2;</code>
-     * @return The owner.
-     */
-    public java.lang.String getOwner() {
-      java.lang.Object ref = owner_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        owner_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute)) {
+            return super.equals(obj);
+        }
+        com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute other = (com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute) obj;
+
+        if (getIsFile()
+                != other.getIsFile()) return false;
+        if (!getOwner()
+                .equals(other.getOwner())) return false;
+        if (!getGroup()
+                .equals(other.getGroup())) return false;
+        if (getPermission()
+                != other.getPermission()) return false;
+        if (getCreatedTime()
+                != other.getCreatedTime()) return false;
+        if (getLastModifiedTime()
+                != other.getLastModifiedTime()) return false;
+        if (getLastAccessedTime()
+                != other.getLastAccessedTime()) return false;
+        if (getFileSize()
+                != other.getFileSize()) return false;
+        if (getReplication()
+                != other.getReplication()) return false;
+        if (getBlockSize()
+                != other.getBlockSize()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
     }
+
+    @java.lang.Override
+    public int hashCode() {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ISFILE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+                getIsFile());
+        hash = (37 * hash) + OWNER_FIELD_NUMBER;
+        hash = (53 * hash) + getOwner().hashCode();
+        hash = (37 * hash) + GROUP_FIELD_NUMBER;
+        hash = (53 * hash) + getGroup().hashCode();
+        hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPermission();
+        hash = (37 * hash) + CREATEDTIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getCreatedTime());
+        hash = (37 * hash) + LASTMODIFIEDTIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getLastModifiedTime());
+        hash = (37 * hash) + LASTACCESSEDTIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getLastAccessedTime());
+        hash = (37 * hash) + FILESIZE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getFileSize());
+        hash = (37 * hash) + REPLICATION_FIELD_NUMBER;
+        hash = (53 * hash) + getReplication();
+        hash = (37 * hash) + BLOCKSIZE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getBlockSize());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+        return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Attribute> getParserForType() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+    }
+
     /**
-     * <code>string owner = 2;</code>
-     * @return The bytes for owner.
+     * Protobuf type {@code cloudfs.protocol.Attribute}
      */
-    public com.google.protobuf.ByteString
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:cloudfs.protocol.Attribute)
+            com.aakash.cloudfs.protocol.proto.generated.stubs.AttributeOrBuilder {
+        private boolean isFile_;
+        private java.lang.Object owner_ = "";
+        private java.lang.Object group_ = "";
+        private int permission_;
+        private long createdTime_;
+        private long lastModifiedTime_;
+        private long lastAccessedTime_;
+        private long fileSize_;
+        private int replication_;
+        private long blockSize_;
+
+        // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.newBuilder()
+        private Builder() {
+            maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.class, com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.Builder.class);
+        }
+
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            isFile_ = false;
+
+            owner_ = "";
+
+            group_ = "";
+
+            permission_ = 0;
+
+            createdTime_ = 0L;
+
+            lastModifiedTime_ = 0L;
+
+            lastAccessedTime_ = 0L;
+
+            fileSize_ = 0L;
+
+            replication_ = 0;
+
+            blockSize_ = 0L;
+
+            return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_Attribute_descriptor;
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getDefaultInstanceForType() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute build() {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute buildPartial() {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute result = new com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute(this);
+            result.isFile_ = isFile_;
+            result.owner_ = owner_;
+            result.group_ = group_;
+            result.permission_ = permission_;
+            result.createdTime_ = createdTime_;
+            result.lastModifiedTime_ = lastModifiedTime_;
+            result.lastAccessedTime_ = lastAccessedTime_;
+            result.fileSize_ = fileSize_;
+            result.replication_ = replication_;
+            result.blockSize_ = blockSize_;
+            onBuilt();
+            return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+            return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute) {
+                return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute other) {
+            if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute.getDefaultInstance()) return this;
+            if (other.getIsFile() != false) {
+                setIsFile(other.getIsFile());
+            }
+            if (!other.getOwner().isEmpty()) {
+                owner_ = other.owner_;
+                onChanged();
+            }
+            if (!other.getGroup().isEmpty()) {
+                group_ = other.group_;
+                onChanged();
+            }
+            if (other.getPermission() != 0) {
+                setPermission(other.getPermission());
+            }
+            if (other.getCreatedTime() != 0L) {
+                setCreatedTime(other.getCreatedTime());
+            }
+            if (other.getLastModifiedTime() != 0L) {
+                setLastModifiedTime(other.getLastModifiedTime());
+            }
+            if (other.getLastAccessedTime() != 0L) {
+                setLastAccessedTime(other.getLastAccessedTime());
+            }
+            if (other.getFileSize() != 0L) {
+                setFileSize(other.getFileSize());
+            }
+            if (other.getReplication() != 0) {
+                setReplication(other.getReplication());
+            }
+            if (other.getBlockSize() != 0L) {
+                setBlockSize(other.getBlockSize());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute parsedMessage = null;
+            try {
+                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute) e.getUnfinishedMessage();
+                throw e.unwrapIOException();
+            } finally {
+                if (parsedMessage != null) {
+                    mergeFrom(parsedMessage);
+                }
+            }
+            return this;
+        }
+
+        /**
+         * <code>bool isFile = 1;</code>
+         *
+         * @return The isFile.
+         */
+        public boolean getIsFile() {
+            return isFile_;
+        }
+
+        /**
+         * <code>bool isFile = 1;</code>
+         *
+         * @param value The isFile to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIsFile(boolean value) {
+
+            isFile_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>bool isFile = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIsFile() {
+
+            isFile_ = false;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @return The owner.
+         */
+        public java.lang.String getOwner() {
+            java.lang.Object ref = owner_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                owner_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @param value The owner to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOwner(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            owner_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @return The bytes for owner.
+         */
+        public com.google.protobuf.ByteString
         getOwnerBytes() {
-      java.lang.Object ref = owner_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        owner_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string owner = 2;</code>
-     * @param value The owner to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOwner(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      owner_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string owner = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOwner() {
-      
-      owner_ = getDefaultInstance().getOwner();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string owner = 2;</code>
-     * @param value The bytes for owner to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOwnerBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      owner_ = value;
-      onChanged();
-      return this;
-    }
+            java.lang.Object ref = owner_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                owner_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
-    private java.lang.Object group_ = "";
-    /**
-     * <code>string group = 3;</code>
-     * @return The group.
-     */
-    public java.lang.String getGroup() {
-      java.lang.Object ref = group_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        group_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string group = 3;</code>
-     * @return The bytes for group.
-     */
-    public com.google.protobuf.ByteString
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @param value The bytes for owner to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOwnerBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            owner_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string owner = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOwner() {
+
+            owner_ = getDefaultInstance().getOwner();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string group = 3;</code>
+         *
+         * @return The group.
+         */
+        public java.lang.String getGroup() {
+            java.lang.Object ref = group_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                group_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string group = 3;</code>
+         *
+         * @param value The group to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGroup(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            group_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string group = 3;</code>
+         *
+         * @return The bytes for group.
+         */
+        public com.google.protobuf.ByteString
         getGroupBytes() {
-      java.lang.Object ref = group_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        group_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string group = 3;</code>
-     * @param value The group to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGroup(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      group_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string group = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearGroup() {
-      
-      group_ = getDefaultInstance().getGroup();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string group = 3;</code>
-     * @param value The bytes for group to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGroupBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      group_ = value;
-      onChanged();
-      return this;
-    }
+            java.lang.Object ref = group_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                group_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
-    private int permission_ ;
-    /**
-     * <code>int32 permission = 4;</code>
-     * @return The permission.
-     */
-    public int getPermission() {
-      return permission_;
-    }
-    /**
-     * <code>int32 permission = 4;</code>
-     * @param value The permission to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPermission(int value) {
-      
-      permission_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 permission = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPermission() {
-      
-      permission_ = 0;
-      onChanged();
-      return this;
-    }
+        /**
+         * <code>string group = 3;</code>
+         *
+         * @param value The bytes for group to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGroupBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
 
-    private long createdTime_ ;
-    /**
-     * <code>int64 createdTime = 5;</code>
-     * @return The createdTime.
-     */
-    public long getCreatedTime() {
-      return createdTime_;
-    }
-    /**
-     * <code>int64 createdTime = 5;</code>
-     * @param value The createdTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedTime(long value) {
-      
-      createdTime_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 createdTime = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCreatedTime() {
-      
-      createdTime_ = 0L;
-      onChanged();
-      return this;
-    }
+            group_ = value;
+            onChanged();
+            return this;
+        }
 
-    private long lastModifiedTime_ ;
-    /**
-     * <code>int64 lastModifiedTime = 6;</code>
-     * @return The lastModifiedTime.
-     */
-    public long getLastModifiedTime() {
-      return lastModifiedTime_;
-    }
-    /**
-     * <code>int64 lastModifiedTime = 6;</code>
-     * @param value The lastModifiedTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLastModifiedTime(long value) {
-      
-      lastModifiedTime_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 lastModifiedTime = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLastModifiedTime() {
-      
-      lastModifiedTime_ = 0L;
-      onChanged();
-      return this;
-    }
+        /**
+         * <code>string group = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGroup() {
 
-    private long lastAccessedTime_ ;
-    /**
-     * <code>int64 lastAccessedTime = 7;</code>
-     * @return The lastAccessedTime.
-     */
-    public long getLastAccessedTime() {
-      return lastAccessedTime_;
-    }
-    /**
-     * <code>int64 lastAccessedTime = 7;</code>
-     * @param value The lastAccessedTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLastAccessedTime(long value) {
-      
-      lastAccessedTime_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 lastAccessedTime = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLastAccessedTime() {
-      
-      lastAccessedTime_ = 0L;
-      onChanged();
-      return this;
-    }
+            group_ = getDefaultInstance().getGroup();
+            onChanged();
+            return this;
+        }
 
-    private long fileSize_ ;
-    /**
-     * <code>int64 fileSize = 8;</code>
-     * @return The fileSize.
-     */
-    public long getFileSize() {
-      return fileSize_;
-    }
-    /**
-     * <code>int64 fileSize = 8;</code>
-     * @param value The fileSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFileSize(long value) {
-      
-      fileSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 fileSize = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFileSize() {
-      
-      fileSize_ = 0L;
-      onChanged();
-      return this;
-    }
+        /**
+         * <code>int32 permission = 4;</code>
+         *
+         * @return The permission.
+         */
+        public int getPermission() {
+            return permission_;
+        }
 
-    private int replication_ ;
-    /**
-     * <code>int32 replication = 9;</code>
-     * @return The replication.
-     */
-    public int getReplication() {
-      return replication_;
+        /**
+         * <code>int32 permission = 4;</code>
+         *
+         * @param value The permission to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPermission(int value) {
+
+            permission_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int32 permission = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPermission() {
+
+            permission_ = 0;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 createdTime = 5;</code>
+         *
+         * @return The createdTime.
+         */
+        public long getCreatedTime() {
+            return createdTime_;
+        }
+
+        /**
+         * <code>int64 createdTime = 5;</code>
+         *
+         * @param value The createdTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCreatedTime(long value) {
+
+            createdTime_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 createdTime = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCreatedTime() {
+
+            createdTime_ = 0L;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 lastModifiedTime = 6;</code>
+         *
+         * @return The lastModifiedTime.
+         */
+        public long getLastModifiedTime() {
+            return lastModifiedTime_;
+        }
+
+        /**
+         * <code>int64 lastModifiedTime = 6;</code>
+         *
+         * @param value The lastModifiedTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLastModifiedTime(long value) {
+
+            lastModifiedTime_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 lastModifiedTime = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLastModifiedTime() {
+
+            lastModifiedTime_ = 0L;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 lastAccessedTime = 7;</code>
+         *
+         * @return The lastAccessedTime.
+         */
+        public long getLastAccessedTime() {
+            return lastAccessedTime_;
+        }
+
+        /**
+         * <code>int64 lastAccessedTime = 7;</code>
+         *
+         * @param value The lastAccessedTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLastAccessedTime(long value) {
+
+            lastAccessedTime_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 lastAccessedTime = 7;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLastAccessedTime() {
+
+            lastAccessedTime_ = 0L;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 fileSize = 8;</code>
+         *
+         * @return The fileSize.
+         */
+        public long getFileSize() {
+            return fileSize_;
+        }
+
+        /**
+         * <code>int64 fileSize = 8;</code>
+         *
+         * @param value The fileSize to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFileSize(long value) {
+
+            fileSize_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 fileSize = 8;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFileSize() {
+
+            fileSize_ = 0L;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int32 replication = 9;</code>
+         *
+         * @return The replication.
+         */
+        public int getReplication() {
+            return replication_;
+        }
+
+        /**
+         * <code>int32 replication = 9;</code>
+         *
+         * @param value The replication to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReplication(int value) {
+
+            replication_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int32 replication = 9;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReplication() {
+
+            replication_ = 0;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 blockSize = 10;</code>
+         *
+         * @return The blockSize.
+         */
+        public long getBlockSize() {
+            return blockSize_;
+        }
+
+        /**
+         * <code>int64 blockSize = 10;</code>
+         *
+         * @param value The blockSize to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlockSize(long value) {
+
+            blockSize_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>int64 blockSize = 10;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBlockSize() {
+
+            blockSize_ = 0L;
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:cloudfs.protocol.Attribute)
     }
-    /**
-     * <code>int32 replication = 9;</code>
-     * @param value The replication to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReplication(int value) {
-      
-      replication_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 replication = 9;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearReplication() {
-      
-      replication_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private long blockSize_ ;
-    /**
-     * <code>int64 blockSize = 10;</code>
-     * @return The blockSize.
-     */
-    public long getBlockSize() {
-      return blockSize_;
-    }
-    /**
-     * <code>int64 blockSize = 10;</code>
-     * @param value The blockSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBlockSize(long value) {
-      
-      blockSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 blockSize = 10;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBlockSize() {
-      
-      blockSize_ = 0L;
-      onChanged();
-      return this;
-    }
-    @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
-    }
-
-
-    // @@protoc_insertion_point(builder_scope:cloudfs.protocol.Attribute)
-  }
-
-  // @@protoc_insertion_point(class_scope:cloudfs.protocol.Attribute)
-  private static final com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute();
-  }
-
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<Attribute>
-      PARSER = new com.google.protobuf.AbstractParser<Attribute>() {
-    @java.lang.Override
-    public Attribute parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Attribute(input, extensionRegistry);
-    }
-  };
-
-  public static com.google.protobuf.Parser<Attribute> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<Attribute> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
 
 }
 

@@ -16,7 +16,7 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
         NamespaceContainerService containerService = ServiceProvider.getSingeltonInstance().getNamespaceContainerService();
         try {
             containerService.registerNewNamespace(request.getOwner(), request.getGroup(), request.getName().getName(),
-                    request.getVendorUri(),request.getBucketName(),request.getAdditionalInfoMap());
+                    request.getVendorUri(), request.getBucketName(), request.getAdditionalInfoMap());
 
             responseObserver.onNext(NamespaceInfo.newBuilder().setName(request.getName().getName())
                     .setUri(request.getVendorUri())

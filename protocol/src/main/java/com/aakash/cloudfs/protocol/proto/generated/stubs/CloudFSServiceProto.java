@@ -4,312 +4,315 @@
 package com.aakash.cloudfs.protocol.proto.generated.stubs;
 
 public final class CloudFSServiceProto {
-  private CloudFSServiceProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_NamespaceInfoReq_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_DeleteFSReq_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_DeleteFSReq_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_RenameFSPath_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_RenameMsg_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_ResultMsg_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_ResultMsg_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_ErrorMsg_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_ErrorMsg_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_CFSFileStatusMap_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_Attribute_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_Attribute_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_CFSFileStatus_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_CFSFileStatus_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_ExistMsg_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_ExistMsg_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_CreateFileReq_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_CreateFileReq_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_DirReq_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_DirReq_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_FSPathReq_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_FSPathReq_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_NamespaceName_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_NamespaceName_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_NamespaceInfoReq_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_DeleteFSReq_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_DeleteFSReq_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_RenameFSPath_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_RenameMsg_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_ResultMsg_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_ResultMsg_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_ErrorMsg_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_ErrorMsg_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_CFSFileStatusMap_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_Attribute_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_Attribute_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_CFSFileStatus_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_CFSFileStatus_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_ExistMsg_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_ExistMsg_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_CreateFileReq_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_CreateFileReq_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_DirReq_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_DirReq_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_FSPathReq_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_FSPathReq_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_NamespaceName_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_NamespaceName_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_fieldAccessorTable;
+    static {
+        java.lang.String[] descriptorData = {
+                "\n\rcloudfs.proto\022\020cloudfs.protocol\"\215\002\n\020Na" +
+                        "mespaceInfoReq\022\r\n\005owner\030\001 \001(\t\022\r\n\005group\030\002" +
+                        " \001(\t\022-\n\004name\030\003 \001(\0132\037.cloudfs.protocol.Na" +
+                        "mespaceName\022\021\n\tvendorUri\030\004 \001(\t\022\022\n\nbucket" +
+                        "Name\030\005 \001(\t\022N\n\016additionalInfo\030\006 \003(\01326.clo" +
+                        "udfs.protocol.NamespaceInfoReq.Additiona" +
+                        "lInfoEntry\0325\n\023AdditionalInfoEntry\022\013\n\003key" +
+                        "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"l\n\013DeleteFSReq" +
+                        "\022.\n\tfsPathReq\030\001 \001(\0132\033.cloudfs.protocol.F" +
+                        "SPathReq\022\021\n\trecursive\030\002 \001(\010\022\032\n\022reqTimeOu" +
+                        "tInMillis\030\003 \001(\003\"}\n\014RenameFSPath\022\021\n\tnames" +
+                        "pace\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\r\n\005group\030\003 \003(\t" +
+                        "\022\017\n\007srcPath\030\004 \001(\t\022\017\n\007dstPath\030\005 \001(\t\022\032\n\022re" +
+                        "qTimeOutInMillis\030\006 \001(\003\"J\n\tRenameMsg\022\017\n\007s" +
+                        "uccess\030\001 \001(\010\022,\n\010errorMsg\030\002 \001(\0132\032.cloudfs" +
+                        ".protocol.ErrorMsg\"\242\001\n\tResultMsg\022,\n\007cfsP" +
+                        "ath\030\001 \001(\0132\033.cloudfs.protocol.FSPathReq\022(" +
+                        "\n\006status\030\002 \001(\0162\030.cloudfs.protocol.Status" +
+                        "\022\017\n\007success\030\003 \001(\010\022,\n\010errorMsg\030\004 \001(\0132\032.cl" +
+                        "oudfs.protocol.ErrorMsg\"%\n\010ErrorMsg\022\014\n\004t" +
+                        "ype\030\001 \001(\t\022\013\n\003msg\030\002 \001(\t\"\200\002\n\020CFSFileStatus" +
+                        "Map\022^\n\026cfsPathToFileStatusMap\030\001 \003(\0132>.cl" +
+                        "oudfs.protocol.CFSFileStatusMap.CfsPathT" +
+                        "oFileStatusMapEntry\022,\n\010errorMsg\030\002 \001(\0132\032." +
+                        "cloudfs.protocol.ErrorMsg\032^\n\033CfsPathToFi" +
+                        "leStatusMapEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002" +
+                        " \001(\0132\037.cloudfs.protocol.CFSFileStatus:\0028" +
+                        "\001\"\320\001\n\tAttribute\022\016\n\006isFile\030\001 \001(\010\022\r\n\005owner" +
+                        "\030\002 \001(\t\022\r\n\005group\030\003 \001(\t\022\022\n\npermission\030\004 \001(" +
+                        "\005\022\023\n\013createdTime\030\005 \001(\003\022\030\n\020lastModifiedTi" +
+                        "me\030\006 \001(\003\022\030\n\020lastAccessedTime\030\007 \001(\003\022\020\n\010fi" +
+                        "leSize\030\010 \001(\003\022\023\n\013replication\030\t \001(\005\022\021\n\tblo" +
+                        "ckSize\030\n \001(\003\"\274\001\n\rCFSFileStatus\022.\n\tattrib" +
+                        "ute\030\001 \001(\0132\033.cloudfs.protocol.Attribute\022\022" +
+                        "\n\nvendorPath\030\002 \001(\t\022(\n\006status\030\003 \001(\0162\030.clo" +
+                        "udfs.protocol.Status\022\017\n\007cfsPath\030\004 \001(\t\022,\n" +
+                        "\010errorMsg\030\005 \001(\0132\032.cloudfs.protocol.Error" +
+                        "Msg\"H\n\010ExistMsg\022\016\n\006exists\030\001 \001(\010\022,\n\010error" +
+                        "Msg\030\002 \001(\0132\032.cloudfs.protocol.ErrorMsg\"\272\001" +
+                        "\n\rCreateFileReq\022+\n\006fsPath\030\001 \001(\0132\033.cloudf" +
+                        "s.protocol.FSPathReq\022\022\n\npermission\030\002 \001(\005" +
+                        "\022\023\n\013replication\030\003 \001(\005\022\021\n\tblockSize\030\004 \001(\003" +
+                        "\022\020\n\010fileSize\030\005 \001(\003\022\022\n\nvendorPath\030\006 \001(\t\022\032" +
+                        "\n\022reqTimeOutInMillis\030\007 \001(\003\"e\n\006DirReq\022+\n\006" +
+                        "fsPath\030\001 \001(\0132\033.cloudfs.protocol.FSPathRe" +
+                        "q\022\022\n\npermission\030\002 \001(\005\022\032\n\022reqTimeOutInMil" +
+                        "lis\030\003 \001(\003\"l\n\tFSPathReq\0222\n\tnamespace\030\001 \001(" +
+                        "\0132\037.cloudfs.protocol.NamespaceName\022\014\n\004pa" +
+                        "th\030\002 \001(\t\022\r\n\005owner\030\003 \001(\t\022\016\n\006groups\030\004 \003(\t\"" +
+                        "\035\n\rNamespaceName\022\014\n\004name\030\001 \001(\t\"\360\001\n\rNames" +
+                        "paceInfo\022\014\n\004name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\022\n\nb" +
+                        "ucketName\030\003 \001(\t\022K\n\016additionalInfo\030\004 \003(\0132" +
+                        "3.cloudfs.protocol.NamespaceInfo.Additio" +
+                        "nalInfoEntry\022,\n\010errorMsg\030\005 \001(\0132\032.cloudfs" +
+                        ".protocol.ErrorMsg\0325\n\023AdditionalInfoEntr" +
+                        "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*I\n\006Sta" +
+                        "tus\022\021\n\rUNDER_WRITING\020\000\022\r\n\tCOMPLETED\020\001\022\020\n" +
+                        "\014UNDER_DELETE\020\002\022\013\n\007DELETED\020\0032\217\007\n\016CloudFS" +
+                        "Service\022Z\n\021registerNameSpace\022\".cloudfs.p" +
+                        "rotocol.NamespaceInfoReq\032\037.cloudfs.proto" +
+                        "col.NamespaceInfo\"\000\022V\n\020getNamespaceInfo\022" +
+                        "\037.cloudfs.protocol.NamespaceName\032\037.cloud" +
+                        "fs.protocol.NamespaceInfo\"\000\022C\n\006exists\022\033." +
+                        "cloudfs.protocol.FSPathReq\032\032.cloudfs.pro" +
+                        "tocol.ExistMsg\"\000\022O\n\rgetFileStatus\022\033.clou" +
+                        "dfs.protocol.FSPathReq\032\037.cloudfs.protoco" +
+                        "l.CFSFileStatus\"\000\022U\n\020getFileStatusMap\022\033." +
+                        "cloudfs.protocol.FSPathReq\032\".cloudfs.pro" +
+                        "tocol.CFSFileStatusMap\"\000\022F\n\006delete\022\035.clo" +
+                        "udfs.protocol.DeleteFSReq\032\033.cloudfs.prot" +
+                        "ocol.ResultMsg\"\000\022G\n\006rename\022\036.cloudfs.pro" +
+                        "tocol.RenameFSPath\032\033.cloudfs.protocol.Re" +
+                        "nameMsg\"\000\022A\n\006mkdirs\022\030.cloudfs.protocol.D" +
+                        "irReq\032\033.cloudfs.protocol.ResultMsg\"\000\022T\n\022" +
+                        "createZeroByteFile\022\037.cloudfs.protocol.Cr" +
+                        "eateFileReq\032\033.cloudfs.protocol.ResultMsg" +
+                        "\"\000\022Z\n\030createOnUploadCompletion\022\037.cloudfs" +
+                        ".protocol.CreateFileReq\032\033.cloudfs.protoc" +
+                        "ol.ResultMsg\"\000\022V\n\020updateFileStatus\022\037.clo" +
+                        "udfs.protocol.CFSFileStatus\032\037.cloudfs.pr" +
+                        "otocol.CFSFileStatus\"\000BT\n1com.aakash.clo" +
+                        "udfs.protocol.proto.generated.stubsB\023Clo" +
+                        "udFSServiceProtoP\001\242\002\007CloudFsb\006proto3"
+        };
+        descriptor = com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                        });
+        internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_cloudfs_protocol_NamespaceInfoReq_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor,
+                new java.lang.String[]{"Owner", "Group", "Name", "VendorUri", "BucketName", "AdditionalInfo",});
+        internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_descriptor =
+                internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor.getNestedTypes().get(0);
+        internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_descriptor,
+                new java.lang.String[]{"Key", "Value",});
+        internal_static_cloudfs_protocol_DeleteFSReq_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_cloudfs_protocol_DeleteFSReq_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_DeleteFSReq_descriptor,
+                new java.lang.String[]{"FsPathReq", "Recursive", "ReqTimeOutInMillis",});
+        internal_static_cloudfs_protocol_RenameFSPath_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_RenameFSPath_descriptor,
+                new java.lang.String[]{"Namespace", "Owner", "Group", "SrcPath", "DstPath", "ReqTimeOutInMillis",});
+        internal_static_cloudfs_protocol_RenameMsg_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_RenameMsg_descriptor,
+                new java.lang.String[]{"Success", "ErrorMsg",});
+        internal_static_cloudfs_protocol_ResultMsg_descriptor =
+                getDescriptor().getMessageTypes().get(4);
+        internal_static_cloudfs_protocol_ResultMsg_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_ResultMsg_descriptor,
+                new java.lang.String[]{"CfsPath", "Status", "Success", "ErrorMsg",});
+        internal_static_cloudfs_protocol_ErrorMsg_descriptor =
+                getDescriptor().getMessageTypes().get(5);
+        internal_static_cloudfs_protocol_ErrorMsg_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_ErrorMsg_descriptor,
+                new java.lang.String[]{"Type", "Msg",});
+        internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor =
+                getDescriptor().getMessageTypes().get(6);
+        internal_static_cloudfs_protocol_CFSFileStatusMap_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor,
+                new java.lang.String[]{"CfsPathToFileStatusMap", "ErrorMsg",});
+        internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_descriptor =
+                internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor.getNestedTypes().get(0);
+        internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_descriptor,
+                new java.lang.String[]{"Key", "Value",});
+        internal_static_cloudfs_protocol_Attribute_descriptor =
+                getDescriptor().getMessageTypes().get(7);
+        internal_static_cloudfs_protocol_Attribute_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_Attribute_descriptor,
+                new java.lang.String[]{"IsFile", "Owner", "Group", "Permission", "CreatedTime", "LastModifiedTime", "LastAccessedTime", "FileSize", "Replication", "BlockSize",});
+        internal_static_cloudfs_protocol_CFSFileStatus_descriptor =
+                getDescriptor().getMessageTypes().get(8);
+        internal_static_cloudfs_protocol_CFSFileStatus_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_CFSFileStatus_descriptor,
+                new java.lang.String[]{"Attribute", "VendorPath", "Status", "CfsPath", "ErrorMsg",});
+        internal_static_cloudfs_protocol_ExistMsg_descriptor =
+                getDescriptor().getMessageTypes().get(9);
+        internal_static_cloudfs_protocol_ExistMsg_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_ExistMsg_descriptor,
+                new java.lang.String[]{"Exists", "ErrorMsg",});
+        internal_static_cloudfs_protocol_CreateFileReq_descriptor =
+                getDescriptor().getMessageTypes().get(10);
+        internal_static_cloudfs_protocol_CreateFileReq_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_CreateFileReq_descriptor,
+                new java.lang.String[]{"FsPath", "Permission", "Replication", "BlockSize", "FileSize", "VendorPath", "ReqTimeOutInMillis",});
+        internal_static_cloudfs_protocol_DirReq_descriptor =
+                getDescriptor().getMessageTypes().get(11);
+        internal_static_cloudfs_protocol_DirReq_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_DirReq_descriptor,
+                new java.lang.String[]{"FsPath", "Permission", "ReqTimeOutInMillis",});
+        internal_static_cloudfs_protocol_FSPathReq_descriptor =
+                getDescriptor().getMessageTypes().get(12);
+        internal_static_cloudfs_protocol_FSPathReq_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_FSPathReq_descriptor,
+                new java.lang.String[]{"Namespace", "Path", "Owner", "Groups",});
+        internal_static_cloudfs_protocol_NamespaceName_descriptor =
+                getDescriptor().getMessageTypes().get(13);
+        internal_static_cloudfs_protocol_NamespaceName_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_NamespaceName_descriptor,
+                new java.lang.String[]{"Name",});
+        internal_static_cloudfs_protocol_NamespaceInfo_descriptor =
+                getDescriptor().getMessageTypes().get(14);
+        internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_NamespaceInfo_descriptor,
+                new java.lang.String[]{"Name", "Uri", "BucketName", "AdditionalInfo", "ErrorMsg",});
+        internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor =
+                internal_static_cloudfs_protocol_NamespaceInfo_descriptor.getNestedTypes().get(0);
+        internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor,
+                new java.lang.String[]{"Key", "Value",});
+    }
+    private CloudFSServiceProto() {
+    }
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\rcloudfs.proto\022\020cloudfs.protocol\"\215\002\n\020Na" +
-      "mespaceInfoReq\022\r\n\005owner\030\001 \001(\t\022\r\n\005group\030\002" +
-      " \001(\t\022-\n\004name\030\003 \001(\0132\037.cloudfs.protocol.Na" +
-      "mespaceName\022\021\n\tvendorUri\030\004 \001(\t\022\022\n\nbucket" +
-      "Name\030\005 \001(\t\022N\n\016additionalInfo\030\006 \003(\01326.clo" +
-      "udfs.protocol.NamespaceInfoReq.Additiona" +
-      "lInfoEntry\0325\n\023AdditionalInfoEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"l\n\013DeleteFSReq" +
-      "\022.\n\tfsPathReq\030\001 \001(\0132\033.cloudfs.protocol.F" +
-      "SPathReq\022\021\n\trecursive\030\002 \001(\010\022\032\n\022reqTimeOu" +
-      "tInMillis\030\003 \001(\003\"}\n\014RenameFSPath\022\021\n\tnames" +
-      "pace\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\r\n\005group\030\003 \003(\t" +
-      "\022\017\n\007srcPath\030\004 \001(\t\022\017\n\007dstPath\030\005 \001(\t\022\032\n\022re" +
-      "qTimeOutInMillis\030\006 \001(\003\"J\n\tRenameMsg\022\017\n\007s" +
-      "uccess\030\001 \001(\010\022,\n\010errorMsg\030\002 \001(\0132\032.cloudfs" +
-      ".protocol.ErrorMsg\"\242\001\n\tResultMsg\022,\n\007cfsP" +
-      "ath\030\001 \001(\0132\033.cloudfs.protocol.FSPathReq\022(" +
-      "\n\006status\030\002 \001(\0162\030.cloudfs.protocol.Status" +
-      "\022\017\n\007success\030\003 \001(\010\022,\n\010errorMsg\030\004 \001(\0132\032.cl" +
-      "oudfs.protocol.ErrorMsg\"%\n\010ErrorMsg\022\014\n\004t" +
-      "ype\030\001 \001(\t\022\013\n\003msg\030\002 \001(\t\"\200\002\n\020CFSFileStatus" +
-      "Map\022^\n\026cfsPathToFileStatusMap\030\001 \003(\0132>.cl" +
-      "oudfs.protocol.CFSFileStatusMap.CfsPathT" +
-      "oFileStatusMapEntry\022,\n\010errorMsg\030\002 \001(\0132\032." +
-      "cloudfs.protocol.ErrorMsg\032^\n\033CfsPathToFi" +
-      "leStatusMapEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002" +
-      " \001(\0132\037.cloudfs.protocol.CFSFileStatus:\0028" +
-      "\001\"\320\001\n\tAttribute\022\016\n\006isFile\030\001 \001(\010\022\r\n\005owner" +
-      "\030\002 \001(\t\022\r\n\005group\030\003 \001(\t\022\022\n\npermission\030\004 \001(" +
-      "\005\022\023\n\013createdTime\030\005 \001(\003\022\030\n\020lastModifiedTi" +
-      "me\030\006 \001(\003\022\030\n\020lastAccessedTime\030\007 \001(\003\022\020\n\010fi" +
-      "leSize\030\010 \001(\003\022\023\n\013replication\030\t \001(\005\022\021\n\tblo" +
-      "ckSize\030\n \001(\003\"\274\001\n\rCFSFileStatus\022.\n\tattrib" +
-      "ute\030\001 \001(\0132\033.cloudfs.protocol.Attribute\022\022" +
-      "\n\nvendorPath\030\002 \001(\t\022(\n\006status\030\003 \001(\0162\030.clo" +
-      "udfs.protocol.Status\022\017\n\007cfsPath\030\004 \001(\t\022,\n" +
-      "\010errorMsg\030\005 \001(\0132\032.cloudfs.protocol.Error" +
-      "Msg\"H\n\010ExistMsg\022\016\n\006exists\030\001 \001(\010\022,\n\010error" +
-      "Msg\030\002 \001(\0132\032.cloudfs.protocol.ErrorMsg\"\272\001" +
-      "\n\rCreateFileReq\022+\n\006fsPath\030\001 \001(\0132\033.cloudf" +
-      "s.protocol.FSPathReq\022\022\n\npermission\030\002 \001(\005" +
-      "\022\023\n\013replication\030\003 \001(\005\022\021\n\tblockSize\030\004 \001(\003" +
-      "\022\020\n\010fileSize\030\005 \001(\003\022\022\n\nvendorPath\030\006 \001(\t\022\032" +
-      "\n\022reqTimeOutInMillis\030\007 \001(\003\"e\n\006DirReq\022+\n\006" +
-      "fsPath\030\001 \001(\0132\033.cloudfs.protocol.FSPathRe" +
-      "q\022\022\n\npermission\030\002 \001(\005\022\032\n\022reqTimeOutInMil" +
-      "lis\030\003 \001(\003\"l\n\tFSPathReq\0222\n\tnamespace\030\001 \001(" +
-      "\0132\037.cloudfs.protocol.NamespaceName\022\014\n\004pa" +
-      "th\030\002 \001(\t\022\r\n\005owner\030\003 \001(\t\022\016\n\006groups\030\004 \003(\t\"" +
-      "\035\n\rNamespaceName\022\014\n\004name\030\001 \001(\t\"\360\001\n\rNames" +
-      "paceInfo\022\014\n\004name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\022\n\nb" +
-      "ucketName\030\003 \001(\t\022K\n\016additionalInfo\030\004 \003(\0132" +
-      "3.cloudfs.protocol.NamespaceInfo.Additio" +
-      "nalInfoEntry\022,\n\010errorMsg\030\005 \001(\0132\032.cloudfs" +
-      ".protocol.ErrorMsg\0325\n\023AdditionalInfoEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*I\n\006Sta" +
-      "tus\022\021\n\rUNDER_WRITING\020\000\022\r\n\tCOMPLETED\020\001\022\020\n" +
-      "\014UNDER_DELETE\020\002\022\013\n\007DELETED\020\0032\217\007\n\016CloudFS" +
-      "Service\022Z\n\021registerNameSpace\022\".cloudfs.p" +
-      "rotocol.NamespaceInfoReq\032\037.cloudfs.proto" +
-      "col.NamespaceInfo\"\000\022V\n\020getNamespaceInfo\022" +
-      "\037.cloudfs.protocol.NamespaceName\032\037.cloud" +
-      "fs.protocol.NamespaceInfo\"\000\022C\n\006exists\022\033." +
-      "cloudfs.protocol.FSPathReq\032\032.cloudfs.pro" +
-      "tocol.ExistMsg\"\000\022O\n\rgetFileStatus\022\033.clou" +
-      "dfs.protocol.FSPathReq\032\037.cloudfs.protoco" +
-      "l.CFSFileStatus\"\000\022U\n\020getFileStatusMap\022\033." +
-      "cloudfs.protocol.FSPathReq\032\".cloudfs.pro" +
-      "tocol.CFSFileStatusMap\"\000\022F\n\006delete\022\035.clo" +
-      "udfs.protocol.DeleteFSReq\032\033.cloudfs.prot" +
-      "ocol.ResultMsg\"\000\022G\n\006rename\022\036.cloudfs.pro" +
-      "tocol.RenameFSPath\032\033.cloudfs.protocol.Re" +
-      "nameMsg\"\000\022A\n\006mkdirs\022\030.cloudfs.protocol.D" +
-      "irReq\032\033.cloudfs.protocol.ResultMsg\"\000\022T\n\022" +
-      "createZeroByteFile\022\037.cloudfs.protocol.Cr" +
-      "eateFileReq\032\033.cloudfs.protocol.ResultMsg" +
-      "\"\000\022Z\n\030createOnUploadCompletion\022\037.cloudfs" +
-      ".protocol.CreateFileReq\032\033.cloudfs.protoc" +
-      "ol.ResultMsg\"\000\022V\n\020updateFileStatus\022\037.clo" +
-      "udfs.protocol.CFSFileStatus\032\037.cloudfs.pr" +
-      "otocol.CFSFileStatus\"\000BT\n1com.aakash.clo" +
-      "udfs.protocol.proto.generated.stubsB\023Clo" +
-      "udFSServiceProtoP\001\242\002\007CloudFsb\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_cloudfs_protocol_NamespaceInfoReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor,
-        new java.lang.String[] { "Owner", "Group", "Name", "VendorUri", "BucketName", "AdditionalInfo", });
-    internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_descriptor =
-      internal_static_cloudfs_protocol_NamespaceInfoReq_descriptor.getNestedTypes().get(0);
-    internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_NamespaceInfoReq_AdditionalInfoEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_cloudfs_protocol_DeleteFSReq_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_cloudfs_protocol_DeleteFSReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_DeleteFSReq_descriptor,
-        new java.lang.String[] { "FsPathReq", "Recursive", "ReqTimeOutInMillis", });
-    internal_static_cloudfs_protocol_RenameFSPath_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_cloudfs_protocol_RenameFSPath_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_RenameFSPath_descriptor,
-        new java.lang.String[] { "Namespace", "Owner", "Group", "SrcPath", "DstPath", "ReqTimeOutInMillis", });
-    internal_static_cloudfs_protocol_RenameMsg_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_RenameMsg_descriptor,
-        new java.lang.String[] { "Success", "ErrorMsg", });
-    internal_static_cloudfs_protocol_ResultMsg_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_cloudfs_protocol_ResultMsg_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_ResultMsg_descriptor,
-        new java.lang.String[] { "CfsPath", "Status", "Success", "ErrorMsg", });
-    internal_static_cloudfs_protocol_ErrorMsg_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_cloudfs_protocol_ErrorMsg_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_ErrorMsg_descriptor,
-        new java.lang.String[] { "Type", "Msg", });
-    internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_cloudfs_protocol_CFSFileStatusMap_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor,
-        new java.lang.String[] { "CfsPathToFileStatusMap", "ErrorMsg", });
-    internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_descriptor =
-      internal_static_cloudfs_protocol_CFSFileStatusMap_descriptor.getNestedTypes().get(0);
-    internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_CFSFileStatusMap_CfsPathToFileStatusMapEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_cloudfs_protocol_Attribute_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_cloudfs_protocol_Attribute_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_Attribute_descriptor,
-        new java.lang.String[] { "IsFile", "Owner", "Group", "Permission", "CreatedTime", "LastModifiedTime", "LastAccessedTime", "FileSize", "Replication", "BlockSize", });
-    internal_static_cloudfs_protocol_CFSFileStatus_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_cloudfs_protocol_CFSFileStatus_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_CFSFileStatus_descriptor,
-        new java.lang.String[] { "Attribute", "VendorPath", "Status", "CfsPath", "ErrorMsg", });
-    internal_static_cloudfs_protocol_ExistMsg_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_cloudfs_protocol_ExistMsg_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_ExistMsg_descriptor,
-        new java.lang.String[] { "Exists", "ErrorMsg", });
-    internal_static_cloudfs_protocol_CreateFileReq_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_cloudfs_protocol_CreateFileReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_CreateFileReq_descriptor,
-        new java.lang.String[] { "FsPath", "Permission", "Replication", "BlockSize", "FileSize", "VendorPath", "ReqTimeOutInMillis", });
-    internal_static_cloudfs_protocol_DirReq_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_cloudfs_protocol_DirReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_DirReq_descriptor,
-        new java.lang.String[] { "FsPath", "Permission", "ReqTimeOutInMillis", });
-    internal_static_cloudfs_protocol_FSPathReq_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_cloudfs_protocol_FSPathReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_FSPathReq_descriptor,
-        new java.lang.String[] { "Namespace", "Path", "Owner", "Groups", });
-    internal_static_cloudfs_protocol_NamespaceName_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_cloudfs_protocol_NamespaceName_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_NamespaceName_descriptor,
-        new java.lang.String[] { "Name", });
-    internal_static_cloudfs_protocol_NamespaceInfo_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_NamespaceInfo_descriptor,
-        new java.lang.String[] { "Name", "Uri", "BucketName", "AdditionalInfo", "ErrorMsg", });
-    internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor =
-      internal_static_cloudfs_protocol_NamespaceInfo_descriptor.getNestedTypes().get(0);
-    internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-  }
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
 
-  // @@protoc_insertion_point(outer_class_scope)
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }

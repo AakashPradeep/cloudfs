@@ -5,5 +5,6 @@ import org.apache.hadoop.conf.Configuration;
 
 public interface NamespaceToServerMapperProxy {
     void initialize(Configuration configuration);
+
     HostWithPort getMetadataServerHostsWithPort(String namespace);
 }

@@ -2,7 +2,6 @@ package com.aakash.server.services;
 
 import com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute;
 import com.aakash.cloudfs.protocol.proto.generated.stubs.CFSFileStatus;
-import com.aakash.cloudfs.protocol.proto.generated.stubs.FSPathReq;
 import com.aakash.server.in.memory.ds.Node;
 import com.aakash.server.in.memory.ds.NodeAttribute;
 import com.aakash.server.in.memory.ds.NodeInfo;
@@ -28,7 +27,7 @@ public class NodeToCFSFileStatusMapper implements BiFunction<Node, Path, CFSFile
                 .setIsFile(attribute.isFile()).build();
 
         CFSFileStatus.Builder builder = CFSFileStatus.newBuilder();
-        if(attribute.isFile()){
+        if (attribute.isFile()) {
             builder = builder.setVendorPath(nodeInfo.getVendorCloudPath().toString());
         }
         return builder

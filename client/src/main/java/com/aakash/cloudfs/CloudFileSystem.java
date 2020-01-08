@@ -158,7 +158,7 @@ public class CloudFileSystem extends FileSystem {
             if (fileStatus != null) {
                 throw new FileAlreadyExistsException("file already exist with path:" + f);
             }
-        } catch (FileNotFoundException fe){
+        } catch (FileNotFoundException fe) {
             //expected ignore
         }
 
@@ -271,7 +271,7 @@ public class CloudFileSystem extends FileSystem {
         Optional<? extends Class<?>> mapperKlass = Optional.ofNullable(configuration.getClassByNameOrNull(Constants.FS_CFS_PATH_MAPPER_CLASS));
         CfsPathToVendorPathMapper pathMapper = getPathMapper(mapperKlass);
         Path vendorPath = pathMapper.map(this.namespace, f, this.namespaceInfo.getBucketName(), this.namespaceInfo.getUri());
-        this.vendorFileSystem.mkdirs(vendorPath,permission);
+        this.vendorFileSystem.mkdirs(vendorPath, permission);
         MetadataClientService clientService = this.metadataClientProvider.provide(namespace, this.configuration);
         UserGroupInformation ugi = UserGroupInformation.getCurrentUser();
         String user = ugi.getShortUserName();

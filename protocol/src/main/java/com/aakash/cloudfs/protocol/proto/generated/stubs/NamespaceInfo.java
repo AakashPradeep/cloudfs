@@ -6,1283 +6,1403 @@ package com.aakash.cloudfs.protocol.proto.generated.stubs;
 /**
  * Protobuf type {@code cloudfs.protocol.NamespaceInfo}
  */
-public  final class NamespaceInfo extends
-    com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:cloudfs.protocol.NamespaceInfo)
-    NamespaceInfoOrBuilder {
-private static final long serialVersionUID = 0L;
-  // Use NamespaceInfo.newBuilder() to construct.
-  private NamespaceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-  private NamespaceInfo() {
-    name_ = "";
-    uri_ = "";
-    bucketName_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new NamespaceInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-  private NamespaceInfo(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            uri_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            bucketName_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              additionalInfo_ = com.google.protobuf.MapField.newMapField(
-                  AdditionalInfoDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            additionalInfo__ = input.readMessage(
-                AdditionalInfoDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            additionalInfo_.getMutableMap().put(
-                additionalInfo__.getKey(), additionalInfo__.getValue());
-            break;
-          }
-          case 42: {
-            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder subBuilder = null;
-            if (errorMsg_ != null) {
-              subBuilder = errorMsg_.toBuilder();
-            }
-            errorMsg_ = input.readMessage(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(errorMsg_);
-              errorMsg_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
+public final class NamespaceInfo extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:cloudfs.protocol.NamespaceInfo)
+        NamespaceInfoOrBuilder {
+    public static final int NAME_FIELD_NUMBER = 1;
+    public static final int URI_FIELD_NUMBER = 2;
+    public static final int BUCKETNAME_FIELD_NUMBER = 3;
+    public static final int ADDITIONALINFO_FIELD_NUMBER = 4;
+    public static final int ERRORMSG_FIELD_NUMBER = 5;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:cloudfs.protocol.NamespaceInfo)
+    private static final com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<NamespaceInfo>
+            PARSER = new com.google.protobuf.AbstractParser<NamespaceInfo>() {
+        @java.lang.Override
+        public NamespaceInfo parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return new NamespaceInfo(input, extensionRegistry);
         }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
-  }
+    };
 
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
-    switch (number) {
-      case 4:
-        return internalGetAdditionalInfo();
-      default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+    static {
+        DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo();
     }
-  }
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.class, com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.Builder.class);
-  }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
-  /**
-   * <code>string name = 1;</code>
-   * @return The name.
-   */
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
-   */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
+    private volatile java.lang.Object name_;
+    private volatile java.lang.Object uri_;
+    private volatile java.lang.Object bucketName_;
+    private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> additionalInfo_;
+    private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
+    private byte memoizedIsInitialized = -1;
 
-  public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
-  /**
-   * <code>string uri = 2;</code>
-   * @return The uri.
-   */
-  public java.lang.String getUri() {
-    java.lang.Object ref = uri_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      uri_ = s;
-      return s;
+    // Use NamespaceInfo.newBuilder() to construct.
+    private NamespaceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
     }
-  }
-  /**
-   * <code>string uri = 2;</code>
-   * @return The bytes for uri.
-   */
-  public com.google.protobuf.ByteString
-      getUriBytes() {
-    java.lang.Object ref = uri_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      uri_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
 
-  public static final int BUCKETNAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object bucketName_;
-  /**
-   * <code>string bucketName = 3;</code>
-   * @return The bucketName.
-   */
-  public java.lang.String getBucketName() {
-    java.lang.Object ref = bucketName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      bucketName_ = s;
-      return s;
+    private NamespaceInfo() {
+        name_ = "";
+        uri_ = "";
+        bucketName_ = "";
     }
-  }
-  /**
-   * <code>string bucketName = 3;</code>
-   * @return The bytes for bucketName.
-   */
-  public com.google.protobuf.ByteString
-      getBucketNameBytes() {
-    java.lang.Object ref = bucketName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      bucketName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
 
-  public static final int ADDITIONALINFO_FIELD_NUMBER = 4;
-  private static final class AdditionalInfoDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
-  }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> additionalInfo_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetAdditionalInfo() {
-    if (additionalInfo_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          AdditionalInfoDefaultEntryHolder.defaultEntry);
-    }
-    return additionalInfo_;
-  }
+    private NamespaceInfo(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+            boolean done = false;
+            while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                    case 0:
+                        done = true;
+                        break;
+                    case 10: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public int getAdditionalInfoCount() {
-    return internalGetAdditionalInfo().getMap().size();
-  }
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
+                        name_ = s;
+                        break;
+                    }
+                    case 18: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public boolean containsAdditionalInfo(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    return internalGetAdditionalInfo().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getAdditionalInfoMap()} instead.
-   */
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getAdditionalInfo() {
-    return getAdditionalInfoMap();
-  }
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
+                        uri_ = s;
+                        break;
+                    }
+                    case 26: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  public java.util.Map<java.lang.String, java.lang.String> getAdditionalInfoMap() {
-    return internalGetAdditionalInfo().getMap();
-  }
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
+                        bucketName_ = s;
+                        break;
+                    }
+                    case 34: {
+                        if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                            additionalInfo_ = com.google.protobuf.MapField.newMapField(
+                                    AdditionalInfoDefaultEntryHolder.defaultEntry);
+                            mutable_bitField0_ |= 0x00000001;
+                        }
+                        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                                additionalInfo__ = input.readMessage(
+                                AdditionalInfoDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                        additionalInfo_.getMutableMap().put(
+                                additionalInfo__.getKey(), additionalInfo__.getValue());
+                        break;
+                    }
+                    case 42: {
+                        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder subBuilder = null;
+                        if (errorMsg_ != null) {
+                            subBuilder = errorMsg_.toBuilder();
+                        }
+                        errorMsg_ = input.readMessage(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.parser(), extensionRegistry);
+                        if (subBuilder != null) {
+                            subBuilder.mergeFrom(errorMsg_);
+                            errorMsg_ = subBuilder.buildPartial();
+                        }
 
-  public java.lang.String getAdditionalInfoOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetAdditionalInfo().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-   */
+                        break;
+                    }
+                    default: {
+                        if (!parseUnknownField(
+                                input, unknownFields, extensionRegistry, tag)) {
+                            done = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+        } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+        }
+    }
 
-  public java.lang.String getAdditionalInfoOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetAdditionalInfo().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
-  public static final int ERRORMSG_FIELD_NUMBER = 5;
-  private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-   * @return Whether the errorMsg field is set.
-   */
-  public boolean hasErrorMsg() {
-    return errorMsg_ != null;
-  }
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-   * @return The errorMsg.
-   */
-  public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg() {
-    return errorMsg_ == null ? com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
-  }
-  /**
-   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-   */
-  public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder() {
-    return getErrorMsg();
-  }
-
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    }
-    if (!getUriBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
-    }
-    if (!getBucketNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bucketName_);
-    }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetAdditionalInfo(),
-        AdditionalInfoDefaultEntryHolder.defaultEntry,
-        4);
-    if (errorMsg_ != null) {
-      output.writeMessage(5, getErrorMsg());
-    }
-    unknownFields.writeTo(output);
-  }
-
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
-    if (!getUriBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
-    }
-    if (!getBucketNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bucketName_);
-    }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetAdditionalInfo().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      additionalInfo__ = AdditionalInfoDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, additionalInfo__);
-    }
-    if (errorMsg_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getErrorMsg());
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo)) {
-      return super.equals(obj);
-    }
-    com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo other = (com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo) obj;
-
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getUri()
-        .equals(other.getUri())) return false;
-    if (!getBucketName()
-        .equals(other.getBucketName())) return false;
-    if (!internalGetAdditionalInfo().equals(
-        other.internalGetAdditionalInfo())) return false;
-    if (hasErrorMsg() != other.hasErrorMsg()) return false;
-    if (hasErrorMsg()) {
-      if (!getErrorMsg()
-          .equals(other.getErrorMsg())) return false;
-    }
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + URI_FIELD_NUMBER;
-    hash = (53 * hash) + getUri().hashCode();
-    hash = (37 * hash) + BUCKETNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getBucketName().hashCode();
-    if (!internalGetAdditionalInfo().getMap().isEmpty()) {
-      hash = (37 * hash) + ADDITIONALINFO_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetAdditionalInfo().hashCode();
-    }
-    if (hasErrorMsg()) {
-      hash = (37 * hash) + ERRORMSG_FIELD_NUMBER;
-      hash = (53 * hash) + getErrorMsg().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * Protobuf type {@code cloudfs.protocol.NamespaceInfo}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:cloudfs.protocol.NamespaceInfo)
-      com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
+    getDescriptor() {
+        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<NamespaceInfo> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+        return new NamespaceInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+        return this.unknownFields;
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 4:
-          return internalGetAdditionalInfo();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
+            int number) {
+        switch (number) {
+            case 4:
+                return internalGetAdditionalInfo();
+            default:
+                throw new RuntimeException(
+                        "Invalid map field number: " + number);
+        }
     }
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
-      switch (number) {
-        case 4:
-          return internalGetMutableAdditionalInfo();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.class, com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.Builder.class);
+    internalGetFieldAccessorTable() {
+        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.class, com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.Builder.class);
     }
 
-    // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      name_ = "";
-
-      uri_ = "";
-
-      bucketName_ = "";
-
-      internalGetMutableAdditionalInfo().clear();
-      if (errorMsgBuilder_ == null) {
-        errorMsg_ = null;
-      } else {
-        errorMsg_ = null;
-        errorMsgBuilder_ = null;
-      }
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
-    }
-
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo getDefaultInstanceForType() {
-      return com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo build() {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo buildPartial() {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo result = new com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uri_ = uri_;
-      result.bucketName_ = bucketName_;
-      result.additionalInfo_ = internalGetAdditionalInfo();
-      result.additionalInfo_.makeImmutable();
-      if (errorMsgBuilder_ == null) {
-        result.errorMsg_ = errorMsg_;
-      } else {
-        result.errorMsg_ = errorMsgBuilder_.build();
-      }
-      onBuilt();
-      return result;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo) {
-        return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
-    public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo other) {
-      if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
-      if (!other.getUri().isEmpty()) {
-        uri_ = other.uri_;
-        onChanged();
-      }
-      if (!other.getBucketName().isEmpty()) {
-        bucketName_ = other.bucketName_;
-        onChanged();
-      }
-      internalGetMutableAdditionalInfo().mergeFrom(
-          other.internalGetAdditionalInfo());
-      if (other.hasErrorMsg()) {
-        mergeErrorMsg(other.getErrorMsg());
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
-    }
-    private int bitField0_;
-
-    private java.lang.Object name_ = "";
     /**
      * <code>string name = 1;</code>
+     *
      * @return The name.
      */
     public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+        }
     }
+
     /**
      * <code>string name = 1;</code>
+     *
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string name = 1;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string name = 1;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
+    getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            name_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private java.lang.Object uri_ = "";
     /**
      * <code>string uri = 2;</code>
+     *
      * @return The uri.
      */
     public java.lang.String getUri() {
-      java.lang.Object ref = uri_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        uri_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+        }
     }
+
     /**
      * <code>string uri = 2;</code>
+     *
      * @return The bytes for uri.
      */
     public com.google.protobuf.ByteString
-        getUriBytes() {
-      java.lang.Object ref = uri_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string uri = 2;</code>
-     * @param value The uri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUri(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      uri_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string uri = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUri() {
-      
-      uri_ = getDefaultInstance().getUri();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string uri = 2;</code>
-     * @param value The bytes for uri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUriBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      uri_ = value;
-      onChanged();
-      return this;
+    getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            uri_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private java.lang.Object bucketName_ = "";
     /**
      * <code>string bucketName = 3;</code>
+     *
      * @return The bucketName.
      */
     public java.lang.String getBucketName() {
-      java.lang.Object ref = bucketName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bucketName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = bucketName_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            bucketName_ = s;
+            return s;
+        }
     }
+
     /**
      * <code>string bucketName = 3;</code>
+     *
      * @return The bytes for bucketName.
      */
     public com.google.protobuf.ByteString
-        getBucketNameBytes() {
-      java.lang.Object ref = bucketName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        bucketName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string bucketName = 3;</code>
-     * @param value The bucketName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBucketName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      bucketName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bucketName = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBucketName() {
-      
-      bucketName_ = getDefaultInstance().getBucketName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string bucketName = 3;</code>
-     * @param value The bytes for bucketName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBucketNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      bucketName_ = value;
-      onChanged();
-      return this;
+    getBucketNameBytes() {
+        java.lang.Object ref = bucketName_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            bucketName_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> additionalInfo_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
     internalGetAdditionalInfo() {
-      if (additionalInfo_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            AdditionalInfoDefaultEntryHolder.defaultEntry);
-      }
-      return additionalInfo_;
-    }
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableAdditionalInfo() {
-      onChanged();;
-      if (additionalInfo_ == null) {
-        additionalInfo_ = com.google.protobuf.MapField.newMapField(
-            AdditionalInfoDefaultEntryHolder.defaultEntry);
-      }
-      if (!additionalInfo_.isMutable()) {
-        additionalInfo_ = additionalInfo_.copy();
-      }
-      return additionalInfo_;
+        if (additionalInfo_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                    AdditionalInfoDefaultEntryHolder.defaultEntry);
+        }
+        return additionalInfo_;
     }
 
     public int getAdditionalInfoCount() {
-      return internalGetAdditionalInfo().getMap().size();
+        return internalGetAdditionalInfo().getMap().size();
     }
+
     /**
      * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
      */
 
     public boolean containsAdditionalInfo(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetAdditionalInfo().getMap().containsKey(key);
+            java.lang.String key) {
+        if (key == null) {
+            throw new java.lang.NullPointerException();
+        }
+        return internalGetAdditionalInfo().getMap().containsKey(key);
     }
+
     /**
      * Use {@link #getAdditionalInfoMap()} instead.
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalInfo() {
-      return getAdditionalInfoMap();
+        return getAdditionalInfoMap();
     }
+
     /**
      * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalInfoMap() {
-      return internalGetAdditionalInfo().getMap();
+        return internalGetAdditionalInfo().getMap();
     }
+
     /**
      * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
      */
 
     public java.lang.String getAdditionalInfoOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetAdditionalInfo().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
+            java.lang.String key,
+            java.lang.String defaultValue) {
+        if (key == null) {
+            throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+                internalGetAdditionalInfo().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
      */
 
     public java.lang.String getAdditionalInfoOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetAdditionalInfo().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+            java.lang.String key) {
+        if (key == null) {
+            throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+                internalGetAdditionalInfo().getMap();
+        if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
     }
 
-    public Builder clearAdditionalInfo() {
-      internalGetMutableAdditionalInfo().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-     */
-
-    public Builder removeAdditionalInfo(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableAdditionalInfo().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableAdditionalInfo() {
-      return internalGetMutableAdditionalInfo().getMutableMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-     */
-    public Builder putAdditionalInfo(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableAdditionalInfo().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
-     */
-
-    public Builder putAllAdditionalInfo(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableAdditionalInfo().getMutableMap()
-          .putAll(values);
-      return this;
-    }
-
-    private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder> errorMsgBuilder_;
     /**
      * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+     *
      * @return Whether the errorMsg field is set.
      */
     public boolean hasErrorMsg() {
-      return errorMsgBuilder_ != null || errorMsg_ != null;
+        return errorMsg_ != null;
     }
+
     /**
      * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+     *
      * @return The errorMsg.
      */
     public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg() {
-      if (errorMsgBuilder_ == null) {
         return errorMsg_ == null ? com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
-      } else {
-        return errorMsgBuilder_.getMessage();
-      }
     }
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     */
-    public Builder setErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
-      if (errorMsgBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        errorMsg_ = value;
-        onChanged();
-      } else {
-        errorMsgBuilder_.setMessage(value);
-      }
 
-      return this;
-    }
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     */
-    public Builder setErrorMsg(
-        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder builderForValue) {
-      if (errorMsgBuilder_ == null) {
-        errorMsg_ = builderForValue.build();
-        onChanged();
-      } else {
-        errorMsgBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     */
-    public Builder mergeErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
-      if (errorMsgBuilder_ == null) {
-        if (errorMsg_ != null) {
-          errorMsg_ =
-            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.newBuilder(errorMsg_).mergeFrom(value).buildPartial();
-        } else {
-          errorMsg_ = value;
-        }
-        onChanged();
-      } else {
-        errorMsgBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     */
-    public Builder clearErrorMsg() {
-      if (errorMsgBuilder_ == null) {
-        errorMsg_ = null;
-        onChanged();
-      } else {
-        errorMsg_ = null;
-        errorMsgBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     */
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder getErrorMsgBuilder() {
-      
-      onChanged();
-      return getErrorMsgFieldBuilder().getBuilder();
-    }
     /**
      * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
      */
     public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder() {
-      if (errorMsgBuilder_ != null) {
-        return errorMsgBuilder_.getMessageOrBuilder();
-      } else {
-        return errorMsg_ == null ?
-            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
-      }
+        return getErrorMsg();
     }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+        if (!getNameBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        }
+        if (!getUriBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
+        }
+        if (!getBucketNameBytes().isEmpty()) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bucketName_);
+        }
+        com.google.protobuf.GeneratedMessageV3
+                .serializeStringMapTo(
+                        output,
+                        internalGetAdditionalInfo(),
+                        AdditionalInfoDefaultEntryHolder.defaultEntry,
+                        4);
+        if (errorMsg_ != null) {
+            output.writeMessage(5, getErrorMsg());
+        }
+        unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getNameBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        }
+        if (!getUriBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
+        }
+        if (!getBucketNameBytes().isEmpty()) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bucketName_);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+                : internalGetAdditionalInfo().getMap().entrySet()) {
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    additionalInfo__ = AdditionalInfoDefaultEntryHolder.defaultEntry.newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(4, additionalInfo__);
+        }
+        if (errorMsg_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(5, getErrorMsg());
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo)) {
+            return super.equals(obj);
+        }
+        com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo other = (com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo) obj;
+
+        if (!getName()
+                .equals(other.getName())) return false;
+        if (!getUri()
+                .equals(other.getUri())) return false;
+        if (!getBucketName()
+                .equals(other.getBucketName())) return false;
+        if (!internalGetAdditionalInfo().equals(
+                other.internalGetAdditionalInfo())) return false;
+        if (hasErrorMsg() != other.hasErrorMsg()) return false;
+        if (hasErrorMsg()) {
+            if (!getErrorMsg()
+                    .equals(other.getErrorMsg())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        hash = (37 * hash) + BUCKETNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getBucketName().hashCode();
+        if (!internalGetAdditionalInfo().getMap().isEmpty()) {
+            hash = (37 * hash) + ADDITIONALINFO_FIELD_NUMBER;
+            hash = (53 * hash) + internalGetAdditionalInfo().hashCode();
+        }
+        if (hasErrorMsg()) {
+            hash = (37 * hash) + ERRORMSG_FIELD_NUMBER;
+            hash = (53 * hash) + getErrorMsg().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+        return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NamespaceInfo> getParserForType() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+    }
+
+    private static final class AdditionalInfoDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+                java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                        .<java.lang.String, java.lang.String>newDefaultInstance(
+                                com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_AdditionalInfoEntry_descriptor,
+                                com.google.protobuf.WireFormat.FieldType.STRING,
+                                "",
+                                com.google.protobuf.WireFormat.FieldType.STRING,
+                                "");
+    }
+
     /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+     * Protobuf type {@code cloudfs.protocol.NamespaceInfo}
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder> 
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:cloudfs.protocol.NamespaceInfo)
+            com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfoOrBuilder {
+        private int bitField0_;
+        private java.lang.Object name_ = "";
+        private java.lang.Object uri_ = "";
+        private java.lang.Object bucketName_ = "";
+        private com.google.protobuf.MapField<
+                java.lang.String, java.lang.String> additionalInfo_;
+        private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder> errorMsgBuilder_;
+
+        // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.newBuilder()
+        private Builder() {
+            maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+                int number) {
+            switch (number) {
+                case 4:
+                    return internalGetAdditionalInfo();
+                default:
+                    throw new RuntimeException(
+                            "Invalid map field number: " + number);
+            }
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+                int number) {
+            switch (number) {
+                case 4:
+                    return internalGetMutableAdditionalInfo();
+                default:
+                    throw new RuntimeException(
+                            "Invalid map field number: " + number);
+            }
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.class, com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.Builder.class);
+        }
+
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            name_ = "";
+
+            uri_ = "";
+
+            bucketName_ = "";
+
+            internalGetMutableAdditionalInfo().clear();
+            if (errorMsgBuilder_ == null) {
+                errorMsg_ = null;
+            } else {
+                errorMsg_ = null;
+                errorMsgBuilder_ = null;
+            }
+            return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_NamespaceInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo getDefaultInstanceForType() {
+            return com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo build() {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo buildPartial() {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo result = new com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo(this);
+            int from_bitField0_ = bitField0_;
+            result.name_ = name_;
+            result.uri_ = uri_;
+            result.bucketName_ = bucketName_;
+            result.additionalInfo_ = internalGetAdditionalInfo();
+            result.additionalInfo_.makeImmutable();
+            if (errorMsgBuilder_ == null) {
+                result.errorMsg_ = errorMsg_;
+            } else {
+                result.errorMsg_ = errorMsgBuilder_.build();
+            }
+            onBuilt();
+            return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+            return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo) {
+                return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo other) {
+            if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo.getDefaultInstance())
+                return this;
+            if (!other.getName().isEmpty()) {
+                name_ = other.name_;
+                onChanged();
+            }
+            if (!other.getUri().isEmpty()) {
+                uri_ = other.uri_;
+                onChanged();
+            }
+            if (!other.getBucketName().isEmpty()) {
+                bucketName_ = other.bucketName_;
+                onChanged();
+            }
+            internalGetMutableAdditionalInfo().mergeFrom(
+                    other.internalGetAdditionalInfo());
+            if (other.hasErrorMsg()) {
+                mergeErrorMsg(other.getErrorMsg());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo parsedMessage = null;
+            try {
+                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo) e.getUnfinishedMessage();
+                throw e.unwrapIOException();
+            } finally {
+                if (parsedMessage != null) {
+                    mergeFrom(parsedMessage);
+                }
+            }
+            return this;
+        }
+
+        /**
+         * <code>string name = 1;</code>
+         *
+         * @return The name.
+         */
+        public java.lang.String getName() {
+            java.lang.Object ref = name_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                name_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string name = 1;</code>
+         *
+         * @param value The name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setName(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            name_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string name = 1;</code>
+         *
+         * @return The bytes for name.
+         */
+        public com.google.protobuf.ByteString
+        getNameBytes() {
+            java.lang.Object ref = name_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string name = 1;</code>
+         *
+         * @param value The bytes for name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNameBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            name_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearName() {
+
+            name_ = getDefaultInstance().getName();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string uri = 2;</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+            java.lang.Object ref = uri_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                uri_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string uri = 2;</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            uri_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string uri = 2;</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString
+        getUriBytes() {
+            java.lang.Object ref = uri_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                uri_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string uri = 2;</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            uri_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string uri = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+
+            uri_ = getDefaultInstance().getUri();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string bucketName = 3;</code>
+         *
+         * @return The bucketName.
+         */
+        public java.lang.String getBucketName() {
+            java.lang.Object ref = bucketName_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                bucketName_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <code>string bucketName = 3;</code>
+         *
+         * @param value The bucketName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBucketName(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            bucketName_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string bucketName = 3;</code>
+         *
+         * @return The bytes for bucketName.
+         */
+        public com.google.protobuf.ByteString
+        getBucketNameBytes() {
+            java.lang.Object ref = bucketName_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                bucketName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string bucketName = 3;</code>
+         *
+         * @param value The bytes for bucketName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBucketNameBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            bucketName_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>string bucketName = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBucketName() {
+
+            bucketName_ = getDefaultInstance().getBucketName();
+            onChanged();
+            return this;
+        }
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAdditionalInfo() {
+            if (additionalInfo_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                        AdditionalInfoDefaultEntryHolder.defaultEntry);
+            }
+            return additionalInfo_;
+        }
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAdditionalInfo() {
+            onChanged();
+            ;
+            if (additionalInfo_ == null) {
+                additionalInfo_ = com.google.protobuf.MapField.newMapField(
+                        AdditionalInfoDefaultEntryHolder.defaultEntry);
+            }
+            if (!additionalInfo_.isMutable()) {
+                additionalInfo_ = additionalInfo_.copy();
+            }
+            return additionalInfo_;
+        }
+
+        public int getAdditionalInfoCount() {
+            return internalGetAdditionalInfo().getMap().size();
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+         */
+
+        public boolean containsAdditionalInfo(
+                java.lang.String key) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            return internalGetAdditionalInfo().getMap().containsKey(key);
+        }
+
+        /**
+         * Use {@link #getAdditionalInfoMap()} instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getAdditionalInfo() {
+            return getAdditionalInfoMap();
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+         */
+
+        public java.util.Map<java.lang.String, java.lang.String> getAdditionalInfoMap() {
+            return internalGetAdditionalInfo().getMap();
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+         */
+
+        public java.lang.String getAdditionalInfoOrDefault(
+                java.lang.String key,
+                java.lang.String defaultValue) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            java.util.Map<java.lang.String, java.lang.String> map =
+                    internalGetAdditionalInfo().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+         */
+
+        public java.lang.String getAdditionalInfoOrThrow(
+                java.lang.String key) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            java.util.Map<java.lang.String, java.lang.String> map =
+                    internalGetAdditionalInfo().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
+        }
+
+        public Builder clearAdditionalInfo() {
+            internalGetMutableAdditionalInfo().getMutableMap()
+                    .clear();
+            return this;
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+         */
+
+        public Builder removeAdditionalInfo(
+                java.lang.String key) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            internalGetMutableAdditionalInfo().getMutableMap()
+                    .remove(key);
+            return this;
+        }
+
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableAdditionalInfo() {
+            return internalGetMutableAdditionalInfo().getMutableMap();
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+         */
+        public Builder putAdditionalInfo(
+                java.lang.String key,
+                java.lang.String value) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            if (value == null) {
+                throw new java.lang.NullPointerException();
+            }
+            internalGetMutableAdditionalInfo().getMutableMap()
+                    .put(key, value);
+            return this;
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; additionalInfo = 4;</code>
+         */
+
+        public Builder putAllAdditionalInfo(
+                java.util.Map<java.lang.String, java.lang.String> values) {
+            internalGetMutableAdditionalInfo().getMutableMap()
+                    .putAll(values);
+            return this;
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         *
+         * @return Whether the errorMsg field is set.
+         */
+        public boolean hasErrorMsg() {
+            return errorMsgBuilder_ != null || errorMsg_ != null;
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         *
+         * @return The errorMsg.
+         */
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg() {
+            if (errorMsgBuilder_ == null) {
+                return errorMsg_ == null ? com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
+            } else {
+                return errorMsgBuilder_.getMessage();
+            }
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         */
+        public Builder setErrorMsg(
+                com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder builderForValue) {
+            if (errorMsgBuilder_ == null) {
+                errorMsg_ = builderForValue.build();
+                onChanged();
+            } else {
+                errorMsgBuilder_.setMessage(builderForValue.build());
+            }
+
+            return this;
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         */
+        public Builder setErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
+            if (errorMsgBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                errorMsg_ = value;
+                onChanged();
+            } else {
+                errorMsgBuilder_.setMessage(value);
+            }
+
+            return this;
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         */
+        public Builder mergeErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
+            if (errorMsgBuilder_ == null) {
+                if (errorMsg_ != null) {
+                    errorMsg_ =
+                            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.newBuilder(errorMsg_).mergeFrom(value).buildPartial();
+                } else {
+                    errorMsg_ = value;
+                }
+                onChanged();
+            } else {
+                errorMsgBuilder_.mergeFrom(value);
+            }
+
+            return this;
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         */
+        public Builder clearErrorMsg() {
+            if (errorMsgBuilder_ == null) {
+                errorMsg_ = null;
+                onChanged();
+            } else {
+                errorMsg_ = null;
+                errorMsgBuilder_ = null;
+            }
+
+            return this;
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         */
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder getErrorMsgBuilder() {
+
+            onChanged();
+            return getErrorMsgFieldBuilder().getBuilder();
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         */
+        public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder() {
+            if (errorMsgBuilder_ != null) {
+                return errorMsgBuilder_.getMessageOrBuilder();
+            } else {
+                return errorMsg_ == null ?
+                        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
+            }
+        }
+
+        /**
+         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder>
         getErrorMsgFieldBuilder() {
-      if (errorMsgBuilder_ == null) {
-        errorMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder>(
-                getErrorMsg(),
-                getParentForChildren(),
-                isClean());
-        errorMsg_ = null;
-      }
-      return errorMsgBuilder_;
+            if (errorMsgBuilder_ == null) {
+                errorMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder>(
+                        getErrorMsg(),
+                        getParentForChildren(),
+                        isClean());
+                errorMsg_ = null;
+            }
+            return errorMsgBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:cloudfs.protocol.NamespaceInfo)
     }
-    @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
-    }
-
-
-    // @@protoc_insertion_point(builder_scope:cloudfs.protocol.NamespaceInfo)
-  }
-
-  // @@protoc_insertion_point(class_scope:cloudfs.protocol.NamespaceInfo)
-  private static final com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo();
-  }
-
-  public static com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<NamespaceInfo>
-      PARSER = new com.google.protobuf.AbstractParser<NamespaceInfo>() {
-    @java.lang.Override
-    public NamespaceInfo parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new NamespaceInfo(input, extensionRegistry);
-    }
-  };
-
-  public static com.google.protobuf.Parser<NamespaceInfo> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<NamespaceInfo> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.aakash.cloudfs.protocol.proto.generated.stubs.NamespaceInfo getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
 
 }
 

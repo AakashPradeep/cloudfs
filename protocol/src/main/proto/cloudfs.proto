@@ -8,24 +8,35 @@ option objc_class_prefix = "CloudFs";
 package cloudfs.protocol;
 
 service CloudFSService {
-    rpc registerNameSpace(NamespaceInfoReq) returns (NamespaceInfo){}
+    rpc registerNameSpace (NamespaceInfoReq) returns (NamespaceInfo) {
+    }
 
-    rpc getNamespaceInfo (NamespaceName) returns (NamespaceInfo) {}
+    rpc getNamespaceInfo (NamespaceName) returns (NamespaceInfo) {
+    }
 
-    rpc exists (FSPathReq) returns (ExistMsg) {}
-    rpc getFileStatus (FSPathReq) returns (CFSFileStatus) {}
+    rpc exists (FSPathReq) returns (ExistMsg) {
+    }
+    rpc getFileStatus (FSPathReq) returns (CFSFileStatus) {
+    }
 
-    rpc getFileStatusMap (FSPathReq) returns (CFSFileStatusMap) {}
+    rpc getFileStatusMap (FSPathReq) returns (CFSFileStatusMap) {
+    }
 
-    rpc delete (DeleteFSReq) returns (ResultMsg) {}
+    rpc delete (DeleteFSReq) returns (ResultMsg) {
+    }
 
-    rpc rename (RenameFSPath) returns (RenameMsg) {}
-    rpc mkdirs (DirReq) returns (ResultMsg) {}
+    rpc rename (RenameFSPath) returns (RenameMsg) {
+    }
+    rpc mkdirs (DirReq) returns (ResultMsg) {
+    }
 
-    rpc createZeroByteFile (CreateFileReq) returns (ResultMsg) {}
-    rpc createOnUploadCompletion (CreateFileReq) returns (ResultMsg) {}
+    rpc createZeroByteFile (CreateFileReq) returns (ResultMsg) {
+    }
+    rpc createOnUploadCompletion (CreateFileReq) returns (ResultMsg) {
+    }
 
-    rpc updateFileStatus (CFSFileStatus) returns (CFSFileStatus) {}
+    rpc updateFileStatus (CFSFileStatus) returns (CFSFileStatus) {
+    }
 }
 
 message NamespaceInfoReq {
@@ -34,7 +45,7 @@ message NamespaceInfoReq {
     NamespaceName name = 3;
     string vendorUri = 4;
     string bucketName = 5;
-    map<string,string> additionalInfo = 6;
+    map<string, string> additionalInfo = 6;
 }
 
 message DeleteFSReq {
@@ -51,17 +62,17 @@ enum Status {
 }
 
 message RenameFSPath {
-    string namespace =1;
+    string namespace = 1;
     string owner = 2;
     repeated string group = 3;
     string srcPath = 4;
-    string dstPath =5;
+    string dstPath = 5;
     int64 reqTimeOutInMillis = 6;
 }
 
 message RenameMsg {
     bool success = 1;
-    ErrorMsg errorMsg =2;
+    ErrorMsg errorMsg = 2;
 }
 
 message ResultMsg {
@@ -77,7 +88,7 @@ message ErrorMsg {
 }
 
 message CFSFileStatusMap {
-    map<string,CFSFileStatus> cfsPathToFileStatusMap = 1;
+    map<string, CFSFileStatus> cfsPathToFileStatusMap = 1;
     ErrorMsg errorMsg = 2;
 }
 
@@ -139,7 +150,7 @@ message NamespaceInfo {
     string name = 1;
     string uri = 2;
     string bucketName = 3;
-    map<string,string> additionalInfo = 4;
+    map<string, string> additionalInfo = 4;
     ErrorMsg errorMsg = 5;
 }
 

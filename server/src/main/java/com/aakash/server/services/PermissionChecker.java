@@ -7,15 +7,16 @@ import org.apache.hadoop.fs.permission.FsAction;
 import java.util.List;
 
 public interface PermissionChecker {
-    default void init(Configuration configuration){}
+    default void init(Configuration configuration) {
+    }
 
     boolean check(short permission, String owner, List<String> groups, boolean isFile, FsAction fsAction) throws OperationNotPermittedException;
 
-    class DefaultPermissionCheckerImpl implements PermissionChecker{
+    class DefaultPermissionCheckerImpl implements PermissionChecker {
 
         @Override
         public boolean check(short permission, String owner, List<String> groups, boolean isFile, FsAction fsAction) throws OperationNotPermittedException {
-             return true;
+            return true;
         }
     }
 

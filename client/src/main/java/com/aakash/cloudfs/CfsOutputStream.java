@@ -38,7 +38,7 @@ public class CfsOutputStream extends OutputStream {
 
     @Override
     public void write(int b) throws IOException {
-        if(isClosed.get()){
+        if (isClosed.get()) {
             throw new IOException("file is already closed");
         }
         this.backupStream.write(b);
@@ -47,7 +47,7 @@ public class CfsOutputStream extends OutputStream {
 
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
-        if(isClosed.get()){
+        if (isClosed.get()) {
             throw new IOException("file is already closed");
         }
         this.backupStream.write(b, off, len);
@@ -56,7 +56,7 @@ public class CfsOutputStream extends OutputStream {
 
     @Override
     public void write(byte[] b) throws IOException {
-        if(isClosed.get()){
+        if (isClosed.get()) {
             throw new IOException("file is already closed");
         }
         this.backupStream.write(b);
@@ -70,10 +70,10 @@ public class CfsOutputStream extends OutputStream {
 
     @Override
     public void close() throws IOException {
-        if(isClosed.get()){
+        if (isClosed.get()) {
             return;
         }
-        isClosed.compareAndSet(false,true);
+        isClosed.compareAndSet(false, true);
         this.backupStream.close();
 
         try {

@@ -29,6 +29,7 @@ public class TrashQueue {
         private final Path path;
         private final Node node;
         private final long updateTime = utcTimeProvider.currentEpochTime();
+
         public TrashNode(Path path, Node node) {
             this.path = path;
             this.node = node;

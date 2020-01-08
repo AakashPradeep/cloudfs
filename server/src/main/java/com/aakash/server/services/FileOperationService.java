@@ -77,7 +77,6 @@ public class FileOperationService {
             }));
 
 
-
             return ResultMsg.newBuilder().setSuccess(resultNode.isPresent()).build();
         } finally {
             lockHandler.unlock();

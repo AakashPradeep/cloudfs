@@ -2,8 +2,6 @@ package com.aakash.server.in.memory.ds;
 
 import org.apache.hadoop.fs.Path;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Objects;
@@ -58,15 +56,6 @@ public class NodeInfo {
         return shortValueToStatusMap.get(this.status);
     }
 
-    public enum Status {
-        UNDER_WRITING(1), COMPLETED(2), UNDER_DELETE(3), DELETED(4);
-        private final short val;
-
-        Status(int val) {
-            this.val = (short) val;
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,5 +72,14 @@ public class NodeInfo {
         int result = Objects.hash(attribute, status);
         result = 31 * result + Arrays.hashCode(vendorPathUri);
         return result;
+    }
+
+    public enum Status {
+        UNDER_WRITING(1), COMPLETED(2), UNDER_DELETE(3), DELETED(4);
+        private final short val;
+
+        Status(int val) {
+            this.val = (short) val;
+        }
     }
 }

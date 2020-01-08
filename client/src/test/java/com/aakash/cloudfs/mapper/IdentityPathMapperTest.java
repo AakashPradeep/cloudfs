@@ -18,7 +18,7 @@ public class IdentityPathMapperTest {
                 "gs://testBucket/");
 
         Path expectedParentPath = new Path("gs://testBucket/com.aakash.ns1/test/a/b/c");
-        Assert.assertEquals(vendorPath.getName() + " is not as expected", vendorPath,expectedParentPath);
+        Assert.assertEquals(vendorPath.getName() + " is not as expected", vendorPath, expectedParentPath);
     }
 
     @Test
@@ -28,6 +28,6 @@ public class IdentityPathMapperTest {
                 "gs://testBucket/");
 
         Path expectedParentPath = new Path("gs://testBucket/com.aakash.ns1/test/a/b/c");
-        Assert.assertEquals(vendorPath.getName() + " is not as expected", vendorPath,expectedParentPath);
+        Assert.assertEquals(vendorPath.getName() + " is not as expected", vendorPath, expectedParentPath);
     }
 }

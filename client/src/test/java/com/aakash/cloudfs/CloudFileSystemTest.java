@@ -81,7 +81,7 @@ public class CloudFileSystemTest {
             FSDataOutputStream outputStream = fileSystem.create(filePath);
             try (final PrintWriter printWriter = new PrintWriter(new BufferedOutputStream(outputStream))) {
                 IntStream.range(0, 10000).forEach(i ->
-                        printWriter.write("Hello how are you doing times:" + i+"\n"));
+                        printWriter.write("Hello how are you doing times:" + i + "\n"));
             }
 
             Assert.assertTrue(fileSystem.exists(filePath));
@@ -122,7 +122,7 @@ public class CloudFileSystemTest {
             fileSystem.mkdirs(path);
 
             Path filePath = new Path(path, "c.txt");
-            try(FSDataOutputStream outputStream = fileSystem.create(filePath)){
+            try (FSDataOutputStream outputStream = fileSystem.create(filePath)) {
                 outputStream.close();
             }
             Assert.assertTrue(fileSystem.exists(filePath));
@@ -156,7 +156,7 @@ public class CloudFileSystemTest {
             fileSystem.mkdirs(path);
 
             Path filePath = new Path(path, "c.txt");
-            try(FSDataOutputStream outputStream = fileSystem.create(filePath)){
+            try (FSDataOutputStream outputStream = fileSystem.create(filePath)) {
                 outputStream.close();
             }
             Assert.assertTrue(fileSystem.exists(filePath));
@@ -167,8 +167,8 @@ public class CloudFileSystemTest {
                     outputStream.close();
                 }
 
-                Assert.fail("file creation should have failed as "+filePath+" already created");
-            }catch (FileAlreadyExistsException fe){
+                Assert.fail("file creation should have failed as " + filePath + " already created");
+            } catch (FileAlreadyExistsException fe) {
                 //expected
             }
 

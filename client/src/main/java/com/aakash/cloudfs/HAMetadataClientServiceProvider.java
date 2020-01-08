@@ -29,7 +29,7 @@ public interface HAMetadataClientServiceProvider {
         @Override
         public synchronized MetadataClientService provide(String namespace, Configuration configuration) throws IOException {
             final HostWithPort newHostWithPort = getMetadataServerHostWithPort(namespace, configuration);
-            if(newHostWithPort.equals(hostWithPort)){
+            if (newHostWithPort.equals(hostWithPort)) {
                 this.hostWithPort = newHostWithPort;
                 this.metadataClientService = new GrpcBasedMetadataClientServiceImpl(this.hostWithPort);
             }

@@ -37,7 +37,7 @@ class GrpcBasedMetadataClientServiceImpl implements MetadataClientService {
                 .setVendorUri(vendorURI)
                 .putAllAdditionalInfo(additionalInfo).build();
         NamespaceInfo namespaceInfo = this.blockingStub.registerNameSpace(namespaceInfoReq);
-        if(namespaceInfo.hasErrorMsg()){
+        if (namespaceInfo.hasErrorMsg()) {
             throw new IOException("Error While creating namesapce:" + namespace, new Exception(namespaceInfo.getErrorMsg().getMsg()));
         }
         return namespaceInfo;

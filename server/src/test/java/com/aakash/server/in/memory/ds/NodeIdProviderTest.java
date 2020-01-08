@@ -13,10 +13,10 @@ import java.util.stream.IntStream;
 public class NodeIdProviderTest {
 
     @Test
-    public void testUniqueId(){
+    public void testUniqueId() {
 
         Set<String> uniqueIds = new HashSet<>();
-        IntStream.range(0,10).forEach(
+        IntStream.range(0, 10).forEach(
                 i -> uniqueIds.add(new String(NodeIdProvider.INSTANCE.getNewUniqueId()))
         );
 
