@@ -1,0 +1,145 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.aakash.cloudfs.protocol.proto.generated.stubs";
+option java_outer_classname = "CloudFSServiceProto";
+option objc_class_prefix = "CloudFs";
+
+package cloudfs.protocol;
+
+service CloudFSService {
+    rpc registerNameSpace(NamespaceInfoReq) returns (NamespaceInfo){}
+
+    rpc getNamespaceInfo (NamespaceName) returns (NamespaceInfo) {}
+
+    rpc exists (FSPathReq) returns (ExistMsg) {}
+    rpc getFileStatus (FSPathReq) returns (CFSFileStatus) {}
+
+    rpc getFileStatusMap (FSPathReq) returns (CFSFileStatusMap) {}
+
+    rpc delete (DeleteFSReq) returns (ResultMsg) {}
+
+    rpc rename (RenameFSPath) returns (RenameMsg) {}
+    rpc mkdirs (DirReq) returns (ResultMsg) {}
+
+    rpc createZeroByteFile (CreateFileReq) returns (ResultMsg) {}
+    rpc createOnUploadCompletion (CreateFileReq) returns (ResultMsg) {}
+
+    rpc updateFileStatus (CFSFileStatus) returns (CFSFileStatus) {}
+}
+
+message NamespaceInfoReq {
+    string owner = 1;
+    string group = 2;
+    NamespaceName name = 3;
+    string vendorUri = 4;
+    string bucketName = 5;
+    map<string,string> additionalInfo = 6;
+}
+
+message DeleteFSReq {
+    FSPathReq fsPathReq = 1;
+    bool recursive = 2;
+    int64 reqTimeOutInMillis = 3;
+}
+
+enum Status {
+    UNDER_WRITING = 0;
+    COMPLETED = 1;
+    UNDER_DELETE = 2;
+    DELETED = 3;
+}
+
+message RenameFSPath {
+    string namespace =1;
+    string owner = 2;
+    repeated string group = 3;
+    string srcPath = 4;
+    string dstPath =5;
+    int64 reqTimeOutInMillis = 6;
+}
+
+message RenameMsg {
+    bool success = 1;
+    ErrorMsg errorMsg =2;
+}
+
+message ResultMsg {
+    FSPathReq cfsPath = 1;
+    Status status = 2;
+    bool success = 3;
+    ErrorMsg errorMsg = 4;
+}
+
+message ErrorMsg {
+    string type = 1;
+    string msg = 2;
+}
+
+message CFSFileStatusMap {
+    map<string,CFSFileStatus> cfsPathToFileStatusMap = 1;
+    ErrorMsg errorMsg = 2;
+}
+
+message Attribute {
+    bool isFile = 1;
+    string owner = 2;
+    string group = 3;
+    int32 permission = 4;
+    int64 createdTime = 5;
+    int64 lastModifiedTime = 6;
+    int64 lastAccessedTime = 7;
+    int64 fileSize = 8;
+    int32 replication = 9;
+    int64 blockSize = 10;
+}
+
+message CFSFileStatus {
+    Attribute attribute = 1;
+    string vendorPath = 2;
+    Status status = 3;
+    string cfsPath = 4;
+    ErrorMsg errorMsg = 5;
+}
+
+
+message ExistMsg {
+    bool exists = 1;
+    ErrorMsg errorMsg = 2;
+}
+
+message CreateFileReq {
+    FSPathReq fsPath = 1;
+    int32 permission = 2;
+    int32 replication = 3;
+    int64 blockSize = 4;
+    int64 fileSize = 5;
+    string vendorPath = 6;
+    int64 reqTimeOutInMillis = 7;
+}
+
+message DirReq {
+    FSPathReq fsPath = 1;
+    int32 permission = 2;
+    int64 reqTimeOutInMillis = 3;
+}
+
+message FSPathReq {
+    NamespaceName namespace = 1;
+    string path = 2;
+    string owner = 3;
+    repeated string groups = 4;
+}
+
+message NamespaceName {
+    string name = 1;
+}
+
+message NamespaceInfo {
+    string name = 1;
+    string uri = 2;
+    string bucketName = 3;
+    map<string,string> additionalInfo = 4;
+    ErrorMsg errorMsg = 5;
+}
+
