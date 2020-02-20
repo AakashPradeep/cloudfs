@@ -4,8 +4,8 @@ public class DirContainer {
     public static final String name = "/";
     private final Node rootNode;
 
-    public DirContainer(NodeAttribute nodeAttribute) {
-        this.rootNode = new Node(NodeInfo.createDirNodeInfo(nodeAttribute));
+    public DirContainer(NodeAttribute inMemoryNodeAttribute) {
+        this.rootNode = new Node(InMemoryNodeInfo.createDirNodeInfo(inMemoryNodeAttribute));
     }
 
     public Node getRootNode() {

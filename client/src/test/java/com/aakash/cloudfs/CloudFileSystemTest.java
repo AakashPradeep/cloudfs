@@ -1,5 +1,6 @@
 package com.aakash.cloudfs;
 
+import com.google.common.base.Stopwatch;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
 import org.junit.Assert;
@@ -9,6 +10,8 @@ import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collections;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 public class CloudFileSystemTest {
@@ -177,6 +180,54 @@ public class CloudFileSystemTest {
             Assert.assertEquals("dir count is not as expected", contentSummary.getDirectoryCount(), 1);
             Assert.assertEquals("dir size is not as expected", contentSummary.getLength(), 0);
             Assert.assertEquals("dir space consumed is not as expected", contentSummary.getSpaceConsumed(), 0);
+
+        } finally {
+            if (fileSystem.exists(path)) {
+                fileSystem.delete(path, true);
+            }
+        }
+    }
+
+    @Test
+    public void testCreateAMillionFile() throws IOException {
+        Configuration configuration = new Configuration();
+        configuration.set(Constants.FS_CFS_HA_METADATA_CLIENT_SERVICE_PROVIDER_CLASS, HAMetadataClientServiceProvider.LocalInMemoryMetadataClientStoreServiceProvider.class.getName());
+
+        String namespace = "test.create.million.file.ns1";
+        MetadataClientService metadataClientService = new HAMetadataClientServiceProvider.LocalInMemoryMetadataClientStoreServiceProvider().provide(namespace, configuration);
+        metadataClientService.registerNewNamespace("test1", "grp1", namespace, "/", "tmp", Collections.emptyMap());
+
+        Path path = new Path("cfs://" + namespace + "/a/b");
+        final FileSystem fileSystem = path.getFileSystem(configuration);
+
+        try {
+            fileSystem.mkdirs(path);
+
+            Stopwatch stopwatch = Stopwatch.createStarted();
+            Stopwatch internalStopwatch = Stopwatch.createStarted();
+
+            final int numMaxFiles = 1_000;
+            for (int i = 0; i < numMaxFiles; i++) {
+                String newFile = UUID.randomUUID().toString();
+                Path filePath = new Path(path, newFile + ".txt");
+                try (FSDataOutputStream outputStream = fileSystem.create(filePath)) {
+                    outputStream.close();
+                }
+
+                FileStatus fileStatus = fileSystem.getFileStatus(filePath);
+                Assert.assertNotNull(fileStatus);
+                Assert.assertEquals(true,fileStatus.isFile());
+                Assert.assertTrue(fileSystem.exists(filePath));
+                if (i % 5000 == 0) {
+                    internalStopwatch.stop();
+                    System.out.println("created 5000 files, time:"+stopwatch.elapsed(TimeUnit.MILLISECONDS)+" ::"+stopwatch.elapsed(TimeUnit.SECONDS));
+                    System.out.println("created 5000 files, time:"+internalStopwatch.elapsed(TimeUnit.MILLISECONDS)+" ::"+internalStopwatch.elapsed(TimeUnit.SECONDS));
+                    internalStopwatch = Stopwatch.createStarted();
+                }
+            }
+
+            ContentSummary contentSummary = fileSystem.getContentSummary(path);
+            Assert.assertEquals("file count is not as expected", contentSummary.getFileCount(), numMaxFiles);
 
         } finally {
             if (fileSystem.exists(path)) {

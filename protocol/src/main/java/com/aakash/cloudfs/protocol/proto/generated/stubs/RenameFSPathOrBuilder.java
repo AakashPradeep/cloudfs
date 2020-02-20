@@ -4,105 +4,85 @@
 package com.aakash.cloudfs.protocol.proto.generated.stubs;
 
 public interface RenameFSPathOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:cloudfs.protocol.RenameFSPath)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:cloudfs.protocol.RenameFSPath)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>string namespace = 1;</code>
-     *
-     * @return The namespace.
-     */
-    java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 1;</code>
+   * @return The namespace.
+   */
+  java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 1;</code>
+   * @return The bytes for namespace.
+   */
+  com.google.protobuf.ByteString
+      getNamespaceBytes();
 
-    /**
-     * <code>string namespace = 1;</code>
-     *
-     * @return The bytes for namespace.
-     */
-    com.google.protobuf.ByteString
-    getNamespaceBytes();
+  /**
+   * <code>string owner = 2;</code>
+   * @return The owner.
+   */
+  java.lang.String getOwner();
+  /**
+   * <code>string owner = 2;</code>
+   * @return The bytes for owner.
+   */
+  com.google.protobuf.ByteString
+      getOwnerBytes();
 
-    /**
-     * <code>string owner = 2;</code>
-     *
-     * @return The owner.
-     */
-    java.lang.String getOwner();
+  /**
+   * <code>repeated string group = 3;</code>
+   * @return A list containing the group.
+   */
+  java.util.List<java.lang.String>
+      getGroupList();
+  /**
+   * <code>repeated string group = 3;</code>
+   * @return The count of group.
+   */
+  int getGroupCount();
+  /**
+   * <code>repeated string group = 3;</code>
+   * @param index The index of the element to return.
+   * @return The group at the given index.
+   */
+  java.lang.String getGroup(int index);
+  /**
+   * <code>repeated string group = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the group at the given index.
+   */
+  com.google.protobuf.ByteString
+      getGroupBytes(int index);
 
-    /**
-     * <code>string owner = 2;</code>
-     *
-     * @return The bytes for owner.
-     */
-    com.google.protobuf.ByteString
-    getOwnerBytes();
+  /**
+   * <code>string srcPath = 4;</code>
+   * @return The srcPath.
+   */
+  java.lang.String getSrcPath();
+  /**
+   * <code>string srcPath = 4;</code>
+   * @return The bytes for srcPath.
+   */
+  com.google.protobuf.ByteString
+      getSrcPathBytes();
 
-    /**
-     * <code>repeated string group = 3;</code>
-     *
-     * @return A list containing the group.
-     */
-    java.util.List<java.lang.String>
-    getGroupList();
+  /**
+   * <code>string dstPath = 5;</code>
+   * @return The dstPath.
+   */
+  java.lang.String getDstPath();
+  /**
+   * <code>string dstPath = 5;</code>
+   * @return The bytes for dstPath.
+   */
+  com.google.protobuf.ByteString
+      getDstPathBytes();
 
-    /**
-     * <code>repeated string group = 3;</code>
-     *
-     * @return The count of group.
-     */
-    int getGroupCount();
-
-    /**
-     * <code>repeated string group = 3;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The group at the given index.
-     */
-    java.lang.String getGroup(int index);
-
-    /**
-     * <code>repeated string group = 3;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the group at the given index.
-     */
-    com.google.protobuf.ByteString
-    getGroupBytes(int index);
-
-    /**
-     * <code>string srcPath = 4;</code>
-     *
-     * @return The srcPath.
-     */
-    java.lang.String getSrcPath();
-
-    /**
-     * <code>string srcPath = 4;</code>
-     *
-     * @return The bytes for srcPath.
-     */
-    com.google.protobuf.ByteString
-    getSrcPathBytes();
-
-    /**
-     * <code>string dstPath = 5;</code>
-     *
-     * @return The dstPath.
-     */
-    java.lang.String getDstPath();
-
-    /**
-     * <code>string dstPath = 5;</code>
-     *
-     * @return The bytes for dstPath.
-     */
-    com.google.protobuf.ByteString
-    getDstPathBytes();
-
-    /**
-     * <code>int64 reqTimeOutInMillis = 6;</code>
-     *
-     * @return The reqTimeOutInMillis.
-     */
-    long getReqTimeOutInMillis();
+  /**
+   * <code>int64 reqTimeOutInMillis = 6;</code>
+   * @return The reqTimeOutInMillis.
+   */
+  long getReqTimeOutInMillis();
 }

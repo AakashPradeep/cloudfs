@@ -26,6 +26,11 @@
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.aakash</groupId>
             <artifactId>protocol</artifactId>
         </dependency>
@@ -37,11 +42,6 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-api</artifactId>
             <version>RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aakash</groupId>
-            <artifactId>protocol</artifactId>
-            <version>0.1-snapshot</version>
         </dependency>
         <dependency>
             <groupId>com.aakash</groupId>

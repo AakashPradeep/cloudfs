@@ -1,4 +1,4 @@
-package com.aakash.server.in.memory.ds;
+package com.aakash.server.ds;
 
 import java.net.Inet6Address;
 import java.net.UnknownHostException;
