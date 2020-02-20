@@ -2,7 +2,7 @@ package com.aakash.server.services;
 
 import com.aakash.bean.NamespaceInfo;
 import com.aakash.server.in.memory.ds.DirContainer;
-import com.aakash.server.in.memory.ds.Node;
+import com.aakash.server.ds.Node;
 import com.aakash.server.in.memory.ds.TrashQueue;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
