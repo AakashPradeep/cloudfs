@@ -2,7 +2,7 @@ package com.aakash.server.off.heap.ds;
 
 import com.aakash.server.exceptions.SerializationException;
 import com.aakash.server.in.memory.ds.InMemoryNodeAttribute;
-import com.aakash.server.in.memory.ds.NodeAttribute;
+import com.aakash.server.ds.NodeAttribute;
 import com.aakash.server.in.memory.ds.NodeAttributeBuilder;
 import org.junit.Assert;
 import org.junit.Test;

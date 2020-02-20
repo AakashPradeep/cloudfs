@@ -1,5 +1,6 @@
 package com.aakash.server.in.memory.ds;
 
+import com.aakash.server.ds.NodeAttribute;
 import com.aakash.server.exceptions.SerializationException;
 import com.aakash.server.off.heap.ds.OffHeapNodeAttribute;
 import com.aakash.server.off.heap.ds.OffHeapReaderWriter;

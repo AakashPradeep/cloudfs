@@ -8,7 +8,7 @@ import com.aakash.server.exceptions.NamsepaceAlreadyExistException;
 import com.aakash.server.in.memory.ds.DirContainer;
 import com.aakash.server.ds.NamespaceContainer;
 import com.aakash.server.in.memory.ds.InMemoryNodeAttribute;
-import com.aakash.server.in.memory.ds.NodeAttribute;
+import com.aakash.server.ds.NodeAttribute;
 import com.aakash.server.in.memory.ds.TrashQueue;
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang.StringUtils;

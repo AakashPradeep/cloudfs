@@ -1,5 +1,7 @@
 package com.aakash.server.in.memory.ds;
 
+import com.aakash.server.ds.NodeAttribute;
+import com.aakash.server.ds.NodeInfo;
 import org.apache.hadoop.fs.Path;
 
 import java.util.Objects;

@@ -5,7 +5,6 @@ import com.aakash.in.memory.ds.LockService;
 import com.aakash.server.exceptions.NamespaceDoesNotExist;
 import com.aakash.server.exceptions.NamsepaceAlreadyExistException;
 import com.aakash.server.in.memory.ds.DirContainer;
-import com.aakash.server.in.memory.ds.NodeAttribute;
 import com.aakash.server.in.memory.ds.TrashQueue;
 
 import java.util.Map;

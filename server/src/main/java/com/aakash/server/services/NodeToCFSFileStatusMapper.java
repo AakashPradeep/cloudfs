@@ -2,10 +2,9 @@ package com.aakash.server.services;
 
 import com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute;
 import com.aakash.cloudfs.protocol.proto.generated.stubs.CFSFileStatus;
-import com.aakash.server.in.memory.ds.NodeAttribute;
-import com.aakash.server.in.memory.ds.Node;
-import com.aakash.server.in.memory.ds.InMemoryNodeInfo;
-import com.aakash.server.in.memory.ds.NodeInfo;
+import com.aakash.server.ds.NodeAttribute;
+import com.aakash.server.ds.Node;
+import com.aakash.server.ds.NodeInfo;
 import org.apache.hadoop.fs.Path;
 
 import java.util.function.BiFunction;

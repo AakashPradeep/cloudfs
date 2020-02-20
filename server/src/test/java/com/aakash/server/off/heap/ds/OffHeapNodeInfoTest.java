@@ -1,5 +1,7 @@
 package com.aakash.server.off.heap.ds;
 
+import com.aakash.server.ds.NodeAttribute;
+import com.aakash.server.ds.NodeInfo;
 import com.aakash.server.exceptions.SerializationException;
 import com.aakash.server.in.memory.ds.*;
 import org.junit.Assert;

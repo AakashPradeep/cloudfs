@@ -11,7 +11,7 @@ import com.aakash.server.services.TransactionService.TransactionEntry;
  * <p>
  * Its a double link list so that delete can be performed from any node.
  *
- * @param <T> The data to be store in current case its {@link com.aakash.server.in.memory.ds.Node}
+ * @param <T> The data to be store in current case its {@link Node}
  */
 public class MultiVersionNode<T> {
     private VersionNode<T> head;

@@ -1,6 +1,6 @@
 package com.aakash.server.services;
 
-import com.aakash.server.in.memory.ds.Node;
+import com.aakash.server.ds.Node;
 
 public interface Visitor<T> {
     Visitor<Boolean> DO_NOTHING_VISITOR = () -> node -> true;
