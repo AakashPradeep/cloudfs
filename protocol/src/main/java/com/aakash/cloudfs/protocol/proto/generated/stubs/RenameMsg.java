@@ -6,712 +6,662 @@ package com.aakash.cloudfs.protocol.proto.generated.stubs;
 /**
  * Protobuf type {@code cloudfs.protocol.RenameMsg}
  */
-public final class RenameMsg extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:cloudfs.protocol.RenameMsg)
-        RenameMsgOrBuilder {
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    public static final int ERRORMSG_FIELD_NUMBER = 2;
-    private static final long serialVersionUID = 0L;
-    // @@protoc_insertion_point(class_scope:cloudfs.protocol.RenameMsg)
-    private static final com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg DEFAULT_INSTANCE;
-    private static final com.google.protobuf.Parser<RenameMsg>
-            PARSER = new com.google.protobuf.AbstractParser<RenameMsg>() {
-        @java.lang.Override
-        public RenameMsg parsePartialFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return new RenameMsg(input, extensionRegistry);
-        }
-    };
+public  final class RenameMsg extends
+    com.google.protobuf.GeneratedMessageV3 implements
+    // @@protoc_insertion_point(message_implements:cloudfs.protocol.RenameMsg)
+    RenameMsgOrBuilder {
+private static final long serialVersionUID = 0L;
+  // Use RenameMsg.newBuilder() to construct.
+  private RenameMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+  private RenameMsg() {
+  }
 
-    static {
-        DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg();
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RenameMsg();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
+  private RenameMsg(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
     }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
+    try {
+      boolean done = false;
+      while (!done) {
+        int tag = input.readTag();
+        switch (tag) {
+          case 0:
+            done = true;
+            break;
+          case 8: {
 
-    private boolean success_;
-    private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
-    private byte memoizedIsInitialized = -1;
-    // Use RenameMsg.newBuilder() to construct.
-    private RenameMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-    }
-
-    private RenameMsg() {
-    }
-
-    private RenameMsg(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-            boolean done = false;
-            while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                    case 0:
-                        done = true;
-                        break;
-                    case 8: {
-
-                        success_ = input.readBool();
-                        break;
-                    }
-                    case 18: {
-                        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder subBuilder = null;
-                        if (errorMsg_ != null) {
-                            subBuilder = errorMsg_.toBuilder();
-                        }
-                        errorMsg_ = input.readMessage(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.parser(), extensionRegistry);
-                        if (subBuilder != null) {
-                            subBuilder.mergeFrom(errorMsg_);
-                            errorMsg_ = subBuilder.buildPartial();
-                        }
-
-                        break;
-                    }
-                    default: {
-                        if (!parseUnknownField(
-                                input, unknownFields, extensionRegistry, tag)) {
-                            done = true;
-                        }
-                        break;
-                    }
-                }
+            success_ = input.readBool();
+            break;
+          }
+          case 18: {
+            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder subBuilder = null;
+            if (errorMsg_ != null) {
+              subBuilder = errorMsg_.toBuilder();
             }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                    e).setUnfinishedMessage(this);
-        } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
+            errorMsg_ = input.readMessage(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(errorMsg_);
+              errorMsg_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
+      }
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw e.setUnfinishedMessage(this);
+    } catch (java.io.IOException e) {
+      throw new com.google.protobuf.InvalidProtocolBufferException(
+          e).setUnfinishedMessage(this);
+    } finally {
+      this.unknownFields = unknownFields.build();
+      makeExtensionsImmutable();
     }
+  }
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_descriptor;
+  }
 
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+    return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.Builder.class);
+  }
+
+  public static final int SUCCESS_FIELD_NUMBER = 1;
+  private boolean success_;
+  /**
+   * <code>bool success = 1;</code>
+   * @return The success.
+   */
+  public boolean getSuccess() {
+    return success_;
+  }
+
+  public static final int ERRORMSG_FIELD_NUMBER = 2;
+  private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
+  /**
+   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+   * @return Whether the errorMsg field is set.
+   */
+  public boolean hasErrorMsg() {
+    return errorMsg_ != null;
+  }
+  /**
+   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+   * @return The errorMsg.
+   */
+  public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg() {
+    return errorMsg_ == null ? com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
+  }
+  /**
+   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+   */
+  public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder() {
+    return getErrorMsg();
+  }
+
+  private byte memoizedIsInitialized = -1;
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
+    if (success_ != false) {
+      output.writeBool(1, success_);
+    }
+    if (errorMsg_ != null) {
+      output.writeMessage(2, getErrorMsg());
+    }
+    unknownFields.writeTo(output);
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    if (success_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(1, success_);
+    }
+    if (errorMsg_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getErrorMsg());
+    }
+    size += unknownFields.getSerializedSize();
+    memoizedSize = size;
+    return size;
+  }
+
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
+    if (obj == this) {
+     return true;
+    }
+    if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg)) {
+      return super.equals(obj);
+    }
+    com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg other = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg) obj;
+
+    if (getSuccess()
+        != other.getSuccess()) return false;
+    if (hasErrorMsg() != other.hasErrorMsg()) return false;
+    if (hasErrorMsg()) {
+      if (!getErrorMsg()
+          .equals(other.getErrorMsg())) return false;
+    }
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSuccess());
+    if (hasErrorMsg()) {
+      hash = (37 * hash) + ERRORMSG_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorMsg().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseDelimitedFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public Builder newBuilderForType() { return newBuilder(); }
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+  public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    Builder builder = new Builder(parent);
+    return builder;
+  }
+  /**
+   * Protobuf type {@code cloudfs.protocol.RenameMsg}
+   */
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      // @@protoc_insertion_point(builder_implements:cloudfs.protocol.RenameMsg)
+      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsgOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_descriptor;
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            java.nio.ByteBuffer data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-                .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-    }
-
-    public static com.google.protobuf.Parser<RenameMsg> parser() {
-        return PARSER;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-            UnusedPrivateParameter unused) {
-        return new RenameMsg();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-        return this.unknownFields;
+        getDescriptor() {
+      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-        return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.Builder.class);
+        internalGetFieldAccessorTable() {
+      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.Builder.class);
     }
 
-    /**
-     * <code>bool success = 1;</code>
-     *
-     * @return The success.
-     */
-    public boolean getSuccess() {
-        return success_;
+    // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.newBuilder()
+    private Builder() {
+      maybeForceBuilderInitialization();
     }
 
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-     *
-     * @return Whether the errorMsg field is set.
-     */
-    public boolean hasErrorMsg() {
-        return errorMsg_ != null;
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
     }
-
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-     *
-     * @return The errorMsg.
-     */
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg() {
-        return errorMsg_ == null ? com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+      }
     }
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      success_ = false;
 
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-     */
-    public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder() {
-        return getErrorMsg();
+      if (errorMsgBuilder_ == null) {
+        errorMsg_ = null;
+      } else {
+        errorMsg_ = null;
+        errorMsgBuilder_ = null;
+      }
+      return this;
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
-        if (success_ != false) {
-            output.writeBool(1, success_);
-        }
-        if (errorMsg_ != null) {
-            output.writeMessage(2, getErrorMsg());
-        }
-        unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (success_ != false) {
-            size += com.google.protobuf.CodedOutputStream
-                    .computeBoolSize(1, success_);
-        }
-        if (errorMsg_ != null) {
-            size += com.google.protobuf.CodedOutputStream
-                    .computeMessageSize(2, getErrorMsg());
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg)) {
-            return super.equals(obj);
-        }
-        com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg other = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg) obj;
-
-        if (getSuccess()
-                != other.getSuccess()) return false;
-        if (hasErrorMsg() != other.hasErrorMsg()) return false;
-        if (hasErrorMsg()) {
-            if (!getErrorMsg()
-                    .equals(other.getErrorMsg())) return false;
-        }
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-        if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-                getSuccess());
-        if (hasErrorMsg()) {
-            hash = (37 * hash) + ERRORMSG_FIELD_NUMBER;
-            hash = (53 * hash) + getErrorMsg().hashCode();
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-        return newBuilder();
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-                ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<RenameMsg> getParserForType() {
-        return PARSER;
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+      return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_descriptor;
     }
 
     @java.lang.Override
     public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
+      return com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.getDefaultInstance();
     }
 
+    @java.lang.Override
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg build() {
+      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg result = buildPartial();
+      if (!result.isInitialized()) {
+        throw newUninitializedMessageException(result);
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg buildPartial() {
+      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg result = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg(this);
+      result.success_ = success_;
+      if (errorMsgBuilder_ == null) {
+        result.errorMsg_ = errorMsg_;
+      } else {
+        result.errorMsg_ = errorMsgBuilder_.build();
+      }
+      onBuilt();
+      return result;
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg) {
+        return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg)other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
+    }
+
+    public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg other) {
+      if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.getDefaultInstance()) return this;
+      if (other.getSuccess() != false) {
+        setSuccess(other.getSuccess());
+      }
+      if (other.hasErrorMsg()) {
+        mergeErrorMsg(other.getErrorMsg());
+      }
+      this.mergeUnknownFields(other.unknownFields);
+      onChanged();
+      return this;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parsedMessage = null;
+      try {
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg) e.getUnfinishedMessage();
+        throw e.unwrapIOException();
+      } finally {
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
+      return this;
+    }
+
+    private boolean success_ ;
     /**
-     * Protobuf type {@code cloudfs.protocol.RenameMsg}
+     * <code>bool success = 1;</code>
+     * @return The success.
      */
-    public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:cloudfs.protocol.RenameMsg)
-            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsgOrBuilder {
-        private boolean success_;
-        private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-                com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder> errorMsgBuilder_;
-
-        // Construct using com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.newBuilder()
-        private Builder() {
-            maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.class, com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.Builder.class);
-        }
-
-        private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
-        }
-
-        @java.lang.Override
-        public Builder clear() {
-            super.clear();
-            success_ = false;
-
-            if (errorMsgBuilder_ == null) {
-                errorMsg_ = null;
-            } else {
-                errorMsg_ = null;
-                errorMsgBuilder_ = null;
-            }
-            return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-            return com.aakash.cloudfs.protocol.proto.generated.stubs.CloudFSServiceProto.internal_static_cloudfs_protocol_RenameMsg_descriptor;
-        }
-
-        @java.lang.Override
-        public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg getDefaultInstanceForType() {
-            return com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg build() {
-            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg result = buildPartial();
-            if (!result.isInitialized()) {
-                throw newUninitializedMessageException(result);
-            }
-            return result;
-        }
-
-        @java.lang.Override
-        public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg buildPartial() {
-            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg result = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg(this);
-            result.success_ = success_;
-            if (errorMsgBuilder_ == null) {
-                result.errorMsg_ = errorMsg_;
-            } else {
-                result.errorMsg_ = errorMsgBuilder_.build();
-            }
-            onBuilt();
-            return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-            return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                java.lang.Object value) {
-            return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(
-                com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(
-                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                int index, java.lang.Object value) {
-            return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                java.lang.Object value) {
-            return super.addRepeatedField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg) {
-                return mergeFrom((com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg) other);
-            } else {
-                super.mergeFrom(other);
-                return this;
-            }
-        }
-
-        public Builder mergeFrom(com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg other) {
-            if (other == com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg.getDefaultInstance()) return this;
-            if (other.getSuccess() != false) {
-                setSuccess(other.getSuccess());
-            }
-            if (other.hasErrorMsg()) {
-                mergeErrorMsg(other.getErrorMsg());
-            }
-            this.mergeUnknownFields(other.unknownFields);
-            onChanged();
-            return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg parsedMessage = null;
-            try {
-                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                parsedMessage = (com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg) e.getUnfinishedMessage();
-                throw e.unwrapIOException();
-            } finally {
-                if (parsedMessage != null) {
-                    mergeFrom(parsedMessage);
-                }
-            }
-            return this;
-        }
-
-        /**
-         * <code>bool success = 1;</code>
-         *
-         * @return The success.
-         */
-        public boolean getSuccess() {
-            return success_;
-        }
-
-        /**
-         * <code>bool success = 1;</code>
-         *
-         * @param value The success to set.
-         * @return This builder for chaining.
-         */
-        public Builder setSuccess(boolean value) {
-
-            success_ = value;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>bool success = 1;</code>
-         *
-         * @return This builder for chaining.
-         */
-        public Builder clearSuccess() {
-
-            success_ = false;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         *
-         * @return Whether the errorMsg field is set.
-         */
-        public boolean hasErrorMsg() {
-            return errorMsgBuilder_ != null || errorMsg_ != null;
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         *
-         * @return The errorMsg.
-         */
-        public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg() {
-            if (errorMsgBuilder_ == null) {
-                return errorMsg_ == null ? com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
-            } else {
-                return errorMsgBuilder_.getMessage();
-            }
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         */
-        public Builder setErrorMsg(
-                com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder builderForValue) {
-            if (errorMsgBuilder_ == null) {
-                errorMsg_ = builderForValue.build();
-                onChanged();
-            } else {
-                errorMsgBuilder_.setMessage(builderForValue.build());
-            }
-
-            return this;
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         */
-        public Builder setErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
-            if (errorMsgBuilder_ == null) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                errorMsg_ = value;
-                onChanged();
-            } else {
-                errorMsgBuilder_.setMessage(value);
-            }
-
-            return this;
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         */
-        public Builder mergeErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
-            if (errorMsgBuilder_ == null) {
-                if (errorMsg_ != null) {
-                    errorMsg_ =
-                            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.newBuilder(errorMsg_).mergeFrom(value).buildPartial();
-                } else {
-                    errorMsg_ = value;
-                }
-                onChanged();
-            } else {
-                errorMsgBuilder_.mergeFrom(value);
-            }
-
-            return this;
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         */
-        public Builder clearErrorMsg() {
-            if (errorMsgBuilder_ == null) {
-                errorMsg_ = null;
-                onChanged();
-            } else {
-                errorMsg_ = null;
-                errorMsgBuilder_ = null;
-            }
-
-            return this;
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         */
-        public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder getErrorMsgBuilder() {
-
-            onChanged();
-            return getErrorMsgFieldBuilder().getBuilder();
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         */
-        public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder() {
-            if (errorMsgBuilder_ != null) {
-                return errorMsgBuilder_.getMessageOrBuilder();
-            } else {
-                return errorMsg_ == null ?
-                        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
-            }
-        }
-
-        /**
-         * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-                com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder>
-        getErrorMsgFieldBuilder() {
-            if (errorMsgBuilder_ == null) {
-                errorMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder>(
-                        getErrorMsg(),
-                        getParentForChildren(),
-                        isClean());
-                errorMsg_ = null;
-            }
-            return errorMsgBuilder_;
-        }
-
-        @java.lang.Override
-        public final Builder setUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:cloudfs.protocol.RenameMsg)
+    public boolean getSuccess() {
+      return success_;
     }
+    /**
+     * <code>bool success = 1;</code>
+     * @param value The success to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuccess(boolean value) {
+      
+      success_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool success = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSuccess() {
+      
+      success_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg errorMsg_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder> errorMsgBuilder_;
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     * @return Whether the errorMsg field is set.
+     */
+    public boolean hasErrorMsg() {
+      return errorMsgBuilder_ != null || errorMsg_ != null;
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     * @return The errorMsg.
+     */
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg() {
+      if (errorMsgBuilder_ == null) {
+        return errorMsg_ == null ? com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
+      } else {
+        return errorMsgBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    public Builder setErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
+      if (errorMsgBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        errorMsg_ = value;
+        onChanged();
+      } else {
+        errorMsgBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    public Builder setErrorMsg(
+        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder builderForValue) {
+      if (errorMsgBuilder_ == null) {
+        errorMsg_ = builderForValue.build();
+        onChanged();
+      } else {
+        errorMsgBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    public Builder mergeErrorMsg(com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg value) {
+      if (errorMsgBuilder_ == null) {
+        if (errorMsg_ != null) {
+          errorMsg_ =
+            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.newBuilder(errorMsg_).mergeFrom(value).buildPartial();
+        } else {
+          errorMsg_ = value;
+        }
+        onChanged();
+      } else {
+        errorMsgBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    public Builder clearErrorMsg() {
+      if (errorMsgBuilder_ == null) {
+        errorMsg_ = null;
+        onChanged();
+      } else {
+        errorMsg_ = null;
+        errorMsgBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder getErrorMsgBuilder() {
+      
+      onChanged();
+      return getErrorMsgFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    public com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder() {
+      if (errorMsgBuilder_ != null) {
+        return errorMsgBuilder_.getMessageOrBuilder();
+      } else {
+        return errorMsg_ == null ?
+            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.getDefaultInstance() : errorMsg_;
+      }
+    }
+    /**
+     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder> 
+        getErrorMsgFieldBuilder() {
+      if (errorMsgBuilder_ == null) {
+        errorMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg.Builder, com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder>(
+                getErrorMsg(),
+                getParentForChildren(),
+                isClean());
+        errorMsg_ = null;
+      }
+      return errorMsgBuilder_;
+    }
+    @java.lang.Override
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.setUnknownFields(unknownFields);
+    }
+
+    @java.lang.Override
+    public final Builder mergeUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.mergeUnknownFields(unknownFields);
+    }
+
+
+    // @@protoc_insertion_point(builder_scope:cloudfs.protocol.RenameMsg)
+  }
+
+  // @@protoc_insertion_point(class_scope:cloudfs.protocol.RenameMsg)
+  private static final com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg DEFAULT_INSTANCE;
+  static {
+    DEFAULT_INSTANCE = new com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg();
+  }
+
+  public static com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  private static final com.google.protobuf.Parser<RenameMsg>
+      PARSER = new com.google.protobuf.AbstractParser<RenameMsg>() {
+    @java.lang.Override
+    public RenameMsg parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return new RenameMsg(input, extensionRegistry);
+    }
+  };
+
+  public static com.google.protobuf.Parser<RenameMsg> parser() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Parser<RenameMsg> getParserForType() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.aakash.cloudfs.protocol.proto.generated.stubs.RenameMsg getDefaultInstanceForType() {
+    return DEFAULT_INSTANCE;
+  }
 
 }
 

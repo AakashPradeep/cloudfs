@@ -7,6 +7,7 @@ import org.apache.hadoop.fs.permission.FsAction;
 import java.util.List;
 
 public interface PermissionChecker {
+
     default void init(Configuration configuration) {
     }
 

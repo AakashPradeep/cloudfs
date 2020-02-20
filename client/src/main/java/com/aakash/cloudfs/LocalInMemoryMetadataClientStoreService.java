@@ -4,6 +4,7 @@ import com.aakash.cloudfs.protocol.proto.generated.stubs.*;
 import com.aakash.server.services.FileOperationService;
 import com.aakash.server.services.NamespaceContainerService;
 import com.aakash.server.services.ServiceProvider;
+import com.aakash.server.services.TransactionService;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.permission.FsPermission;
 
@@ -59,10 +60,13 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
                 .setOwner(owner).addAllGroups(groups).setPath(f.toString()).build();
         final DirReq dirReq = DirReq.newBuilder().setFsPath(fsPath).setPermission(permission.toShort()).build();
         FileOperationService service = getFileOperationService();
-        ResultMsg resultMsg = executeFunction(() -> service.mkdirs(dirReq));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        ResultMsg resultMsg = executeFunction(() -> service.mkdirs(transactionEntry, dirReq));
         if (!resultMsg.getSuccess()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(resultMsg.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return resultMsg.getSuccess();
     }
 
@@ -70,15 +74,22 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
         return executeFunction(() -> ServiceProvider.getSingeltonInstance().getFileOperationService());
     }
 
+    private TransactionService getTransactionService() {
+        return ServiceProvider.getSingeltonInstance().getTransactionService();
+    }
+
 
     public CFSFileStatus getFileStatus(String namespace, Path f, String owner, List<String> groups) throws IOException {
         final FSPathReq fsPath = FSPathReq.newBuilder().setNamespace(NamespaceName.newBuilder().setName(namespace).build())
                 .setOwner(owner).addAllGroups(groups).setPath(f.toString()).build();
         FileOperationService service = getFileOperationService();
-        CFSFileStatus fileStatus = executeFunction(() -> service.getFileStatus(fsPath));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        CFSFileStatus fileStatus = executeFunction(() -> service.getFileStatus(transactionEntry, fsPath));
         if (fileStatus.hasErrorMsg()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(fileStatus.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return fileStatus;
     }
 
@@ -86,10 +97,13 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
         final FSPathReq fsPath = FSPathReq.newBuilder().setNamespace(NamespaceName.newBuilder().setName(namespace).build())
                 .setOwner(owner).addAllGroups(groups).setPath(f.toString()).build();
         FileOperationService service = getFileOperationService();
-        CFSFileStatusMap fileStatusMap = executeFunction(() -> service.getFileStatusMap(fsPath));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        CFSFileStatusMap fileStatusMap = executeFunction(() -> service.getFileStatusMap(transactionEntry, fsPath));
         if (fileStatusMap.hasErrorMsg()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(fileStatusMap.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return fileStatusMap;
     }
 
@@ -97,10 +111,13 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
         final FSPathReq fsPath = FSPathReq.newBuilder().setNamespace(NamespaceName.newBuilder().setName(namespace).build())
                 .setOwner(owner).addAllGroups(groups).setPath(f.toString()).build();
         FileOperationService service = getFileOperationService();
-        ExistMsg existMsg = executeFunction(() -> service.exists(fsPath));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        ExistMsg existMsg = executeFunction(() -> service.exists(transactionEntry, fsPath));
         if (existMsg.hasErrorMsg()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(existMsg.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return existMsg.getExists();
     }
 
@@ -114,10 +131,13 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
                 .setVendorPath(vendorPath.toString())
                 .setFsPath(fsPath).build();
         FileOperationService service = getFileOperationService();
-        ResultMsg resultMsg = executeFunction(() -> service.createZeroByteFile(createFileReq));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        ResultMsg resultMsg = executeFunction(() -> service.createZeroByteFile(transactionEntry, createFileReq));
         if (resultMsg.hasErrorMsg()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(resultMsg.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return resultMsg.getSuccess();
     }
 
@@ -131,10 +151,13 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
                 .setVendorPath(vendorPath.toString())
                 .setFsPath(fsPath).build();
         FileOperationService service = getFileOperationService();
-        ResultMsg resultMsg = executeFunction(() -> service.createOnUploadCompletion(createFileReq));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        ResultMsg resultMsg = executeFunction(() -> service.createOnUploadCompletion(transactionEntry, createFileReq));
         if (resultMsg.hasErrorMsg()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(resultMsg.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return resultMsg.getSuccess();
     }
 
@@ -144,10 +167,13 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
                 .setOwner(owner).addAllGroups(groups).setPath(f.toString()).build();
         DeleteFSReq deleteFSReq = DeleteFSReq.newBuilder().setFsPathReq(fsPath).setRecursive(recursive).build();
         FileOperationService service = getFileOperationService();
-        ResultMsg resultMsg = executeFunction(() -> service.delete(deleteFSReq));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        ResultMsg resultMsg = executeFunction(() -> service.delete(transactionEntry, deleteFSReq));
         if (resultMsg.hasErrorMsg()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(resultMsg.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return resultMsg.getSuccess();
     }
 
@@ -155,10 +181,13 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
         RenameFSPath renameFSPath = RenameFSPath.newBuilder().setNamespace(namespace).setOwner(owner).addAllGroup(groups).setSrcPath(srcPath.toString())
                 .setDstPath(dstPath.toString()).build();
         FileOperationService service = getFileOperationService();
-        RenameMsg renameMsg = executeFunction(() -> service.rename(renameFSPath));
+        final TransactionService.TransactionEntry transactionEntry = getTransactionService().newWriteTrxId();
+        RenameMsg renameMsg = executeFunction(() -> service.rename(transactionEntry, renameFSPath));
         if (renameMsg.hasErrorMsg()) {
+            getTransactionService().markFailed(transactionEntry);
             throw new IOException(renameMsg.getErrorMsg().getMsg());
         }
+        getTransactionService().markComitted(transactionEntry);
         return renameMsg.getSuccess();
     }
 

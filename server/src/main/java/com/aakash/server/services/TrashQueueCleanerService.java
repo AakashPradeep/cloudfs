@@ -42,17 +42,17 @@ public class TrashQueueCleanerService {
                 final long startTime = this.trashQueue.utcTimeProvider.currentEpochTime();
                 TrashQueue.TrashNode peek = this.trashQueue.peek();
                 long expiredTimeSinceNodeCreation = peek.getUpdateTime() - startTime;
+                final TransactionService.TransactionEntry trxId = ServiceProvider.getSingeltonInstance().getTransactionService().newWriteTrxId();
                 if (expiredTimeSinceNodeCreation >= this.namespaceInfo.getTrashTTLInMillis()) {
-                    deleteNode(peek.getNode(), Optional.empty(), peek.getPath().getName());
+                    deleteNode(trxId, peek.getNode(), Optional.empty(), peek.getPath().getName());
                 }
-                peek.getNode().getNodeInfo().markDeleted();
 
                 final DirContainer dirContainer = ServiceProvider.getSingeltonInstance().getNamespaceContainerService()
                         .getDirContainer(this.namespaceInfo.getNamespace());
 
-                Optional<Node> optionalParentNode = this.pathBasedNodeTraversal.traverse(peek.getPath().getParent(),
-                        dirContainer.getRootNode(), this.doNothingPermissionChecker, null, Collections.emptyList(),
-                        Visitor.DO_NOTHING_VISITOR);
+                Optional<Node> optionalParentNode = this.pathBasedNodeTraversal.traverse(trxId,
+                        peek.getPath().getParent(), dirContainer.getRootNode(), this.doNothingPermissionChecker, null,
+                        Collections.emptyList(), Visitor.DO_NOTHING_VISITOR);
 //                optionalParentNode.ifPresent(p -> p.removeChildNode(peek.getPath().getName()));
 
                 this.trashQueue.poll();
@@ -60,27 +60,23 @@ public class TrashQueueCleanerService {
         }
     }
 
-    private void deleteNode(Node node, Optional<Node> parentNode, String name) throws IOException {
+    private void deleteNode(TransactionService.TransactionEntry trxId, Node node, Optional<Node> parentNode, String name) throws IOException {
         if (node.getNodeInfo().getAttribute().isFile()) {
             retry(() -> deleteFile(node), 3);
 
-        } else if (!node.isEmptyDir()) {
+        } else if (!node.isEmptyDir(trxId)) {
 
-            for (String childNodeName : node.getChildFileNames()) {
-                Optional<Node> optionalNode = node.getChildNode(childNodeName);
+            for (String childNodeName : node.getChildFileNames(trxId)) {
+                Optional<Node> optionalNode = node.getChildNode(trxId, childNodeName);
                 if (optionalNode.isPresent()) {
                     Node childNode = optionalNode.get();
-                    deleteNode(childNode, Optional.of(node), childNodeName);
+                    deleteNode(ServiceProvider.getSingeltonInstance().getTransactionService().newWriteTrxId(), childNode, Optional.of(node), childNodeName);
                 }
             }
         }
 
         if (parentNode.isPresent()) {
-            try {
-                parentNode.get().removeChildNode(name);
-            } catch (InterruptedException e) {
-                throw new IOException(e);
-            }
+            parentNode.get().removeChildNode(trxId, name);
         }
     }
 

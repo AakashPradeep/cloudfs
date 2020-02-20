@@ -1,11 +1,13 @@
 package com.aakash.server.services;
 
 import com.aakash.bean.NamespaceInfo;
+import com.aakash.in.memory.ds.LockService;
 import com.aakash.server.exceptions.NamespaceCannotBeCreated;
 import com.aakash.server.exceptions.NamespaceDoesNotExist;
 import com.aakash.server.exceptions.NamsepaceAlreadyExistException;
 import com.aakash.server.in.memory.ds.DirContainer;
-import com.aakash.server.in.memory.ds.NamespaceContainer;
+import com.aakash.server.ds.NamespaceContainer;
+import com.aakash.server.in.memory.ds.InMemoryNodeAttribute;
 import com.aakash.server.in.memory.ds.NodeAttribute;
 import com.aakash.server.in.memory.ds.TrashQueue;
 import com.google.common.base.Preconditions;
@@ -30,7 +32,7 @@ public class NamespaceContainerService {
     //TODO delete namespace
 
     /**
-     * It allows only one request thread to modify the namespace metadata but multiple can read it.
+     * It allows only one request thread to modify the namespace metadata but multiple can readCommitted it.
      *
      * @param owner          name of the owner creating the namespace
      * @param groupName      name of the group owner belongs to
@@ -51,8 +53,8 @@ public class NamespaceContainerService {
         }
 
         NamespaceInfo namespaceInfo = new NamespaceInfo(namespace, cloudVendorURI, bucketName, additionalInfo);
-        NodeAttribute dirNodeAttribute = NodeAttribute.createDirNodeAttribute((short) 770, owner, groupName, utcTimeProvider.currentEpochTime());
-        this.namespaceContainer.add(namespace, namespaceInfo, dirNodeAttribute);
+        NodeAttribute dirInMemoryNodeAttribute = InMemoryNodeAttribute.createDirNodeAttribute((short) 770, owner, groupName, utcTimeProvider.currentEpochTime());
+        this.namespaceContainer.add(namespace, namespaceInfo, dirInMemoryNodeAttribute);
         return;
     }
 
@@ -70,6 +72,10 @@ public class NamespaceContainerService {
 
     DirContainer getDirContainer(String namespace) throws NamespaceDoesNotExist {
         return this.namespaceContainer.getRootDirOfNamespace(namespace);
+    }
+
+    LockService getLockService(String namespace) throws NamespaceDoesNotExist {
+        return this.namespaceContainer.getLockService(namespace);
     }
 
     TrashQueue getTrashQueue(String namespace) throws NamespaceDoesNotExist {

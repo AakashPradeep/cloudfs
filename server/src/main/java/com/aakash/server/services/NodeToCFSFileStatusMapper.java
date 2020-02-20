@@ -2,8 +2,9 @@ package com.aakash.server.services;
 
 import com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute;
 import com.aakash.cloudfs.protocol.proto.generated.stubs.CFSFileStatus;
-import com.aakash.server.in.memory.ds.Node;
 import com.aakash.server.in.memory.ds.NodeAttribute;
+import com.aakash.server.in.memory.ds.Node;
+import com.aakash.server.in.memory.ds.InMemoryNodeInfo;
 import com.aakash.server.in.memory.ds.NodeInfo;
 import org.apache.hadoop.fs.Path;
 
@@ -17,7 +18,8 @@ public class NodeToCFSFileStatusMapper implements BiFunction<Node, Path, CFSFile
         final Attribute resultAttribute = Attribute.newBuilder()
                 .setBlockSize(attribute.getBlockSize())
                 .setLastModifiedTime(attribute.getLastModifiedTime())
-                .setLastAccessedTime(attribute.getLastAccessedTime())
+                //TODO fix it with last access time
+                .setLastAccessedTime(attribute.getLastModifiedTime())
                 .setFileSize(attribute.getFileSize())
                 .setCreatedTime(attribute.getCreatedTime())
                 .setGroup(attribute.getGroup())

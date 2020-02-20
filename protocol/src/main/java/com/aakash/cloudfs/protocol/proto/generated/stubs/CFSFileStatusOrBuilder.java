@@ -4,88 +4,71 @@
 package com.aakash.cloudfs.protocol.proto.generated.stubs;
 
 public interface CFSFileStatusOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:cloudfs.protocol.CFSFileStatus)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:cloudfs.protocol.CFSFileStatus)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>.cloudfs.protocol.Attribute attribute = 1;</code>
-     *
-     * @return Whether the attribute field is set.
-     */
-    boolean hasAttribute();
+  /**
+   * <code>.cloudfs.protocol.Attribute attribute = 1;</code>
+   * @return Whether the attribute field is set.
+   */
+  boolean hasAttribute();
+  /**
+   * <code>.cloudfs.protocol.Attribute attribute = 1;</code>
+   * @return The attribute.
+   */
+  com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getAttribute();
+  /**
+   * <code>.cloudfs.protocol.Attribute attribute = 1;</code>
+   */
+  com.aakash.cloudfs.protocol.proto.generated.stubs.AttributeOrBuilder getAttributeOrBuilder();
 
-    /**
-     * <code>.cloudfs.protocol.Attribute attribute = 1;</code>
-     *
-     * @return The attribute.
-     */
-    com.aakash.cloudfs.protocol.proto.generated.stubs.Attribute getAttribute();
+  /**
+   * <code>string vendorPath = 2;</code>
+   * @return The vendorPath.
+   */
+  java.lang.String getVendorPath();
+  /**
+   * <code>string vendorPath = 2;</code>
+   * @return The bytes for vendorPath.
+   */
+  com.google.protobuf.ByteString
+      getVendorPathBytes();
 
-    /**
-     * <code>.cloudfs.protocol.Attribute attribute = 1;</code>
-     */
-    com.aakash.cloudfs.protocol.proto.generated.stubs.AttributeOrBuilder getAttributeOrBuilder();
+  /**
+   * <code>.cloudfs.protocol.Status status = 3;</code>
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+  /**
+   * <code>.cloudfs.protocol.Status status = 3;</code>
+   * @return The status.
+   */
+  com.aakash.cloudfs.protocol.proto.generated.stubs.Status getStatus();
 
-    /**
-     * <code>string vendorPath = 2;</code>
-     *
-     * @return The vendorPath.
-     */
-    java.lang.String getVendorPath();
+  /**
+   * <code>string cfsPath = 4;</code>
+   * @return The cfsPath.
+   */
+  java.lang.String getCfsPath();
+  /**
+   * <code>string cfsPath = 4;</code>
+   * @return The bytes for cfsPath.
+   */
+  com.google.protobuf.ByteString
+      getCfsPathBytes();
 
-    /**
-     * <code>string vendorPath = 2;</code>
-     *
-     * @return The bytes for vendorPath.
-     */
-    com.google.protobuf.ByteString
-    getVendorPathBytes();
-
-    /**
-     * <code>.cloudfs.protocol.Status status = 3;</code>
-     *
-     * @return The enum numeric value on the wire for status.
-     */
-    int getStatusValue();
-
-    /**
-     * <code>.cloudfs.protocol.Status status = 3;</code>
-     *
-     * @return The status.
-     */
-    com.aakash.cloudfs.protocol.proto.generated.stubs.Status getStatus();
-
-    /**
-     * <code>string cfsPath = 4;</code>
-     *
-     * @return The cfsPath.
-     */
-    java.lang.String getCfsPath();
-
-    /**
-     * <code>string cfsPath = 4;</code>
-     *
-     * @return The bytes for cfsPath.
-     */
-    com.google.protobuf.ByteString
-    getCfsPathBytes();
-
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     *
-     * @return Whether the errorMsg field is set.
-     */
-    boolean hasErrorMsg();
-
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     *
-     * @return The errorMsg.
-     */
-    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
-
-    /**
-     * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
-     */
-    com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
+  /**
+   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+   * @return Whether the errorMsg field is set.
+   */
+  boolean hasErrorMsg();
+  /**
+   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+   * @return The errorMsg.
+   */
+  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsg getErrorMsg();
+  /**
+   * <code>.cloudfs.protocol.ErrorMsg errorMsg = 5;</code>
+   */
+  com.aakash.cloudfs.protocol.proto.generated.stubs.ErrorMsgOrBuilder getErrorMsgOrBuilder();
 }
