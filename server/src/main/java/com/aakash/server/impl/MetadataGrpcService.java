@@ -54,7 +54,7 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
 
     @Override
     public void exists(FSPathReq request, StreamObserver<ExistMsg> responseObserver) {
-        TransactionService.TransactionEntry transactionEntry = this.transactionService.readTrxId();
+        TransactionService.TransactionEntry transactionEntry = this.transactionService.newReadTrxId();
         try {
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             ExistMsg exists = service.exists(transactionEntry, request);
@@ -71,7 +71,7 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
 
     @Override
     public void getFileStatus(FSPathReq request, StreamObserver<CFSFileStatus> responseObserver) {
-        TransactionService.TransactionEntry transactionEntry = this.transactionService.readTrxId();
+        TransactionService.TransactionEntry transactionEntry = this.transactionService.newReadTrxId();
         try {
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             CFSFileStatus fileStatus = service.getFileStatus(transactionEntry, request);
@@ -88,7 +88,7 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
 
     @Override
     public void getFileStatusMap(FSPathReq request, StreamObserver<CFSFileStatusMap> responseObserver) {
-        TransactionService.TransactionEntry transactionEntry = this.transactionService.readTrxId();
+        TransactionService.TransactionEntry transactionEntry = this.transactionService.newReadTrxId();
         try {
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             CFSFileStatusMap fileStatusMap = service.getFileStatusMap(transactionEntry, request);

@@ -2,7 +2,12 @@ package com.aakash.server.ds;
 
 import com.aakash.server.exceptions.OperationNotPermittedException;
 import com.aakash.server.in.memory.ds.Visitor;
+import com.aakash.server.services.TransactionService;
 import com.aakash.server.services.TransactionService.TransactionEntry;
+import com.google.common.collect.Lists;
+
+import java.util.Collection;
+import java.util.LinkedList;
 
 /**
  * A multi version node to support snapshot and avoid any readCommitted and write lock. This will allow to multiple readCommitted and write
@@ -31,6 +36,7 @@ public class MultiVersionNode<T> {
         }
         this.head = versionNode;
         this.versionHistorySize++;
+        transactionEntry.add(new TransactionService.NodeEntry(this, versionNode));
     }
 
     public synchronized void delete(TransactionEntry transactionEntry) throws OperationNotPermittedException {
@@ -56,8 +62,7 @@ public class MultiVersionNode<T> {
     }
 
     public T readLatestCommitted() {
-        VersionNode<T> node = this.head;
-        for (; node != null && !node.getVersion().isCommitted(); node = node.next) ;
+        VersionNode<T> node = getLatestCommittedVersionNode();
         if (node != null) {
             return node.getData();
         }
@@ -65,10 +70,51 @@ public class MultiVersionNode<T> {
     }
 
 
+    public VersionNode<T> getLatestCommittedVersionNode() {
+        VersionNode<T> node = this.head;
+        for (; node != null && !node.getVersion().isCommitted(); node = node.next) ;
+        return node;
+    }
+
+    public Collection<VersionNode<T>> getVersionNodeCleanUp() {
+        LinkedList<VersionNode<T>> versionNodesForCleanUp = Lists.newLinkedList();
+        VersionNode<T> versionNode = this.head;
+        boolean isDone = false;
+        for (; versionNode != null && !isDone; versionNode = versionNode.getNext()) {
+            if (versionNode.getVersion().isFailed()) {
+                versionNodesForCleanUp.addLast(versionNode);
+            } else if (versionNode.getVersion().isCommitted() && versionNode.getNext() != null) {
+                versionNodesForCleanUp.addLast(versionNode.getNext());
+                isDone = true;
+            }
+        }
+        return versionNodesForCleanUp;
+    }
+
+    public void deleteSingleVersionNode(VersionNode<T> nodeToBeDeleted) {
+        if (this.head == nodeToBeDeleted) {
+            this.head = this.head.next;
+        } else {
+            VersionNode<T> prev = nodeToBeDeleted.prev;
+            if (prev != null) {
+                prev.next = nodeToBeDeleted.next;
+            }
+
+            if (nodeToBeDeleted.next != null) {
+                nodeToBeDeleted.next.prev = prev;
+            }
+        }
+
+        nodeToBeDeleted.setNext(null);
+        nodeToBeDeleted.setPrev(null);
+    }
+
+
     public VersionNode<T> get(TransactionEntry transactionEntry) {
         VersionNode<T> versionNode = this.head;
         for (; versionNode != null && !versionNode.getVersion().isFailed() && versionNode.getVersion().getTrxId() > transactionEntry.getTrxId();
-             versionNode = versionNode.next) ;
+             versionNode = versionNode.next)
+            ;
         if (versionNode != null) {
             return versionNode;
         }
