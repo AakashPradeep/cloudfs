@@ -12,8 +12,22 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class LocalInMemoryMetadataClientStoreService implements MetadataClientService {
+
+    public static final int DEFAULT_NUM_THREAD_POOL = 5;
+    private final ExecutorService executorService;
+
+    public LocalInMemoryMetadataClientStoreService(){
+        this(DEFAULT_NUM_THREAD_POOL);
+    }
+
+    public LocalInMemoryMetadataClientStoreService(int numThreadPool) {
+        this.executorService   = Executors.newFixedThreadPool(numThreadPool);
+    }
 
 
     public NamespaceInfo registerNewNamespace(String user, String group, String namespace, String vendorURI, String bucketname, Map<String, String> additionalInfo) throws IOException {
@@ -196,12 +210,41 @@ public class LocalInMemoryMetadataClientStoreService implements MetadataClientSe
     }
 
     private <T> T executeFunction(Callable<T> callable) throws IOException {
+        CallableWrapper<T> wrapper = new CallableWrapper<>(callable);
         try {
-            return callable.call();
-        } catch (IOException e) {
-            throw e;
+            Future<T> future = this.executorService.submit(wrapper);
+            return future.get();
         } catch (Exception e) {
+            if(wrapper.e != null){
+                throw wrapper.e;
+            }
             throw new IOException(e);
+        }
+    }
+
+    /*
+        Little unclean wrapper to percolate the same IOException we got while execution the function if its not IOException
+        wrap it in a new IOException
+     */
+    public static class CallableWrapper<T> implements Callable<T> {
+        private IOException e;
+        private final Callable<T> callable;
+
+        public CallableWrapper(Callable<T> callable) {
+            this.callable = callable;
+        }
+
+
+        @Override
+        public T call() throws Exception {
+            try {
+                return this.callable.call();
+            }catch (Exception e){
+                if(e instanceof IOException) {
+                    this.e = (IOException) e;
+                }
+                throw e;
+            }
         }
     }
 
