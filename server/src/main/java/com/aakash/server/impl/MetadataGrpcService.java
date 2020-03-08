@@ -4,10 +4,8 @@ import com.aakash.cloudfs.protocol.proto.generated.stubs.*;
 import com.aakash.server.exceptions.NamespaceCannotBeCreated;
 import com.aakash.server.exceptions.NamespaceDoesNotExist;
 import com.aakash.server.exceptions.NamsepaceAlreadyExistException;
-import com.aakash.server.services.FileOperationService;
-import com.aakash.server.services.NamespaceContainerService;
-import com.aakash.server.services.ServiceProvider;
-import com.aakash.server.services.TransactionService;
+import com.aakash.server.services.*;
+import com.aakash.wal.WALWriter;
 import io.grpc.stub.StreamObserver;
 
 public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBase {
@@ -111,6 +109,8 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             ResultMsg resultMsg = service.delete(transactionEntry, request);
             this.transactionService.markComitted(transactionEntry);
+            WALService walService = ServiceProvider.getSingeltonInstance().getNamespaceContainerService().getWalService(request.getFsPathReq().getNamespace().getName());
+            walService.getWalWriter().write(transactionEntry.getTrxId(), WALWriter.Operation.DELETE, request.toByteArray());
             responseObserver.onNext(resultMsg);
         } catch (Exception e) {
             ErrorMsg errorMsg = ErrorMsg.newBuilder().setMsg(e.getMessage()).setType(e.getClass().getName()).build();
@@ -128,6 +128,8 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             RenameMsg renameMsg = service.rename(transactionEntry, request);
             this.transactionService.markComitted(transactionEntry);
+            WALService walService = ServiceProvider.getSingeltonInstance().getNamespaceContainerService().getWalService(request.getNamespace());
+            walService.getWalWriter().write(transactionEntry.getTrxId(), WALWriter.Operation.RENAME, request.toByteArray());
             responseObserver.onNext(renameMsg);
         } catch (Exception e) {
             ErrorMsg errorMsg = ErrorMsg.newBuilder().setMsg(e.getMessage()).setType(e.getClass().getName()).build();
@@ -145,6 +147,8 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             ResultMsg resultMsg = service.mkdirs(transactionEntry, request);
             this.transactionService.markComitted(transactionEntry);
+            WALService walService = ServiceProvider.getSingeltonInstance().getNamespaceContainerService().getWalService(request.getFsPath().getNamespace().getName());
+            walService.getWalWriter().write(transactionEntry.getTrxId(), WALWriter.Operation.MKDIR, request.toByteArray());
             responseObserver.onNext(resultMsg);
         } catch (Exception e) {
             ErrorMsg errorMsg = ErrorMsg.newBuilder().setMsg(e.getMessage()).setType(e.getClass().getName()).build();
@@ -168,6 +172,8 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             ResultMsg resultMsg = service.createZeroByteFile(transactionEntry, request);
             this.transactionService.markComitted(transactionEntry);
+            WALService walService = ServiceProvider.getSingeltonInstance().getNamespaceContainerService().getWalService(request.getFsPath().getNamespace().getName());
+            walService.getWalWriter().write(transactionEntry.getTrxId(), WALWriter.Operation.CREATE_ZERO_BYTE_FILE, request.toByteArray());
             responseObserver.onNext(resultMsg);
         } catch (Exception e) {
             ErrorMsg errorMsg = ErrorMsg.newBuilder().setMsg(e.getMessage()).setType(e.getClass().getName()).build();
@@ -185,6 +191,8 @@ public class MetadataGrpcService extends CloudFSServiceGrpc.CloudFSServiceImplBa
             FileOperationService service = ServiceProvider.getSingeltonInstance().getFileOperationService();
             ResultMsg resultMsg = service.createOnUploadCompletion(transactionEntry, request);
             this.transactionService.markComitted(transactionEntry);
+            WALService walService = ServiceProvider.getSingeltonInstance().getNamespaceContainerService().getWalService(request.getFsPath().getNamespace().getName());
+            walService.getWalWriter().write(transactionEntry.getTrxId(), WALWriter.Operation.CREATE_ON_FILE_UPLOAD_COMPLETION, request.toByteArray());
             responseObserver.onNext(resultMsg);
         } catch (Exception e) {
             ErrorMsg errorMsg = ErrorMsg.newBuilder().setMsg(e.getMessage()).setType(e.getClass().getName()).build();

@@ -2,13 +2,13 @@ package com.aakash.server.services;
 
 import com.aakash.bean.NamespaceInfo;
 import com.aakash.in.memory.ds.LockService;
+import com.aakash.server.ds.NamespaceContainer;
+import com.aakash.server.ds.NodeAttribute;
 import com.aakash.server.exceptions.NamespaceCannotBeCreated;
 import com.aakash.server.exceptions.NamespaceDoesNotExist;
 import com.aakash.server.exceptions.NamsepaceAlreadyExistException;
 import com.aakash.server.in.memory.ds.DirContainer;
-import com.aakash.server.ds.NamespaceContainer;
 import com.aakash.server.in.memory.ds.InMemoryNodeAttribute;
-import com.aakash.server.ds.NodeAttribute;
 import com.aakash.server.in.memory.ds.TrashQueue;
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang.StringUtils;
@@ -54,7 +54,12 @@ public class NamespaceContainerService {
 
         NamespaceInfo namespaceInfo = new NamespaceInfo(namespace, cloudVendorURI, bucketName, additionalInfo);
         NodeAttribute dirInMemoryNodeAttribute = InMemoryNodeAttribute.createDirNodeAttribute((short) 770, owner, groupName, utcTimeProvider.currentEpochTime());
-        this.namespaceContainer.add(namespace, namespaceInfo, dirInMemoryNodeAttribute);
+
+        Configuration configuration = new Configuration();
+        additionalInfo.forEach((k, v) -> configuration.set(k, v));
+        WALService walService = new WALService(configuration);
+
+        this.namespaceContainer.add(namespace, namespaceInfo, dirInMemoryNodeAttribute, walService);
         return;
     }
 
@@ -76,6 +81,10 @@ public class NamespaceContainerService {
 
     LockService getLockService(String namespace) throws NamespaceDoesNotExist {
         return this.namespaceContainer.getLockService(namespace);
+    }
+
+    public WALService getWalService(String namespace) throws NamespaceDoesNotExist {
+        return this.namespaceContainer.getWalService(namespace);
     }
 
     TrashQueue getTrashQueue(String namespace) throws NamespaceDoesNotExist {

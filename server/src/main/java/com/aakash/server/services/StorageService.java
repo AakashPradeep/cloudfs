@@ -56,7 +56,7 @@ public class StorageService {
      * An implementation of {@link Callable} to clean the old {@link VersionNode}s.
      */
     public static class OldVersionCleaner implements Callable<Void> {
-        private final LinkedBlockingQueue<NodeEntry> queue = new LinkedBlockingQueue<>();
+        private final LinkedBlockingQueue<NodeEntry<Node>> queue = new LinkedBlockingQueue<>();
         private final LinkedBlockingQueue<TransactionEntry> transactionEventQueue = new LinkedBlockingQueue<>();
         private final TransactionService transactionService;
 
@@ -75,7 +75,7 @@ public class StorageService {
          */
         public void add(MultiVersionNode<Node> multiVersionNode, VersionNode<Node> needToBeDeleted) {
             if (needToBeDeleted.getVersion().isCommitted()) {
-                this.queue.add(new NodeEntry(multiVersionNode, needToBeDeleted));
+                this.queue.add(new NodeEntry<>(multiVersionNode, needToBeDeleted));
             }
 
             if (needToBeDeleted.getVersion().isFailed()) {
@@ -86,10 +86,10 @@ public class StorageService {
         }
 
 
-        private boolean recClean(NodeEntry entry, TransactionEntry oldestTransactionEntryInProcess) {
+        private boolean recClean(NodeEntry<Node> entry, TransactionEntry oldestTransactionEntryInProcess) {
             VersionNode<Node> versionNode = entry.getVersionNode();
             if (versionNode.getNext() != null) {
-                return recClean(new NodeEntry(entry.getMultiVersionNode(), versionNode.getNext()), oldestTransactionEntryInProcess);
+                return recClean(new NodeEntry<>(entry.getMultiVersionNode(), versionNode.getNext()), oldestTransactionEntryInProcess);
             }
             if (versionNode.getVersion().compareTo(oldestTransactionEntryInProcess) < 0) {
                 entry.getMultiVersionNode().deleteSingleVersionNode(versionNode);
@@ -102,7 +102,7 @@ public class StorageService {
         @Override
         public Void call() throws Exception {
             while (true) {
-                LinkedList<NodeEntry> unprocessVersionNodes = new LinkedList<>();
+                LinkedList<NodeEntry<Node>> unprocessVersionNodes = new LinkedList<>();
                 for (NodeEntry nodeEntry : this.queue) {
                     TransactionEntry transactionEntryInProcess = this.transactionService.oldestInProcessTransaction();
                     if (recClean(nodeEntry, transactionEntryInProcess)) {

@@ -7,13 +7,15 @@ import com.aakash.server.ds.TransactionIdProvider;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
  * A service for issuing new transactions and managing it.
  */
 public class TransactionService {
-    private final ConcurrentSkipListSet<RegisteredService> registeredServices = new ConcurrentSkipListSet<>();
+    private final CopyOnWriteArraySet<RegisteredService> registeredServices = new CopyOnWriteArraySet<>();
     private final TransactionIdProvider transactionIdProvider;
     private final ConcurrentSkipListSet<TransactionEntry> inCompleteReadTransactionEntries = new ConcurrentSkipListSet<>();
     private final ConcurrentSkipListSet<TransactionEntry> inCompleteWriteTransactionEntries = new ConcurrentSkipListSet<>();
